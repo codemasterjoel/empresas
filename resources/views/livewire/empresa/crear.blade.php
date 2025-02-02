@@ -1,20 +1,15 @@
-<div class="fixed z-index:50 z-50 inset-0 overflow-y-auto ease-out duration-400">
-    <div class="flex justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
-        <div class="fixed inset-0 transition-opacity">
-            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-        </div>
+<div class="main-content mt-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4 mx-4">
           @if(session()->has('yaregistrado')== 'yaregistrado')
             @include('livewire.components.yaregistrado')
           @endif
-          <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
-          <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">    
-            <div class="min-h-screen flex items-start justify-center pt-8">
+          <div>    
+            <div class="min-h-screen flex items-center justify-center">
                 <div class="p-4 w-full bg-white rounded-lg">
-                    <div class="flex items-center justify-center">
-                      <img src="{{asset('img/logoccs.png')}}" class="w-52">
-                    </div>
-                    <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center mb-4">REGISTRAR EMPRESA DE RECICLAJE</h3>
-                    <form>
+                    <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center">REGISTRAR NUEVA EMPRESA</h3>
+                    <form action="" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-xl-12 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
@@ -42,12 +37,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo cedula --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Cédula</span>
-                                            <input wire:model="cedula" type="number" class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" >
+                                            <input wire:model="cedula" type="text"  class="w-full pl-3 border px-3 py-[0.25rem] border-solid text-neutral-900 font-bold outline-2 border-slate-900" onkeypress="$(this).mask('00000000')" maxlength="8">
+                                            <input wire:click="consultar" type="button" value="Buscar" class="bg-gradient-primary px-2 py-[0.25rem] rounded-tr-lg rounded-br-lg text-white font-bold ">
                                         </div>
                                         @error('cedula') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -78,10 +74,97 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="font-weight-bold text-white text-center"><h3>GEOREFERENCIACION</h3></div>
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Telefono</span>
+                                            <input wire:model="telefono" type="text" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" />
+                                        </div>
+                                        @error('telefono') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Tipo de Materiales</span>
+                                            <select wire:model="tipo_materiales" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
+                                                <option value="">Seleccione</option>
+                                            </select>
+                                        </div>
+                                        @error('telefono') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Dirección</span>
+                                            <input wire:model="direccion" type="text" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" />
+                                        </div>
+                                        @error('direccion') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <div class="fileinput fileinput-new text-white text-center" data-provides="fileinput">
+                                                <span class="btn btn-raised btn-round bg-cyan-900 btn-file">
+                                                  <span class="fileinput-new text-white">Patente:</span>
+                                                  <input type="file" name="patente" id="patente" accept="application/pdf, .pdf">
+                                                </span>
+                                              </div>
+                                        </div>
+                                        @error('patente') <div class="">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <div class="fileinput fileinput-new text-white text-center" data-provides="fileinput">
+                                                <span class="btn btn-raised btn-round bg-cyan-900 btn-file">
+                                                  <span class="fileinput-new text-white">Conformidad de Uso:</span>
+                                                  <input type="file" name="patente" id="patente" accept="application/pdf, .pdf">
+                                                </span>
+                                              </div>
+                                        </div>
+                                        @error('patente') <div class="">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <div class="fileinput fileinput-new text-white text-center" data-provides="fileinput">
+                                                <span class="btn btn-raised btn-round bg-cyan-900 btn-file">
+                                                  <span class="fileinput-new text-white">RUNPA:</span>
+                                                  <input type="file" name="patente" id="patente" accept="application/pdf, .pdf">
+                                                </span>
+                                              </div>
+                                        </div>
+                                        @error('patente') <div class="">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 py-2">
+                                <h1 class="text-center text-2xl text-info text-gradient">{{ __('GEOREFERENCIACIÓN') }}</h1>
                             </div>
                         </div>
                         <div class="items-center">
@@ -96,58 +179,62 @@
                                 <input wire:model="lon" type="text" name="longitud" value="-66.931854" id="longitud" class="form-control">
                             </div>
                         </div>
-                        <div class="px-4 py-3 sm:px-6 sm:flex">                                  
-                            <span class="flex w-full rounded-md sm:ml-3 sm:w-auto">
-                                <button type="submit" class="w-32 bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mb-2" wire:click.prevent="guardar()" >GUARDAR</button>
-                            </span>
-                            <span class="flex w-full rounded-md sm:ml-3 sm:w-auto">
-                                <button type="button" class="w-32 bg-gradient-to-r from-red-400 to-red-600 font-bold text-white py-2 rounded-lg mx-auto block mb-2" wire:click="salir()">SALIR</button>
-                            </span>
-                        </div>
                     </form>
                 </div>
             </div>
           </div>
+        </div>
+      </div>
     </div>
   </div>
   
-<script>
-  var marker;
-  var coords = {};
-  initMap = function () 
-  {
-    navigator.geolocation.getCurrentPosition(
-      function (position){
-        coords =  {
-          lng: position.coords.longitude,
-          lat: position.coords.latitude
-        };
-        setMapa(coords);
-      },function(error){console.log(error);});
-  }
-  function setMapa (coords)
-  {
-    var map = new google.maps.Map(document.getElementById('map'),
+  <script>
+    var marker;
+    var coords = {};
+    initMap = function () 
     {
-      zoom: 13,
-      center:new google.maps.LatLng(coords.lat,coords.lng),
-    });
-    marker = new google.maps.Marker({
-      map: map,
-      draggable: true,
-      animation: google.maps.Animation.DROP,
-      position: new google.maps.LatLng(coords.lat,coords.lng),
-
-    });
-    marker.addListener( 'dragend', function (event)
+      navigator.geolocation.getCurrentPosition(
+        function (position){
+          coords =  {
+            lng: position.coords.longitude,
+            lat: position.coords.latitude
+          };
+          setMapa(coords);
+        },function(error){console.log(error);});
+    }
+    function setMapa (coords)
     {
-      document.getElementById("latitud").value = this.getPosition().lat();
-      document.getElementById("longitud").value = this.getPosition().lng();
-    });
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI&callback=initMap&v=weekly" defer></script>
-
+      var map = new google.maps.Map(document.getElementById('map'),
+      {
+        zoom: 13,
+        center:new google.maps.LatLng(coords.lat,coords.lng),
+      });
+      marker = new google.maps.Marker({
+        map: map,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: new google.maps.LatLng(coords.lat,coords.lng),
+  
+      });
+      marker.addListener( 'dragend', function (event)
+      {
+        document.getElementById("latitud").value = this.getPosition().lat();
+        document.getElementById("longitud").value = this.getPosition().lng();
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI&callback=initMap&v=weekly" defer></script>
+  
+  {{-- <script>
+  
+    var BING_KEY = 'AuhiCJHlGzhg93IqUH_oCpl_-ZUrIE6SPftlyGYUvr9Amx5nzA-WqGcPquyFZl4L'
+  
+    var map = L.map('map').setView([7.1195102, -67.0456545], 6)
+  
+    var bingLayer = L.tileLayer.bing(BING_KEY).addTo(map)
+    
+  </script> --}}
+  
   @section('js')
     <script src="{{ asset('js/functions3.js')}}" type="text/javascript"></script>
   @endsection

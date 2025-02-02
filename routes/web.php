@@ -20,6 +20,7 @@ use App\Http\Livewire\Reporte\Index as reporte;
 use App\Http\Livewire\Sessions\Index as sessions;
 use App\Http\Livewire\Auditoria\Index as auditoria;
 use App\Http\Livewire\Empresa\Index as empresa;
+use App\Http\Livewire\CrearEmpresa\Index as crearempresa;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
@@ -40,6 +41,7 @@ Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')-
 
 Route::middleware('auth')->group(function () {
     Route::get('/empresa', empresa::class)->name('empresa');
+    Route::get('/empresa/{id}', crearempresa::class)->name('empresa.editar');
     Route::get('/auditoria', auditoria::class)->name('auditoria');
     Route::get('/mapa', mapa::class)->name('mapa');
     Route::get('/usuario', usuario::class)->name('usuario');

@@ -11,6 +11,9 @@
                 </ol>
             </nav>
             <div class=" navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end" id="navbar">
+                <div class="nav-item mr-8 d-flex align-self-start">
+                    <a href="{{ url('empresa') }}" class="btn bg-gradient-danger mb-0 text-white" role="button" aria-pressed="true">Empresas</a>
+                </div>
                 <div class="nav-item mr-8 d-flex align-self-end">
                     <a href="{{ url('logout') }}" class="btn bg-gradient-danger active mb-0 text-white" role="button" aria-pressed="true">Salir</a>
                 </div>

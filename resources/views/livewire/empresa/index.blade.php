@@ -9,7 +9,8 @@
                     <div class="d-flex flex-row justify-content-between">
                         <input wire:model.live="search" type="text" placeholder="Filtrar por Nombre" class="w-30 px-4 py-2 border border-solid rounded-lg outline-2 font-bold">
                         {{-- <button wire:click="crear()" class="btn bg-gradient-primary btn-sm mb-0 font-weight-bolder" type="button">+&nbsp; NUEVA EMPRESA</button> --}}
-                        <button type="button" class="btn bg-gradient-primary btn-sm mb-0 font-weight-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal">+&nbsp; NUEVA EMPRESA</button>
+                        {{-- <button type="button" class="btn bg-gradient-primary btn-sm mb-0 font-weight-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal">+&nbsp; NUEVA EMPRESA</button> --}}
+                        <a href="/empresa/0" wire:navigate class="btn bg-gradient-primary btn-sm mb-0 font-bold">+&nbsp; NUEVA EMPRESA</a>
                     </div>
                 </div>
                 @if($modal)
