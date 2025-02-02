@@ -7,7 +7,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Recreadores</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Empresas</p>
                     <h5 class="font-weight-bolder mb-0"></h5>
                   </div>
                 </div>
@@ -27,7 +27,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">NRC</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicadores</p>
                     <h5 class="font-weight-bolder mb-0"></h5>
                   </div>
                 </div>
@@ -46,7 +46,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Voluntarios</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicadores</p>
                     <h5 class="font-weight-bolder mb-0"></h5>
                   </div>
                 </div>
@@ -65,7 +65,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Recreador</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicadores</p>
                     <h5 class="font-weight-bolder mb-0"></h5>
                   </div>
                 </div>
@@ -84,7 +84,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Lider Recreador</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicaodres</p>
                     <h5 class="font-weight-bolder mb-0"></h5>
                   </div>
                 </div>
@@ -103,7 +103,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">POSTULADOS</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicadores</p>
                     <h5 class="font-weight-bolder mb-0"></h5>
                   </div>
                 </div>
@@ -121,7 +121,7 @@
         <div class="col-4">
           <div class="card">
             <div class="card-body p-3">
-              <h5 class=" font-bold text-uppercase">Recreador por Genero</h5>
+              <h5 class=" font-bold text-uppercase">Empresas</h5>
               <div class="row">
                 <div class="ms-auto text-center mt-5 mt-lg-0">
                   <div class=" border-radius-lg h-100">
@@ -135,7 +135,7 @@
         <div class="col-4">
           <div class="card">
             <div class="card-body p-3">
-              <h5 class=" font-bold text-uppercase">Recreadores por nivel académico</h5>
+              <h5 class=" font-bold text-uppercase">Empresas</h5>
               <div class="row">
                 <div class="ms-auto text-center mt-5 mt-lg-0">
                   <div class=" border-radius-lg h-100">
@@ -149,7 +149,7 @@
         <div class="col-4">
           <div class="card">
             <div class="card-body p-3">
-              <h5 class=" font-bold text-uppercase">recreadores activos e inactivos</h5>
+              <h5 class=" font-bold text-uppercase">Empresas</h5>
               <div class="row">
                 <div class="ms-auto text-center mt-5 mt-lg-0">
                   <div class=" border-radius-lg h-100">
@@ -165,7 +165,7 @@
         <div class="col-lg-12 mb-lg-0 mb-4">
           <div class="card">
             <div class="card-body p-3">
-              <h5 class=" font-bold">RECREADORES POR ESTADO</h5>
+              <h5 class=" font-bold">EMPRESAS POR PARROQUIA</h5>
               <div class="row">
                 <div class="ms-auto text-center mt-5 mt-lg-0">
                   <div class=" border-radius-lg h-100">
@@ -181,7 +181,7 @@
         <div class="col-lg-12 mb-lg-0 mb-4">
           <div class="card">
             <div class="card-body p-3">
-              <h5 class=" font-bold">NÚCLEO DE RECREACIÓN COMUNITARIO POR ESTADO</h5>
+              <h5 class=" font-bold">EMPRESAS POR ESTATUS</h5>
               <div class="row">
                 <div class="ms-auto text-center mt-5 mt-lg-0">
                   <div class=" border-radius-lg h-100">
