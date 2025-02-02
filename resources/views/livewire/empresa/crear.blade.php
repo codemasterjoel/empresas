@@ -113,25 +113,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items d-none d-lg-block">
-                                    <span>¿Posee Patente?</span>
+                        <div class="row ">
+                            <div class="col-xl-4 col-sm-12 mb-xl-0 d-none d-xl-block">
+                                <div class="flex items">
+                                    <span class="">¿Posee Patente?</span>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items d-none d-lg-block">
-                                    <span>¿Posee Conformidad de Uso?</span>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0 d-none d-xl-block">
+                                <div class="flex items">
+                                    <span class="">¿Posee Conformidad de Uso?</span>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items d-none d-lg-block">
-                                    <span>¿Posee Runpa?</span>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0 d-none d-xl-block">
+                                <div class="flex items">
+                                    <span class="">¿Posee Runpa?</span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <span>¿Posee Patente?</span>
+                            <span class="d-xl-none">¿Posee Patente?</span>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center"> {{-- campo cedula --}}
                                     <div class="w-full rounded-lg">
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <span>¿Posee Conformidad de Uso?</span>
+                            <span class="d-xl-none">¿Posee Conformidad de Uso?</span>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center"> {{-- campo cedula --}}
                                     <div class="w-full rounded-lg">
@@ -177,7 +177,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <span>¿Posee Runpa?</span>
+                            <span class="d-xl-none">¿Posee Runpa?</span>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center"> {{-- campo cedula --}}
                                     <div class="w-full rounded-lg">
