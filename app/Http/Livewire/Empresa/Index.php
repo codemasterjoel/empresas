@@ -8,6 +8,9 @@ use App\Models\Empresa;
 class Index extends Component
 {
     public $modal = false;
+    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon =null;
+    public $tipo_materiales =null;
+    public $search = null;
     
     public function render()
     {

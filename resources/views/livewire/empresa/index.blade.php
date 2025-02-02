@@ -68,7 +68,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade z-index: 50;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade z-index: 50;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header w-full">
@@ -261,7 +261,6 @@
         </div>
     </div>
 </div>
-
     <script>
         var marker;
         var coords = {};
@@ -296,5 +295,6 @@
             document.getElementById("longitud").value = this.getPosition().lng();
         });
         }
+        function initMap() { console.log('GMap Callback') }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI&callback=initMap&v=weekly" defer></script>
