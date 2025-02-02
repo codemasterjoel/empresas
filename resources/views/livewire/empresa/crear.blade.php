@@ -228,47 +228,47 @@
     (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
       key: "AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI",
       v: "weekly",
+      // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+      // Add other bootstrap parameters as needed, using camel case.
     });
   </script>
   <script>
         // Initialize and add the map
         let map;
         var coords = {};
-        async function initMap() 
-        {
+
+        async function initMap() {
         
-            navigator.geolocation.getCurrentPosition(
-            function (posision)
-            {
-                coords =  
-                {
-                    lng: position.coords.longitude,
-                    lat: position.coords.latitude
-                };
-                setMapa(coords);
-            },function(error){console.log(error);});
-            
-            const position = { lat: 10.508206445478738, lng: -66.9142385424177 };
+        navigator.geolocation.getCurrentPosition(
+        function (position){
+          coords =  {
+            lng: position.coords.longitude,
+            lat: position.coords.latitude
+          };
+          setMapa(coords);
+        },function(error){console.log(error);});
 
-            const { Map } = await google.maps.importLibrary("maps");
-            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+        // The location of Uluru
+        const position = { lat: 10.508248641257252, lng: -66.91428145941548 };
+        // Request needed libraries. 10.508248641257252, -66.91428145941548
+        //@ts-ignore
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-            // The map, centered at Uluru
-            map = new Map(document.getElementById("map"), 
-            {
-                zoom: 4,
-                center: position,
-                mapId: "DEMO_MAP_ID",
-            });
+        // The map, centered at Uluru
+        map = new Map(document.getElementById("map"), {
+            zoom: 12,
+            center: position,
+            mapId: "DEMO_MAP_ID",
+        });
 
-            // The marker, positioned at Uluru
-            const marker = new AdvancedMarkerElement(
-                {
-                map: map,
-                draggable: true,
-                position: position,
-                title: "Uluru",
-            });
+        // The marker, positioned at Uluru
+        const marker = new AdvancedMarkerElement({
+            map: map,
+            position: position,
+            title: "Uluru",
+        });
+        }
 
         initMap();
   </script>
@@ -287,18 +287,3 @@
         mapId: "DEMO_MAP_ID",
 });
   </script>
-  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI&callback=initMap&v=weekly" defer></script> --}}
-  
-  {{-- <script>
-  
-    var BING_KEY = 'AuhiCJHlGzhg93IqUH_oCpl_-ZUrIE6SPftlyGYUvr9Amx5nzA-WqGcPquyFZl4L'
-  
-    var map = L.map('map').setView([7.1195102, -67.0456545], 6)
-  
-    var bingLayer = L.tileLayer.bing(BING_KEY).addTo(map)
-    
-  </script> --}}
-  
-  {{-- @section('js')
-    <script src="{{ asset('js/functions3.js')}}" type="text/javascript"></script>
-  @endsection --}}
