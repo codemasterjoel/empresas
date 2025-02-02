@@ -15,15 +15,16 @@ return new class extends Migration
             $table->string('rif');
             $table->boolean('posee_patente');
             $table->boolean('posee_conformidad');
-            $table->boolean('posee_rumpa');
+            $table->boolean('posee_runpa');
             $table->string('nombres');
             $table->string('apellidos');
             $table->integer('cedula');
             $table->string('telefono');
             $table->longText('direccion');
-            $table->string('tipo_materiales');
+            $table->foreignId('tipo_materiales_id')->nullable()->references('id')->on('tipo_materiales');
             $table->string('lat')->nullable();
             $table->string('lon')->nullable();
+            $table->foreignId('parroquia_id')->nullable()->references('id')->on('parroquias');
             $table->timestamps();
         });
     }
