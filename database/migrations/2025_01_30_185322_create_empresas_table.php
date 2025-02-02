@@ -13,15 +13,17 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('rif');
-            $table->string('patente');
-            $table->string('conformidad de uso');
-            $table->string('rumpa');
+            $table->boolean('posee_patente');
+            $table->boolean('posee_conformidad');
+            $table->boolean('posee_rumpa');
             $table->string('nombres');
             $table->string('apellidos');
             $table->integer('cedula');
             $table->string('telefono');
             $table->longText('direccion');
             $table->string('tipo_materiales');
+            $table->string('lat')->nullable();
+            $table->string('lon')->nullable();
             $table->timestamps();
         });
     }

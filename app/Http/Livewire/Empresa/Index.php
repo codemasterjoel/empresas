@@ -24,5 +24,6 @@ class Index extends Component
     public function salir()
     {
         $this->modal = false;
-    }   
+    }
+    
 }
