@@ -188,7 +188,7 @@
     </div>
   </div>
   
-  <script>
+  {{-- <script>
     var marker;
     var coords = {};
     initMap = function () 
@@ -209,7 +209,7 @@
         zoom: 13,
         center:new google.maps.LatLng(coords.lat,coords.lng),
       });
-      marker = new google.maps.Marker({
+      marker = new AdvancedMarkerElement({
         map: map,
         draggable: true,
         animation: google.maps.Animation.DROP,
@@ -222,8 +222,61 @@
         document.getElementById("longitud").value = this.getPosition().lng();
       });
     }
+  </script> --}}
+
+  <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI",
+      v: "weekly",
+      // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+      // Add other bootstrap parameters as needed, using camel case.
+    });
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI&callback=initMap&v=weekly" defer></script>
+  <script>
+        // Initialize and add the map
+        let map;
+
+        async function initMap() {
+        // The location of Uluru
+        const position = { lat: -25.344, lng: 131.031 };
+        // Request needed libraries.
+        //@ts-ignore
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+        // The map, centered at Uluru
+        map = new Map(document.getElementById("map"), {
+            zoom: 4,
+            center: position,
+            mapId: "DEMO_MAP_ID",
+        });
+
+        // The marker, positioned at Uluru
+        const marker = new AdvancedMarkerElement({
+            map: map,
+            position: position,
+            title: "Uluru",
+        });
+        }
+
+        initMap();
+  </script>
+  <script>
+            // The location of Uluru
+        const position = { lat: -25.344, lng: 131.031 };
+        // Request needed libraries.
+        //@ts-ignore
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+        // The map, centered at Uluru
+        map = new Map(document.getElementById("map"), {
+        zoom: 4,
+        center: position,
+        mapId: "DEMO_MAP_ID",
+});
+  </script>
+  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI&callback=initMap&v=weekly" defer></script> --}}
   
   {{-- <script>
   
@@ -235,6 +288,6 @@
     
   </script> --}}
   
-  @section('js')
+  {{-- @section('js')
     <script src="{{ asset('js/functions3.js')}}" type="text/javascript"></script>
-  @endsection
+  @endsection --}}
