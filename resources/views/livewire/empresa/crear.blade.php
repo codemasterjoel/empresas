@@ -265,8 +265,8 @@
         // The marker, positioned at Uluru
         const marker = new AdvancedMarkerElement({
             map: map,
+            draggable: true,
             position: position,
-            title: "Uluru",
         });
         }
 
