@@ -233,7 +233,6 @@
                                         </div>
                                     </div>
                                 @endif
-                                <span class="d-xl-none">Fecha Patente</span>
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                             </div>
