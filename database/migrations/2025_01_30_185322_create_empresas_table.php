@@ -13,10 +13,12 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('rif');
-            $table->date('fecha_patente');
+            $table->boolean('posee_patente');
+            $table->date('fecha_patente')->nullable();
             $table->boolean('posee_conformidad');
-            $table->boolean('sucursal')->nullable();
             $table->boolean('posee_runpa');
+            $table->date('fecha_runpa')->nullable();
+            $table->boolean('sucursal')->nullable();
             $table->string('nombres');
             $table->string('apellidos');
             $table->integer('cedula');

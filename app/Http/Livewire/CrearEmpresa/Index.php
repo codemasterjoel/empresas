@@ -10,7 +10,8 @@ use App\Models\Parroquia;
 class Index extends Component
 {
     public $modal = null;
-    public $posee_runpa, $posee_conformidad, $fecha_patente = null;
+    public $posee_runpa, $posee_conformidad, $posee_patente = null;
+    public $fecha_runpa, $fecha_patente = null;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon =null;
     public $tipos_materiales, $parroquias, $tipoMaterialesId, $parroquiaId =null;
     public function render()
@@ -23,10 +24,6 @@ class Index extends Component
 
         $existeEmpresa = Empresa::where('rif', $this->rif)->get();
 
-        //dd($existeEmpresa);
-
-
-        // Guardar en la base de datos
         $empresa = new Empresa();
         $empresa->nombre = $this->nombre;
         $empresa->rif = $this->rif;
@@ -36,7 +33,9 @@ class Index extends Component
         $empresa->telefono = $this->telefono;
         $empresa->direccion = $this->direccion;
         $empresa->posee_runpa = $this->posee_runpa;
+        $empresa->fecha_runpa = $this->fecha_runpa;
         $empresa->posee_conformidad = $this->posee_conformidad;
+        $empresa->posee_patente = $this->posee_patente;
         $empresa->fecha_patente = $this->fecha_patente;
         $empresa->lat = $this->lat;
         $empresa->lon = $this->lon;
