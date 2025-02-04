@@ -1978,10 +1978,12 @@ namespace App\Models {
      * @property int(11) $cedula
      * @property string $apellidos
      * @property string $nombres
-     * @property tinyint(1) $posee_runpa
      * @property tinyint(1)|null $sucursal
+     * @property date|null $fecha_runpa
+     * @property tinyint(1) $posee_runpa
      * @property tinyint(1) $posee_conformidad
-     * @property date $fecha_patente
+     * @property date|null $fecha_patente
+     * @property tinyint(1) $posee_patente
      * @property string $rif
      * @property string $nombre
      * @property int $id
@@ -1989,10 +1991,12 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombre($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRif($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePoseePatente($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereFechaPatente($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePoseeConformidad($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSucursal($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePoseeRunpa($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereFechaRunpa($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSucursal($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombres($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereApellidos($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCedula($value)

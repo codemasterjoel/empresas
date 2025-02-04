@@ -14,9 +14,12 @@ class Index extends Component
     public $fecha_runpa, $fecha_patente = null;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon =null;
     public $tipos_materiales, $parroquias, $tipoMaterialesId, $parroquiaId =null;
-    public function render()
-    {
 
+    public function mount($id)
+    {
+        $this->id = $id;
+    }    public function render()
+    {
         if ($this->id) {
             $empresa = Empresa::findOrFail($this->id);
     
@@ -49,34 +52,35 @@ class Index extends Component
             }
     }
     public function guardar(){
-
         $existeEmpresa = Empresa::where('rif', $this->rif)->get();
 
-        //dd(count($existeEmpresa));
-
-        $empresa = new Empresa();
-        $empresa->nombre = $this->nombre;
-        $empresa->rif = $this->rif;
-        $empresa->cedula = $this->cedula;
-        $empresa->nombres = $this->nombres;
-        $empresa->apellidos = $this->apellidos;
-        $empresa->telefono = $this->telefono;
-        $empresa->direccion = $this->direccion;
-        $empresa->posee_runpa = $this->posee_runpa;
-        $empresa->fecha_runpa = $this->fecha_runpa;
-        $empresa->posee_conformidad = $this->posee_conformidad;
-        $empresa->posee_patente = $this->posee_patente;
-        $empresa->fecha_patente = $this->fecha_patente;
-        $empresa->lat = $this->lat;
-        $empresa->lon = $this->lon;
-        $empresa->tipo_materiales_id = $this->tipoMaterialesId;
-        $empresa->parroquia_id = $this->parroquiaId;
         if(count($existeEmpresa) > 0){
-            $empresa->sucursal = true;
+            $this->sucursal = true;
         }else {
-            $empresa->sucursal = false;
+            $this->sucursal = false;
         }
-        $empresa->save();
+
+        Empresa::updateOrCreate(['id' => $this->id],
+        values: [
+            'nombre' => $this->nombre,
+            'rif' => $this->rif,
+            'cedula' => $this->cedula,
+            'nombres' => $this->nombres,
+            'apellidos' => $this->apellidos,
+            'telefono' => $this->telefono,
+            'direccion' => $this->direccion,
+            'posee_runpa' => $this->posee_runpa,
+            'fecha_runpa' => $this->fecha_runpa,
+            'posee_conformidad' => $this->posee_conformidad,
+            'posee_patente' => $this->posee_patente,
+            'fecha_patente' => $this->fecha_patente,
+            'lat' => $this->lat,
+            'lon' => $this->lon,
+            'tipo_materiales_id' => $this->tipoMaterialesId,
+            'parroquia_id' => $this->parroquiaId,
+            'sucursal' => $this->sucursal,
+        ]);
+
         return redirect('empresa');
     }
 }
