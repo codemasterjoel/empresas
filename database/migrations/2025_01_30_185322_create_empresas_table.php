@@ -13,8 +13,9 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('rif');
-            $table->boolean('posee_patente');
+            $table->date('fecha_patente');
             $table->boolean('posee_conformidad');
+            $table->boolean('sucursal')->nullable();
             $table->boolean('posee_runpa');
             $table->string('nombres');
             $table->string('apellidos');

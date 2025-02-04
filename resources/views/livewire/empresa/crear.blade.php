@@ -80,7 +80,7 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Telefono</span>
-                                            <input wire:model="telefono" type="text" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeypress="$(this).mask('00000000')"/>
+                                            <input wire:model="telefono" type="text" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeypress="$(this).mask('(0000)000 0000')" placeholder="(0000)000 0000"/>
                                         </div>
                                         @error('telefono') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -135,7 +135,7 @@
                         <div class="row ">
                             <div class="col-xl-4 col-sm-12 mb-xl-0 d-none d-xl-block">
                                 <div class="flex items">
-                                    <span class="">¿Posee Patente?</span>
+                                    <span class=""></span>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0 d-none d-xl-block">
@@ -150,26 +150,15 @@
                             </div>
                         </div>
                         <div class="row">
-                            <span class="d-xl-none">¿Posee Patente?</span>
+                            <span class="d-xl-none">Fecha Patente</span>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center"> {{-- campo cedula --}}
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <!-- component -->
-                                            <label>
-                                                <input type="radio" value="1" {{isset($patente) ? 'checked' : ''}} class="peer hidden"  name="patente" wire:model.live="posee_patente">
-                                                <div class="hover:bg-blue-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-blue-700  peer-checked:bg-blue-400">
-                                                    <h2 class="font-medium text-gray-700">SI</h2>
-                                                </div>
-                                            </label>
-
-                                            <label>
-                                                <input type="radio" value="0" {{isset($patente) ? 'checked' : ''}} class="peer hidden" name="patente" wire:model.live="posee_patente">
-                                                <div class="hover:bg-red-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-red-500 peer-checked:text-white peer-checked:bg-red-400">
-                                                    <h2 class="font-medium text-gray-700">NO</h2>
-                                                </div>
-                                            </label>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Vencimiento Patente</span>
+                                            <input wire:model="fecha_patente" type="date" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeypress="$(this).mask('00000000')"/>
                                         </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
