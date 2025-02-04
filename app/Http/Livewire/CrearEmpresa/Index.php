@@ -24,6 +24,8 @@ class Index extends Component
 
         $existeEmpresa = Empresa::where('rif', $this->rif)->get();
 
+        //dd(count($existeEmpresa));
+
         $empresa = new Empresa();
         $empresa->nombre = $this->nombre;
         $empresa->rif = $this->rif;
@@ -41,7 +43,7 @@ class Index extends Component
         $empresa->lon = $this->lon;
         $empresa->tipo_materiales_id = $this->tipoMaterialesId;
         $empresa->parroquia_id = $this->parroquiaId;
-        if(isset($existeEmpresa)){
+        if(count($existeEmpresa) > 0){
             $empresa->sucursal = true;
         }else {
             $empresa->sucursal = false;
