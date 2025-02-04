@@ -266,9 +266,6 @@
                             <div class="col-sm-3">
                                 <input wire:model.live="lon" type="text" name="longitud" value="-66.931854" id="longitud" class="form-control">
                             </div>
-                            <div class="col-sm-3">                              
-                                <button type="bottom" class="w-32 bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mb-2" wire:click.prevent="">CAPTURAR</button>
-                            </div>
                         </div>
                         <div class="px-4 py-3 sm:px-6 sm:flex">                                  
                             <span class="flex w-full rounded-md sm:ml-3 sm:w-auto">
@@ -313,7 +310,7 @@
     let marker;
 
     async function initMap() {
-        const position = { lat: 10.508248641257252, lng: -66.91428145941548 };
+        const position = { lat: {{isset($lat) ? $lat : '10.508248641257252'}}, lng: {{isset($lon) ? $lon : '-66.91428145941548'}} };
         const { Map } = await google.maps.importLibrary("maps");
 
         // Crear el mapa

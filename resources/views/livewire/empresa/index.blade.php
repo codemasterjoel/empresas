@@ -43,12 +43,9 @@
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0">{{$empresa->nombre}}</p></td>
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0">{{isset($empresa->parroquia->nombre) ? $empresa->parroquia->nombre : ''}}</p></td>
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0 {{$empresa->sucursal > 0 ? 'text-white bg-cyan-500' : 'text-white bg-green-500'}} rounded-lg">{{$empresa->sucursal > 0 ? 'SUCURSAL' : 'PRINCIPAL'}}</p></td>
-                                        {{-- <td class="text-center text-uppercase"><p class=" font-weight-bold">{{$empresa->estatus ? 'activo' : 'inactivo'}}</p></td> --}}
-                                        <td class="text-center"><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Editar empresa">
-                                            {{-- <a wire:click="fichaempresa('{{$empresa->id}}')" rel="tooltip" title="Generar Ficha" type="button" class="text-warning font-bold py-2 px-2"><i class="material-icons">contact_page</i></a> --}}
-                                            {{-- <a wire:click="carnet('{{$empresa->id}}')" rel="tooltip" title="Generar Carnet" type="button" class="text-danger font-bold py-2 px-2"><i class="material-icons">contact_page</i></a> --}}
-                                            <a wire:click="editar('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">person_edit</span></a>
-                                            <a wire:click="borrar('{{$empresa->id}}')" class="text-danger font-bold py-2 px-2"><span class="material-symbols-outlined">person_cancel</span></a>
+                                        <td class="text-center">
+                                            <a href="{{route('empresa.editar', [$empresa->id])}}" class=" text-success px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">person_edit</span></a>
+                                            <a href="" wire:click="borrar('{{$empresa->id}}')" class="text-danger font-bold py-2 px-2"><span class="material-symbols-outlined">person_cancel</span></a>
                                         </td>
                                     </tr>
                                     @endforeach
