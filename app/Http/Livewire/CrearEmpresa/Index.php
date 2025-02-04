@@ -79,5 +79,4 @@ class Index extends Component
         $empresa->save();
         return redirect('empresa');
     }
-    public funtion
 }
