@@ -6,13 +6,14 @@ use Livewire\WithPagination;
 
 use Livewire\Component;
 use App\Models\Empresa;
+use App\Models\TipoMateriales;
 
 class Index extends Component
 {
     use WithPagination;
-    public $modal = false;
+    public $modal, $materialesModal = false;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon =null;
-    public $tipo_materiales =null;
+    public $tipos_materiales, $empresa_id, $nombreEmpresa =null;
     public $search = null;
     
     public function updatingSearch()
@@ -28,9 +29,21 @@ class Index extends Component
     {
         $this->modal = true;
     }
-    public function salir()
+    public function materiales($id)
     {
-        $this->modal = false;
+        $this->empresa_id = $id;
+        $this->tipos_materiales = TipoMateriales::all();
+        $empresa = Empresa::where('id', $id)->firstOrFail();
+        $this->nombreEmpresa = $empresa->nombre;
+
+        $this->materialesModal = true;
     }
-    
+    public function cerrarModal()
+    {
+        $this->materialesModal = false;
+    }
+    public function guardarMaterial()
+    {
+
+    }
 }

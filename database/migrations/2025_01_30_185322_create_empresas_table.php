@@ -24,9 +24,10 @@ return new class extends Migration
             $table->integer('cedula');
             $table->string('telefono');
             $table->longText('direccion');
-            $table->foreignId('tipo_materiales_id')->nullable()->references('id')->on('tipo_materiales');
+            // $table->foreignId('tipo_materiales_id')->nullable()->references('id')->on('tipo_materiales');
             $table->string('lat')->nullable();
             $table->string('lon')->nullable();
+            $table->foreignId('categoria_id')->nullable()->references('id')->on('categorias');
             $table->foreignId('parroquia_id')->nullable()->references('id')->on('parroquias');
             $table->timestamps();
         });

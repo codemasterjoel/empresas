@@ -12,7 +12,20 @@ class TipoMaterialesSeeder extends Seeder
     public function run(): void
     {
         TipoMateriales::insert([
-            ['nombre' => 'Chatarra'],
+            ['nombre' => 'PLÁSTICO'],
+            ['nombre' => 'ALUMINIO'],
+            ['nombre' => 'HIERRO'],
+            ['nombre' => 'LATÓN'],
+            ['nombre' => 'CALAMINA'],
+            ['nombre' => 'PLOMO'],
+            ['nombre' => 'COBRE'],
+            ['nombre' => 'BRONCE'],
+            ['nombre' => 'RCA'],
+            ['nombre' => 'BATERÍAS'],
+            ['nombre' => 'MOTOR'],
+            ['nombre' => 'TARJETA ELECTRÓNICA'],
+            ['nombre' => 'PAPEL ARCHIVO'],
+            ['nombre' => 'CATÓN'],
         ]);
     }
 }

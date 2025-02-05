@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\CrearEmpresa;
 
+use App\Models\EmpresaTipo;
 use Livewire\Component;
 use App\Models\Empresa;
 use App\Models\TipoMateriales;
@@ -13,16 +14,18 @@ class Index extends Component
     public $posee_runpa, $posee_conformidad, $posee_patente = null;
     public $fecha_runpa, $fecha_patente = null;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon =null;
-    public $tipos_materiales, $parroquias, $tipoMaterialesId, $parroquiaId =null;
+    public $tipos_materiales, $materiales, $parroquias, $tipoMaterialesId, $parroquiaId =null;
 
     public function mount($id)
     {
         $this->id = $id;
-    }    public function render()
+    }    
+    public function render()
     {
         if ($this->id) {
             $empresa = Empresa::findOrFail($this->id);
-    
+            $this->materiales = EmpresaTipo::where("empresa_id", $empresa->id)->get();
+            
             $this->nombre = $empresa->nombre;
             $this->rif = $empresa->rif;
             $this->cedula = $empresa->cedula;
@@ -34,7 +37,6 @@ class Index extends Component
             $this->lon = $empresa->lon;
             $this->parroquiaId = $empresa->parroquia_id;
             $this->parroquias = Parroquia::all();
-            $this->tipoMaterialesId = $empresa->tipo_materiales_id;
             $this->tipos_materiales = TipoMateriales::all();
             
             $this->posee_patente = $empresa->posee_patente;
@@ -46,6 +48,8 @@ class Index extends Component
             return view('livewire.empresa.crear');
     
             } else {
+                $this->materiales = EmpresaTipo::where("empresa_id", $this->id)->get();
+
                 $this->parroquias = Parroquia::all();
                 $this->tipos_materiales = TipoMateriales::all();
                 return view('livewire.empresa.crear');
@@ -53,7 +57,7 @@ class Index extends Component
     }
     public function guardar(){
         $existeEmpresa = Empresa::where('rif', $this->rif)->get();
-
+        
         if(count($existeEmpresa) > 0){
             $this->sucursal = true;
         }else {

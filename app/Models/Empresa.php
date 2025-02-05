@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\Parroquia;
+use App\Models\TipoMateriales;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,12 +23,15 @@ class Empresa extends Model
         'posee_conformidad',
         'lat',
         'lon',
-        'tipo_materiales_id',
         'parroquia_id',
     ];
 
     public function parroquia()
     {
         return $this->belongsTo(Parroquia::class);
+    }
+    public function tipos()
+    {
+        return $this->belongsToMany(TipoMateriales::class, 'empresa_tipos');
     }
 }
