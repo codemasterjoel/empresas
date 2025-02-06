@@ -42,8 +42,8 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Cédula</span>
-                                            <input wire:model="cedula" type="text"  class="w-full pl-3 border px-3 py-[0.25rem] border-solid text-neutral-900 font-bold outline-2 border-slate-900" onkeypress="$(this).mask('00000000')" maxlength="8">
-                                            <input wire:click="consultar" type="button" value="Buscar" class="bg-gradient-primary px-2 py-[0.25rem] rounded-tr-lg rounded-br-lg text-white font-bold ">
+                                            <input wire:model="cedula" type="text"  class="w-full pl-3 border px-3 py-[0.25rem] border-solid rounded-r-lg text-neutral-900 font-bold outline-2 border-slate-900" onkeypress="$(this).mask('00000000')" maxlength="8">
+                                            {{-- <input wire:click="consultar" type="button" value="Buscar" class="bg-gradient-primary px-2 py-[0.25rem] rounded-tr-lg rounded-br-lg text-white font-bold "> --}}
                                         </div>
                                         @error('cedula') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -90,21 +90,16 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Tipo de Materiales</span>
-                                            <select wire:model="tipoMaterialesId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
-                                                <option value="">Seleccione</option>
-                                                @foreach ($tipos_materiales as $tipo_material)
-                                                    <option value="{{$tipo_material->id}}">{{$tipo_material->nombre}}</option>
-                                                @endforeach
-                                            </select>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Correo</span>
+                                            <input wire:model="correo" type="email" class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" >
                                         </div>
-                                        @error('tipoMaterialesId') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('correo') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
@@ -120,7 +115,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-8 col-sm-12 mb-xl-0">
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Categoría</span>
+                                            <select wire:model="categoriaId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
+                                                <option value="">Seleccione</option>
+                                                @foreach ($categorias as $categoria)
+                                                    <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        @error('categoriaId') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">

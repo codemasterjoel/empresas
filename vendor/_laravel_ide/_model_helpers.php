@@ -2215,6 +2215,7 @@ namespace App\Models {
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property bigint(20) unsigned|null $parroquia_id
      * @property bigint(20) unsigned|null $categoria_id
+     * @property string $correo
      * @property string|null $lon
      * @property string|null $lat
      * @property longtext $direccion
@@ -2234,6 +2235,7 @@ namespace App\Models {
      * @property-read \App\Models\Parroquia $parroquia
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TipoMateriales> $tipo_materiales
      * @property-read int|null $tipo_materiales_count
+     * @property-read \App\Models\Categoria $categoria
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombre($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRif($value)
@@ -2250,6 +2252,7 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereDireccion($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereLat($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereLon($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCorreo($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCategoriaId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereParroquiaId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCreatedAt($value)
@@ -2490,12 +2493,16 @@ namespace App\Models {
     /**
      * App\Models\EmpresaTipo
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
      * @property bigint(20) unsigned $tipo_materiales_id
      * @property bigint(20) unsigned $empresa_id
      * @property int $id
      * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereEmpresaId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereTipoMaterialesId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo query()

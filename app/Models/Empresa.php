@@ -3,6 +3,7 @@
 namespace App\Models;
 use App\Models\Parroquia;
 use App\Models\TipoMateriales;
+use App\Models\Categoria;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,6 +25,9 @@ class Empresa extends Model
         'lat',
         'lon',
         'parroquia_id',
+        'sucursal',
+        'categoria_id',
+        'correo',
     ];
 
     public function parroquia()
@@ -33,5 +37,9 @@ class Empresa extends Model
     public function tipo_materiales()
     {
         return $this->belongsToMany(TipoMateriales::class, 'empresa_tipos');
+    }
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
     }
 }

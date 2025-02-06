@@ -7,14 +7,15 @@ use Livewire\Component;
 use App\Models\Empresa;
 use App\Models\TipoMateriales;
 use App\Models\Parroquia;
+use App\Models\Categoria;
 
 class Index extends Component
 {
     public $id = null;
     public $posee_runpa, $posee_conformidad, $posee_patente = null;
     public $fecha_runpa, $fecha_patente = null;
-    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon =null;
-    public $tipos_materiales, $materiales, $parroquias, $tipoMaterialesId, $parroquiaId =null;
+    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $sucursal, $correo = null;
+    public $tipos_materiales, $materiales, $parroquias, $tipoMaterialesId, $parroquiaId, $categorias, $categoriaId =null;
 
     public function mount($id)
     {
@@ -24,6 +25,7 @@ class Index extends Component
     {
         if ($this->id) {
             $empresa = Empresa::findOrFail($this->id);
+            $this->categorias = Categoria::all();
             $this->materiales = EmpresaTipo::where("empresa_id", $empresa->id)->count();
             
             $this->nombre = $empresa->nombre;
@@ -38,6 +40,9 @@ class Index extends Component
             $this->parroquiaId = $empresa->parroquia_id;
             $this->parroquias = Parroquia::all();
             $this->tipos_materiales = TipoMateriales::all();
+            $this->correo = $empresa->correo;
+            $this->categoriaId = $empresa->categoria_id;
+            $this->categorias = Categoria::all();
             
             $this->posee_patente = $empresa->posee_patente;
             $this->posee_conformidad = $empresa->posee_conformidad;
@@ -49,21 +54,39 @@ class Index extends Component
     
             } else {
                 $this->materiales = EmpresaTipo::where("empresa_id", $this->id)->count();
-
-
+                $this->categorias = Categoria::all();
                 $this->parroquias = Parroquia::all();
                 $this->tipos_materiales = TipoMateriales::all();
                 return view('livewire.empresa.crear');
             }
     }
     public function guardar(){
-        $existeEmpresa = Empresa::where('rif', $this->rif)->get();
-        
-        if(count($existeEmpresa) > 0){
-            $this->sucursal = true;
-        }else {
-            $this->sucursal = false;
+        $existeEmpresa = Empresa::where('rif', $this->rif)->count();
+
+        if($existeEmpresa > 0){
+            $this->sucursal = 1;
         }
+
+        if($existeEmpresa = 0){
+            $this->sucursal = 0;
+        }
+
+        $this->validate([
+            'nombre' => 'required',
+            'rif' => 'required',
+            'cedula' => 'required',
+            'nombres' => 'required',
+            'apellidos' => 'required',
+            'direccion' => 'required',
+            'posee_runpa' => 'required',
+            'posee_conformidad' => 'required',
+            'posee_patente' => 'required',
+            'lat' => 'required',
+            'lon' => 'required',
+            'parroquiaId' => 'required',
+            'correo' => 'required|email:rfc',
+            'categoriaId'=> 'required'
+        ]);
 
         Empresa::updateOrCreate(['id' => $this->id],
         values: [
@@ -81,9 +104,10 @@ class Index extends Component
             'fecha_patente' => $this->fecha_patente,
             'lat' => $this->lat,
             'lon' => $this->lon,
-            'tipo_materiales_id' => $this->tipoMaterialesId,
             'parroquia_id' => $this->parroquiaId,
             'sucursal' => $this->sucursal,
+            'categoria_id'=> $this->categoriaId,
+            'correo' => $this->correo,
         ]);
 
         return redirect('empresa');
