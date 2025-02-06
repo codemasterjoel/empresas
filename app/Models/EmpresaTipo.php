@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class EmpresaTipo extends Model
 {
-    //
+    protected $fillable = [
+        "empresa_id",
+        "tipo_materiales_id",
+        ] ;
 }

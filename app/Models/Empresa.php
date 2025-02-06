@@ -30,7 +30,7 @@ class Empresa extends Model
     {
         return $this->belongsTo(Parroquia::class);
     }
-    public function tipos()
+    public function tipo_materiales()
     {
         return $this->belongsToMany(TipoMateriales::class, 'empresa_tipos');
     }

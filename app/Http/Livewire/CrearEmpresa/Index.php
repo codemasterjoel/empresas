@@ -24,7 +24,7 @@ class Index extends Component
     {
         if ($this->id) {
             $empresa = Empresa::findOrFail($this->id);
-            $this->materiales = EmpresaTipo::where("empresa_id", $empresa->id)->get();
+            $this->materiales = EmpresaTipo::where("empresa_id", $empresa->id)->count();
             
             $this->nombre = $empresa->nombre;
             $this->rif = $empresa->rif;
@@ -45,10 +45,11 @@ class Index extends Component
             $this->fecha_runpa = $empresa->fecha_runpa;
             $this->fecha_patente = $empresa->fecha_patente;
     
-            return view('livewire.empresa.crear');
+            return view('livewire.empresa.crear', ['empresa'=> $empresa]);
     
             } else {
-                $this->materiales = EmpresaTipo::where("empresa_id", $this->id)->get();
+                $this->materiales = EmpresaTipo::where("empresa_id", $this->id)->count();
+
 
                 $this->parroquias = Parroquia::all();
                 $this->tipos_materiales = TipoMateriales::all();

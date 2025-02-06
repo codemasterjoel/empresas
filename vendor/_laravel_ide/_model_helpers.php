@@ -2232,8 +2232,8 @@ namespace App\Models {
      * @property string $nombre
      * @property int $id
      * @property-read \App\Models\Parroquia $parroquia
-     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TipoMateriales> $tipos
-     * @property-read int|null $tipos_count
+     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TipoMateriales> $tipo_materiales
+     * @property-read int|null $tipo_materiales_count
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombre($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRif($value)

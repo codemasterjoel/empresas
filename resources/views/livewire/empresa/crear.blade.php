@@ -16,7 +16,7 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Empresa</span>
-                                            <input wire:model="nombre" type="text" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeyup="this.value = this.value.toUpperCase();"/>
+                                            <input wire:model="nombre" type="text" class="w-full pl-3 border text-uppercase border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeyup="this.value = this.value.toUpperCase();"/>
                                         </div>
                                         @error('nombre') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -29,7 +29,7 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">RIF</span>
-                                            <input wire:model="rif" type="text" class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();" >
+                                            <input wire:model="rif" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();" >
                                         </div>
                                         @error('rif') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -56,7 +56,7 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Nombres</span>
-                                            <input wire:model="nombres" type="text" class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();">
+                                            <input wire:model="nombres" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();">
                                         </div>
                                         @error('nombres') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -67,7 +67,7 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Apellidos</span>
-                                            <input wire:model="apellidos" type="text" class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();">
+                                            <input wire:model="apellidos" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();">
                                         </div>
                                         @error('apellidos') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -125,7 +125,7 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Dirección</span>
-                                            <input wire:model="direccion" type="text" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeyup="this.value = this.value.toUpperCase();"/>
+                                            <input wire:model="direccion" type="text" class="w-full text-uppercase pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeyup="this.value = this.value.toUpperCase();"/>
                                         </div>
                                         @error('direccion') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -157,14 +157,14 @@
                                         <div class="flex">
                                             <!-- component -->
                                             <label>
-                                                <input type="radio" value="1" {{isset($posee_patente) ? 'checked' : ''}} class="peer hidden"  name="patente" wire:model.live="posee_patente">
+                                                <input type="radio" value="1" {{isset($posee_patente) ? 'checked' : ''}} class="peer hidden"  name="patente" wire:model="posee_patente">
                                                 <div class="hover:bg-blue-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-blue-700  peer-checked:bg-blue-400">
                                                     <h2 class="font-medium text-gray-700">SI</h2>
                                                 </div>
                                             </label>
 
                                             <label>
-                                                <input type="radio" value="0" {{isset($posee_patente) ? 'checked' : ''}} class="peer hidden" name="patente" wire:model.live="posee_patente">
+                                                <input type="radio" value="0" {{isset($posee_patente) ? 'checked' : ''}} class="peer hidden" name="patente" wire:model="posee_patente">
                                                 <div class="hover:bg-red-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-red-500 peer-checked:text-white peer-checked:bg-red-400">
                                                     <h2 class="font-medium text-gray-700">NO</h2>
                                                 </div>
@@ -180,14 +180,14 @@
                                         <div class="flex">
                                             <!-- component -->
                                             <label>
-                                                <input type="radio" value="1" {{isset($posee_conformidad) ? 'checked' : ''}} class="peer hidden"  name="conformidad" wire:model.live="posee_conformidad">
+                                                <input type="radio" value="1" {{isset($posee_conformidad) ? 'checked' : ''}} class="peer hidden"  name="conformidad" wire:model="posee_conformidad">
                                                 <div class="hover:bg-blue-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-blue-700  peer-checked:bg-blue-400">
                                                     <h2 class="font-medium text-gray-700">SI</h2>
                                                 </div>
                                             </label>
 
                                             <label>
-                                                <input type="radio" value="0" {{isset($posee_conformidad) ? 'checked' : ''}} class="peer hidden" name="conformidad" wire:model.live="posee_conformidad">
+                                                <input type="radio" value="0" {{isset($posee_conformidad) ? 'checked' : ''}} class="peer hidden" name="conformidad" wire:model="posee_conformidad">
                                                 <div class="hover:bg-red-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-red-500 peer-checked:text-white peer-checked:bg-red-400">
                                                     <h2 class="font-medium text-gray-700">NO</h2>
                                                 </div>
@@ -203,14 +203,14 @@
                                         <div class="flex">
                                             <!-- component -->
                                             <label>
-                                                <input type="radio" value="1" {{isset($posee_runpa) ? 'checked' : ''}} class="peer hidden"  name="framework" wire:model.live="posee_runpa">
+                                                <input type="radio" value="1" {{isset($posee_runpa) ? 'checked' : ''}} class="peer hidden"  name="framework" wire:model="posee_runpa">
                                                 <div class="hover:bg-blue-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-blue-700  peer-checked:bg-blue-400">
                                                     <h2 class="font-medium text-gray-700">SI</h2>
                                                 </div>
                                             </label>
 
                                             <label>
-                                                <input type="radio" value="0" {{isset($posee_runpa) ? 'checked' : ''}} class="peer hidden" name="framework" wire:model.live="posee_runpa">
+                                                <input type="radio" value="0" {{isset($posee_runpa) ? 'checked' : ''}} class="peer hidden" name="framework" wire:model="posee_runpa">
                                                 <div class="hover:bg-red-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-red-500 peer-checked:text-white peer-checked:bg-red-400">
                                                     <h2 class="font-medium text-gray-700">NO</h2>
                                                 </div>
@@ -250,39 +250,36 @@
                                 @endif
                             </div>
                         </div>--}}
-                        <div class="row">
+                        <div class="row mt-4">
                             <div class="col-sm-12 py-2">
                                 <h1 class="text-center text-2xl text-info text-gradient">TIPOS DE MATERIALES</h1>
                             </div>
                         </div>
-                        @if($materiales->count())
-                            <div class="d-flex flex-row justify-content-between">
-                                <a href="" class="btn bg-gradient-primary btn-sm mb-0 font-bold">+&nbsp; AGREGAR MATERIAL</a>
-                            </div>
-                        @endif
                              
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-gray-700 font-semibold text-xxs font-weight-bolder opacity-7">#</th>
-                                    <th class="text-center text-uppercase text-gray-700 font-semibold text-xxs font-weight-bolder opacity-7">Material</th>
-                                    <th class="text-center text-uppercase text-gray-700 font-semibold text-xxs font-weight-bolder opacity-7">acciones</th>
+                                    <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">#</th>
+                                    <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">Material</th>
+                                    <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @if($materiales > 0)
                                 <?php $indice = 0; ?>
-                                @foreach ($materiales as $material)
-                                    <?php $indice += 1; ?>
-                                    <tr><td class="ps-4"><p class="text-xs font-weight-bold mb-0"><?php echo $indice; ?></p></td>
-                                        <td class="text-center text-uppercase"><p class="text-xs font-weight-bold mb-0"></p>{{$material->nombre}}</td>
-                                        @if (auth()->user()->nivel_id == 1)
+                                    @foreach ($empresa->tipo_materiales as $material)
+                                        <?php $indice += 1; ?>
+                                        <tr>
+                                            <td class="ps-4 text-center"><p class="text-xs font-weight-bold mb-0"><?php echo $indice; ?></p></td>
+                                            <td class="text-center text-uppercase"><p class="text-xs font-weight-bold mb-0"></p>{{$material->nombre}}</td>
                                             <td class="text-center"><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Editar Integrante">
-                                                {{-- <a href="#" wire:click="editarIntegrante('{{$integrante->id}}')" class=" text-success px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">person_edit</span></a> --}}
-                                                <a href="#" wire:click="borrarIntegrante('{{$material->id}}')" class=" text-danger font-bold py-2 px-4"><span class="material-symbols-outlined">person_cancel</span></a>
+                                                @if (auth()->user()->nivel_id == 1)
+                                                    <a href="#" wire:click="borrarIntegrante('{{$material->id}}')" class=" text-danger font-bold py-2 px-4"><span class="material-symbols-outlined">person_cancel</span></a>
+                                                @endif
                                             </td>
-                                        @endif
-                                    </tr>
-                                @endforeach
+                                        </tr>
+                                    @endforeach
+                                @endif
                             </tbody>
                         </table>
 

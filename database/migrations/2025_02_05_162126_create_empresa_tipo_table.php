@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('empresa_id')->references('id')->on('empresas')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('tipo_materiales_id')->references('id')->on('tipo_materiales')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->timestamps();
         });
     }
 
