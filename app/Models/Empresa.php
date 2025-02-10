@@ -28,6 +28,8 @@ class Empresa extends Model
         'sucursal',
         'categoria_id',
         'correo',
+        'codigo',
+        'user_id',
     ];
 
     public function parroquia()

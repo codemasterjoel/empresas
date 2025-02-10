@@ -108,6 +108,8 @@ class Index extends Component
             'sucursal' => $this->sucursal,
             'categoria_id'=> $this->categoriaId,
             'correo' => $this->correo,
+            'user_id'=> auth()->user()->id,
+            'codigo' => 'EMP'.rand(1000, 9999)
         ]);
 
         return redirect('empresa');

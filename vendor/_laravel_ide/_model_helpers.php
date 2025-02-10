@@ -2213,6 +2213,7 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
+     * @property bigint(20) unsigned|null $user_id
      * @property bigint(20) unsigned|null $parroquia_id
      * @property bigint(20) unsigned|null $categoria_id
      * @property string $correo
@@ -2231,12 +2232,14 @@ namespace App\Models {
      * @property tinyint(1) $posee_patente
      * @property string $rif
      * @property string $nombre
+     * @property string $codigo
      * @property int $id
      * @property-read \App\Models\Parroquia $parroquia
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TipoMateriales> $tipo_materiales
      * @property-read int|null $tipo_materiales_count
      * @property-read \App\Models\Categoria $categoria
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCodigo($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombre($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRif($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePoseePatente($value)
@@ -2255,6 +2258,7 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCorreo($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCategoriaId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereParroquiaId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereUserId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa newModelQuery()

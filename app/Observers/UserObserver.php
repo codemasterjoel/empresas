@@ -9,13 +9,13 @@ class UserObserver
 {
     public function created(User $user): void
     {
-        Auditoria::create([
-            'accion' => 'Creado',
-            'model_type' => get_class($user),
-            'model_id' => $user->id,
-            'user_id' => auth()->user()->id,
-            'cambios' => json_encode($user->toArray())
-        ]);
+        // Auditoria::create([
+        //     'accion' => 'Creado',
+        //     'model_type' => get_class($user),
+        //     'model_id' => $user->id,
+        //     'user_id' => auth()->user()->id,
+        //     'cambios' => json_encode($user->toArray())
+        // ]);
     }
     public function updated(User $user): void
     {
