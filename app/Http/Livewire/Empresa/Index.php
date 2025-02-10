@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Empresa;
 
+use Auth;
 use Livewire\WithPagination;
 
 use Livewire\Component;
@@ -23,7 +24,15 @@ class Index extends Component
     }
     public function render()
     {
-        $empresas = Empresa::where('nombre', 'like', "%$this->search%")->paginate(5);
+        if (auth()->user()->rol_id == 1) 
+        {
+            $empresas = Empresa::where('nombre', 'like', "%$this->search%")->paginate(5);
+        } else 
+        {
+            $empresas = Empresa::where('nombre', 'like', "%$this->search%")
+                                 ->where('user_id', Auth()->user()->id)
+                                 ->paginate(5);
+        }
         return view('livewire.empresa.index', ['empresas' => $empresas]);
     }
     public function crear()

@@ -13,7 +13,13 @@ class Dashboard extends Component
 
     public function render()
     {
-        $this->empresas = Empresa::where("user_id", auth()->user()->id)->get();
+        if (auth()->user()->rol_id == 1) 
+        {
+            $this->empresas = Empresa::all();
+        } else 
+        {
+            $this->empresas = Empresa::where('user_id', Auth()->user()->id)->get(); 
+        }
         // $this->jefe = registro1x10ffm::all()->count();
         // $this->jefe = DB::select('SELECT count(*) as total from registro1x10ffms');
         // $this->integrante = DB::select('select count(*) from integrantes');

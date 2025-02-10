@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('profile_photo_path', 2048)->nullable();
 
             $table->foreignId('parroquia_id')->nullable()->references('id')->on('parroquias')->nullOnDelete()->cascadeOnUpdate();
+            $table->foreignId('rol_id')->nullable()->references('id')->on('rols')->nullOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

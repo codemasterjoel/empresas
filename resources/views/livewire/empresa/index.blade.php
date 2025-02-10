@@ -27,7 +27,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-uppercase text-dark font-weight-bolder">#</th>
-                                        <th class="text-center text-uppercase text-dark font-weight-bolder">cedula</th>
+                                        <th class="text-center text-uppercase text-dark font-weight-bolder">código</th>
                                         <th class="text-center text-uppercase text-dark font-weight-bolder">propietario</th>
                                         <th class="text-center text-uppercase text-dark font-weight-bolder">empresa</th>
                                         <th class="text-center text-uppercase text-dark font-weight-bolder">parroquia</th>
@@ -41,7 +41,7 @@
                                     <?php $indice += 1; ?>
                                     <tr class="w-[800]">
                                         <td class="ps-4"><p class="font-weight-bold text-dark mb-0"><?php echo $indice; ?></p></td>
-                                        <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0">{{$empresa->cedula}}</p></td>
+                                        <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0">{{$empresa->codigo}}</p></td>
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0">{{isset($empresa->nombres) ? $empresa->nombres : ''}} {{isset($empresa->apellido) ? $empresa->apellido : ''}}</p></td>
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0">{{$empresa->nombre}}</p></td>
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0">{{isset($empresa->parroquia->nombre) ? $empresa->parroquia->nombre : ''}}</p></td>

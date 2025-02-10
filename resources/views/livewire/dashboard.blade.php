@@ -223,12 +223,14 @@
         @foreach ($empresas as $empresa)
             var marker{{$empresa->codigo}}
             const contentString{{ $empresa->codigo }} =
-                '<div id="content" style="color:black;">' +
-                    '<h2 id="firstHeading" class="firstHeading">{{ $empresa->nombre }}</h2>' +
-                    '<div id="bodyContent">'+
-                        '<p><b>JEFE DE LA EMPRESA: </b>{{$empresa->nombres}} {{$empresa->apellidos}}'+
+                '<div id="content" style="color:black; text-align:left;">' +
+                  '<div id="bodyContent">'+
+                        '<p class="text-uppercase"><b>{{ $empresa->nombre }}</b></p>' +
+                        '<p><b>CÓDIGO: </b>{{ $empresa->codigo}}'+
+                        '<p class="text-uppercase"><b>JEFE DE LA EMPRESA: </b>{{$empresa->nombres}} {{$empresa->apellidos}}'+
                         '<p><b>TELEFONO: </b>{{ $empresa->telefono}}'+
                         '<p><b>CORREO: </b>{{ $empresa->correo }}'+
+                        '<p><b>CATEGORIA: </b>{{ $empresa->categoria->nombre }}'+
                         '<p><b>PARROQUIA: </b>{{ (isset($empresa->parroquia->nombre)) ? $empresa->parroquia->nombre : '' }}'+
                         '<p><b>DIRECCIÓN: </b>{{ $empresa->direccion}}'+
                     "</div>" +

@@ -12,7 +12,7 @@
         </div>
         <div class="row mt-4 mx-auto text-center">
             <div class="col-xl-6 col-sm-12 mb-xl-0 text-center mt-1">
-                <p class="mb-0 text-secondary"> Copyright © {{ now()->year }} <a style="color: #252f40;" href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Desarrollado por XXXX</a>
+                <p class="mb-0 text-secondary"> Copyright © {{ now()->year }} <a style="color: #252f40;" href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Desarrollado por HoloSystems</a>
             </div>
             </p>
         </div>
