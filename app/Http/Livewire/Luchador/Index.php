@@ -27,7 +27,6 @@ class Index extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
-
     public $modal, $estado, $filtro = false;
     public $estados     = null; // Lista de estados
     public $municipios  = null; // Liste de Municipios

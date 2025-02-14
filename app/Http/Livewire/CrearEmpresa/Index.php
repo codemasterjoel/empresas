@@ -14,6 +14,7 @@ class Index extends Component
     public $id = null;
     public $posee_runpa, $posee_conformidad, $posee_patente = null;
     public $fecha_runpa, $fecha_patente = null;
+    public $input_patente = null;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $sucursal, $correo = null;
     public $tipos_materiales, $materiales, $parroquias, $tipoMaterialesId, $parroquiaId, $categorias, $categoriaId =null;
 

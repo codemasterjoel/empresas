@@ -233,42 +233,174 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="row" style="display:none">
+                        <div class="row">
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                @if ($posee_patente)
-                                    <div class="flex items-center justify-center pb-4">
-                                        <div class="w-full rounded-lg">
-                                            <div class="flex">
-                                                <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Vencimiento Patente</span>
-                                                <input wire:model="fecha_patente" type="date" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeypress="$(this).mask('00000000')"/>
-                                            </div>
-                                            @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Vencimiento Patente</span>
+                                            <input wire:model="fecha_patente" type="date" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" />
                                         </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
-                                @endif
+                                </div>
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                @if ($posee_runpa)
-                                    <div class="flex items-center justify-center pb-4">
-                                        <div class="w-full rounded-lg">
-                                            <div class="flex">
-                                                <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Vencimiento RUNPA</span>
-                                                <input wire:model="fecha_runpa" type="date" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeypress="$(this).mask('00000000')"/>
-                                            </div>
-                                            @error('fecha_runpa') <div class="text-danger">{{ $message }}</div> @enderror
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Vencimiento RUNPA</span>
+                                            <input wire:model="fecha_runpa" type="date" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeypress="$(this).mask('00000000')"/>
                                         </div>
+                                        @error('fecha_runpa') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
-                                @endif
-                            </div>
-                        </div>--}}
-                        <div class="row mt-4">
-                            <div class="col-sm-12 py-2">
-                                <h1 class="text-center text-2xl text-info text-gradient">TIPOS DE MATERIALES</h1>
+                                </div>
                             </div>
                         </div>
-                             
+                        <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">SUBIR DOCUMENTOS LEGALES</h3>
+                        <div class="row">
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CONFORMIDAD DE USO</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>REGISTRO MERCANTIL</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>RIF VIGENTE</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CARTA CATASTRAL</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CROQUIS DE UBICACIÓN</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>PLAN DE EMERGENCIA Y CONTINGENCIA</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICACIÓN DE ORIGEN</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE RIESGO</b></label>
+                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">TIPOS DE MATERIALES</h3>
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
@@ -295,12 +427,7 @@
                                 @endif
                             </tbody>
                         </table>
-
-                        <div class="row mt-4">
-                            <div class="col-sm-12 py-2">
-                                <h1 class="text-center text-2xl text-info text-gradient">GEOREFERENCIACIÓN</h1>
-                            </div>
-                        </div>
+                        <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">GEORREFERENCIACIÓN</h3>
                         <div class="items-center">
                             <div wire:ignore id="map" style= "width: 100%; height: 600px; z-index: 100;" class="mb-4"></div>
                         </div>
@@ -320,7 +447,6 @@
                             <span class="flex w-full rounded-md sm:ml-3 sm:w-auto">
                               <a href="{{route('empresa')}}" class="btn w-32 bg-gradient-to-r from-red-400 to-red-600 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mb-2">SALIR</a>
                             </span>
-                          </div>
                         </div>
                     </form>
                 </div>
