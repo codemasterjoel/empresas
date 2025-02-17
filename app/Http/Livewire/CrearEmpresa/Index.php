@@ -4,14 +4,18 @@ namespace App\Http\Livewire\CrearEmpresa;
 
 use App\Models\EmpresaTipo;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use App\Models\Empresa;
 use App\Models\TipoMateriales;
 use App\Models\Parroquia;
 use App\Models\Categoria;
+use App\Models\FilePatente;
 
 class Index extends Component
 {
-    public $id = null;
+    use WithFileUploads;
+    public $id, $empresa = null;
+    public $patentePDF, $filePatenteid = null;
     public $posee_runpa, $posee_conformidad, $posee_patente = null;
     public $fecha_runpa, $fecha_patente = null;
     public $input_patente = null;
@@ -50,6 +54,7 @@ class Index extends Component
             $this->posee_runpa = $empresa->posee_runpa;
             $this->fecha_runpa = $empresa->fecha_runpa;
             $this->fecha_patente = $empresa->fecha_patente;
+            $this->patentePDF = $empresa->patentePDF;
     
             return view('livewire.empresa.crear', ['empresa'=> $empresa]);
     
@@ -72,6 +77,8 @@ class Index extends Component
             $this->sucursal = 0;
         }
 
+        $patente = $this->patentePDF->store('patente', 'public_path');
+
         $this->validate([
             'nombre' => 'required',
             'rif' => 'required',
@@ -89,7 +96,7 @@ class Index extends Component
             'categoriaId'=> 'required'
         ]);
 
-        Empresa::updateOrCreate(['id' => $this->id],
+        $this->empresa = Empresa::updateOrCreate(['id' => $this->id],
         values: [
             'nombre' => $this->nombre,
             'rif' => $this->rif,
@@ -110,7 +117,8 @@ class Index extends Component
             'categoria_id'=> $this->categoriaId,
             'correo' => $this->correo,
             'user_id'=> auth()->user()->id,
-            'codigo' => 'EMP'.rand(1000, 9999)
+            'codigo' => 'EMP'.rand(1000, 9999),
+            'patentePDF'=> $patente,
         ]);
 
         return redirect('empresa');

@@ -265,10 +265,15 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($patentePDF)
+                                                    <iframe width="500" height="600" src="{{asset($patentePDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                                {{-- <img class="image" src="{{ asset('/img/pdf.svg') }}" style="width: 200px; height: 200px; margin:30%;"> --}}
+                                                <label for="patentePDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b></label>
+                                                <input wire:ignore id="patentePDF" wire:model="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -276,10 +281,15 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CONFORMIDAD DE USO</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($conformidadPDF)
+                                                    <iframe width="500" height="600" src="{{asset($conformidadPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="conformidad" class="mb-1 block text-sm font-medium text-gray-700"><b>CONFORMIDAD DE USO</b></label>
+                                            <input id="conformidadPDF" type="file" wire:model.live="conformidadPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('conformidadPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -287,45 +297,15 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($runpaPDF)
+                                                    <iframe width="500" height="600" src="{{asset($runpaPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="runpa" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b></label>
+                                            <input id="runpaPDF" type="file" wire:model="runpaPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4">
-                                    <div class="w-full rounded-lg">
-                                        <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>REGISTRO MERCANTIL</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
-                                        </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4">
-                                    <div class="w-full rounded-lg">
-                                        <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>RIF VIGENTE</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
-                                        </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4">
-                                    <div class="w-full rounded-lg">
-                                        <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
-                                        </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('runpaPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -335,10 +315,15 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($rmercantilPDF)
+                                                    <iframe width="500" height="600" src="{{asset($rmercantilPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="rmercantilPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>REGISTRO MERCANTIL</b></label>
+                                            <input id="rmercantilPDF" type="file" wire:model="rmercantilPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('rmercantilPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -346,10 +331,15 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CARTA CATASTRAL</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($rifPDF)
+                                                    <iframe width="500" height="600" src="{{asset($rifPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="rif" class="mb-1 block text-sm font-medium text-gray-700"><b>RIF VIGENTE</b></label>
+                                            <input id="rifPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('rifPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -357,10 +347,15 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CROQUIS DE UBICACIÓN</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($solvenciaPDF)
+                                                    <iframe width="500" height="600" src="{{asset($solvenciaPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="solvenciaPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b></label>
+                                            <input id="solvenciaPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('solvenciaPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -370,10 +365,15 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>PLAN DE EMERGENCIA Y CONTINGENCIA</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($arrendamientoPDF)
+                                                    <iframe width="500" height="600" src="{{asset($arrendamientoPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="arrendamientoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b></label>
+                                            <input id="arrendamientoPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('arrendamientoPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -381,10 +381,15 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICACIÓN DE ORIGEN</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($catastralPDF)
+                                                    <iframe width="500" height="600" src="{{asset($catastralPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="catastralPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CARTA CATASTRAL</b></label>
+                                            <input id="catastralPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('catastralPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -392,10 +397,65 @@
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
-                                            <label for="patente" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE RIESGO</b></label>
-                                            <input id="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            @if ($id)
+                                                @if ($croquisPDF)
+                                                    <iframe width="500" height="600" src="{{asset($croquisPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="croquisPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CROQUIS DE UBICACIÓN</b></label>
+                                            <input id="croquisPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
                                         </div>
-                                        @error('fecha_patente') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('croquisPDF') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            @if ($id)
+                                                @if ($planPDF)
+                                                    <iframe width="500" height="600" src="{{asset($planPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="planPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PLAN DE EMERGENCIA Y CONTINGENCIA</b></label>
+                                            <input id="planPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('planPDF') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            @if ($id)
+                                                @if ($origenPDF)
+                                                    <iframe width="500" height="600" src="{{asset($origenPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICACIÓN DE ORIGEN</b></label>
+                                            <input id="origenPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('origenPDF') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4">
+                                    <div class="w-full rounded-lg">
+                                        <div class=" max-w-xs">
+                                            @if ($id)
+                                                @if ($riesgoPDF)
+                                                    <iframe width="500" height="600" src="{{asset($riesgoPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="riesgoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE RIESGO</b></label>
+                                            <input id="riesgoPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                        </div>
+                                        @error('riesgoPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>

@@ -30,6 +30,7 @@ class Empresa extends Model
         'correo',
         'codigo',
         'user_id',
+        'patentePDF',
     ];
 
     public function parroquia()
