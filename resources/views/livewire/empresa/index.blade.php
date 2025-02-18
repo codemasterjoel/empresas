@@ -49,6 +49,7 @@
                                         <td class="text-center">
                                             <a href="{{route('empresa.editar', [$empresa->id])}}" class=" text-success px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">person_edit</span></a>
                                             <a wire:click="materiales('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">patient_list</span></a>
+                                            <a wire:click="ficha('{{$empresa->id}}')" rel="tooltip" title="Generar Ficha" type="button" class="text-warning font-bold py-2 px-2"><i class="material-icons">contact_page</i></a>
                                             <a href="" wire:click="borrar('{{$empresa->id}}')" class="text-danger font-bold py-2 px-2"><span class="material-symbols-outlined">person_cancel</span></a>
                                         </td>
                                     </tr>

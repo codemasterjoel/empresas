@@ -9,6 +9,7 @@ use Livewire\Component;
 use App\Models\Empresa;
 use App\Models\TipoMateriales;
 use App\Models\EmpresaTipo;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class Index extends Component
 {
@@ -59,5 +60,18 @@ class Index extends Component
             'tipo_materiales_id' => $this->tipoMaterialesId,
         ]);
         $this->materialesModal = false;
+    }
+    public function ficha($id)
+    {
+        $empresa = Empresa::find($id);
+
+        //return view('livewire.reportes.ficha');
+        $pdf = Pdf::loadView('livewire.reportes.ficha', ['empresa'=>$empresa]);
+        set_time_limit(0);
+        ini_set("memory_limit",-1);
+        ini_set('max_execution_time', 0);
+        return response()->streamDownload(function () use ($pdf) {
+            echo $pdf->stream();
+        }, 'ficha.pdf');
     }
 }
