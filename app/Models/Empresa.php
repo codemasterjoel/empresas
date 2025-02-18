@@ -11,17 +11,16 @@ class Empresa extends Model
 {
     protected $fillable = [
         'nombre',
+        'tipoRIF',
         'rif',
+        'letra',
         'cedula',
         'nombres',
         'apellidos',
         'telefono',
         'direccion',
-        'posee_runpa',
         'fecha_runpa',
-        'posee_patente',
         'fecha_patente',
-        'posee_conformidad',
         'lat',
         'lon',
         'parroquia_id',
@@ -31,6 +30,17 @@ class Empresa extends Model
         'codigo',
         'user_id',
         'patentePDF',
+        'runpaPDF',
+        'rmercantilPDF',
+        'rifPDF',
+        'solvenciaPDF',
+        'arrendamientoPDF',
+        'catastralPDF',
+        'croquisPDF',
+        'planPDF',
+        'origenPDF',
+        'riesgoPDF',
+        'conformidadPDF',
     ];
 
     public function parroquia()

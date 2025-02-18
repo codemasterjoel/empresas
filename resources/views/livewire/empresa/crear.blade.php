@@ -8,7 +8,7 @@
           <div>    
             <div class="min-h-screen flex items-center justify-center">
                 <div class="p-4 w-full bg-white rounded-lg">
-                    <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center">REGISTRAR NUEVA EMPRESA</h3>
+                    <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center">DATOS DE LA EMPRESA</h3>
                     <form action="" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-xl-12 col-sm-12 mb-xl-0">
@@ -24,20 +24,71 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-xl-2 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">TIPO DE RIF</span>
+                                            <select name="tipoRIF" id="tipoRIF" wire:model="tipoRIF" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
+                                                <option value=""></option>
+                                                <option value="V">V</option>
+                                                <option value="J">J</option>
+                                                <option value="C">C</option>
+                                                <option value="E">E</option>
+                                                <option value="G">G</option>
+                                                <option value="P">P</option>
+                                            </select>
+                                        </div>
+                                        @error('tipoRIF') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">RIF</span>
-                                            <input wire:model="rif" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();" >
+                                            <input wire:model="rif" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();" onkeypress="$(this).mask('00000000-0')" maxlength="10" placeholder="00000000-0">
                                         </div>
                                         @error('rif') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-xl-6 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Categoría</span>
+                                            <select wire:model="categoriaId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
+                                                <option value="">Seleccione</option>
+                                                @foreach ($categorias as $categoria)
+                                                    <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        @error('categoriaId') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center mb-2">DATOS DE LA PROPIETARIO</h3>
+                        <div class="row">
+                            <div class="col-xl-2 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">NACIONALIDAD</span>
+                                            <select name="letra" id="letra" wire:model="letra" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
+                                                <option value=""></option>
+                                                <option value="V">V</option>
+                                                <option value="E">E</option>
+                                            </select>
+                                        </div>
+                                        @error('letra') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo cedula --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
@@ -115,22 +166,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
-                                    <div class="w-full rounded-lg">
-                                        <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Categoría</span>
-                                            <select wire:model="categoriaId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
-                                                <option value="">Seleccione</option>
-                                                @foreach ($categorias as $categoria)
-                                                    <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        @error('categoriaId') <div class="text-danger">{{ $message }}</div> @enderror
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-12 col-sm-12 mb-xl-0">
@@ -145,90 +180,54 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row ">
-                            <div class="col-xl-4 col-sm-12 mb-xl-0 d-none d-xl-block">
-                                <div class="flex items">
-                                    <span class="">¿Posee Patente?</span>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0 d-none d-xl-block">
-                                <div class="flex items">
-                                    <span class="">¿Posee Conformidad de Uso?</span>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0 d-none d-xl-block">
-                                <div class="flex items">
-                                    <span class="">¿Posee Runpa?</span>
-                                </div>
-                            </div>
-                        </div>
+                        <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">SUBIR DOCUMENTOS LEGALES</h3>
                         <div class="row">
-                            <span class="d-xl-none">¿Posee Patente?</span>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center"> {{-- campo cedula --}}
+                                <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
-                                        <div class="flex">
-                                            <!-- component -->
-                                            <label>
-                                                <input type="radio" value="1" {{isset($posee_patente) ? 'checked' : ''}} class="peer hidden"  name="patente" wire:model="posee_patente">
-                                                <div class="hover:bg-blue-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-blue-700  peer-checked:bg-blue-400">
-                                                    <h2 class="font-medium text-gray-700">SI</h2>
-                                                </div>
-                                            </label>
-
-                                            <label>
-                                                <input type="radio" value="0" {{isset($posee_patente) ? 'checked' : ''}} class="peer hidden" name="patente" wire:model="posee_patente">
-                                                <div class="hover:bg-red-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-red-500 peer-checked:text-white peer-checked:bg-red-400">
-                                                    <h2 class="font-medium text-gray-700">NO</h2>
-                                                </div>
-                                            </label>
+                                        <div class=" max-w-xs">
+                                            @if ($id)
+                                                @if ($patentePDF)
+                                                    <iframe width="500" height="600" src="{{asset($patentePDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                                {{-- <img class="image" src="{{ asset('/img/pdf.svg') }}" style="width: 200px; height: 200px; margin:30%;"> --}}
+                                                <label for="patentePDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b></label>
+                                                <input id="patentePDF" wire:model="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
+                                        @error('patentePDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
-                            <span class="d-xl-none">¿Posee Conformidad de Uso?</span>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center"> {{-- campo cedula --}}
+                                <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
-                                        <div class="flex">
-                                            <!-- component -->
-                                            <label>
-                                                <input type="radio" value="1" {{isset($posee_conformidad) ? 'checked' : ''}} class="peer hidden"  name="conformidad" wire:model="posee_conformidad">
-                                                <div class="hover:bg-blue-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-blue-700  peer-checked:bg-blue-400">
-                                                    <h2 class="font-medium text-gray-700">SI</h2>
-                                                </div>
-                                            </label>
-
-                                            <label>
-                                                <input type="radio" value="0" {{isset($posee_conformidad) ? 'checked' : ''}} class="peer hidden" name="conformidad" wire:model="posee_conformidad">
-                                                <div class="hover:bg-red-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-red-500 peer-checked:text-white peer-checked:bg-red-400">
-                                                    <h2 class="font-medium text-gray-700">NO</h2>
-                                                </div>
-                                            </label>
+                                        <div class=" max-w-xs">
+                                            @if ($id)
+                                                @if ($conformidadPDF)
+                                                    <iframe width="500" height="600" src="{{asset($conformidadPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="conformidad" class="mb-1 block text-sm font-medium text-gray-700"><b>CONFORMIDAD DE USO</b></label>
+                                            <input id="conformidadPDF" type="file" wire:model="conformidadPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
+                                        @error('conformidadPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
-                            <span class="d-xl-none">¿Posee Runpa?</span>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center"> {{-- campo cedula --}}
+                                <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
-                                        <div class="flex">
-                                            <!-- component -->
-                                            <label>
-                                                <input type="radio" value="1" {{isset($posee_runpa) ? 'checked' : ''}} class="peer hidden"  name="framework" wire:model="posee_runpa">
-                                                <div class="hover:bg-blue-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-blue-700  peer-checked:bg-blue-400">
-                                                    <h2 class="font-medium text-gray-700">SI</h2>
-                                                </div>
-                                            </label>
-
-                                            <label>
-                                                <input type="radio" value="0" {{isset($posee_runpa) ? 'checked' : ''}} class="peer hidden" name="framework" wire:model="posee_runpa">
-                                                <div class="hover:bg-red-500 flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  border-gray-200 group peer-checked:border-red-500 peer-checked:text-white peer-checked:bg-red-400">
-                                                    <h2 class="font-medium text-gray-700">NO</h2>
-                                                </div>
-                                            </label>
+                                        <div class=" max-w-xs">
+                                            @if ($id)
+                                                @if ($runpaPDF)
+                                                    <iframe width="500" height="600" src="{{asset($runpaPDF)}}" frameborder="0"></iframe>  
+                                                @endif
+                                            @endif
+                                            <label for="runpa" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b></label>
+                                            <input id="runpaPDF" type="file" wire:model="runpaPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
+                                        @error('runpaPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -259,57 +258,6 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">SUBIR DOCUMENTOS LEGALES</h3>
-                        <div class="row">
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4">
-                                    <div class="w-full rounded-lg">
-                                        <div class=" max-w-xs">
-                                            @if ($id)
-                                                @if ($patentePDF)
-                                                    <iframe width="500" height="600" src="{{asset($patentePDF)}}" frameborder="0"></iframe>  
-                                                @endif
-                                            @endif
-                                                {{-- <img class="image" src="{{ asset('/img/pdf.svg') }}" style="width: 200px; height: 200px; margin:30%;"> --}}
-                                                <label for="patentePDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b></label>
-                                                <input wire:ignore id="patentePDF" wire:model="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4">
-                                    <div class="w-full rounded-lg">
-                                        <div class=" max-w-xs">
-                                            @if ($id)
-                                                @if ($conformidadPDF)
-                                                    <iframe width="500" height="600" src="{{asset($conformidadPDF)}}" frameborder="0"></iframe>  
-                                                @endif
-                                            @endif
-                                            <label for="conformidad" class="mb-1 block text-sm font-medium text-gray-700"><b>CONFORMIDAD DE USO</b></label>
-                                            <input id="conformidadPDF" type="file" wire:model.live="conformidadPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
-                                        </div>
-                                        @error('conformidadPDF') <div class="text-danger">{{ $message }}</div> @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4">
-                                    <div class="w-full rounded-lg">
-                                        <div class=" max-w-xs">
-                                            @if ($id)
-                                                @if ($runpaPDF)
-                                                    <iframe width="500" height="600" src="{{asset($runpaPDF)}}" frameborder="0"></iframe>  
-                                                @endif
-                                            @endif
-                                            <label for="runpa" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b></label>
-                                            <input id="runpaPDF" type="file" wire:model="runpaPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
-                                        </div>
-                                        @error('runpaPDF') <div class="text-danger">{{ $message }}</div> @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4">
@@ -321,7 +269,7 @@
                                                 @endif
                                             @endif
                                             <label for="rmercantilPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>REGISTRO MERCANTIL</b></label>
-                                            <input id="rmercantilPDF" type="file" wire:model="rmercantilPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="rmercantilPDF" type="file" wire:model="rmercantilPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('rmercantilPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -337,7 +285,7 @@
                                                 @endif
                                             @endif
                                             <label for="rif" class="mb-1 block text-sm font-medium text-gray-700"><b>RIF VIGENTE</b></label>
-                                            <input id="rifPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="rifPDF" type="file" wire:model="rifPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('rifPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -353,7 +301,7 @@
                                                 @endif
                                             @endif
                                             <label for="solvenciaPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b></label>
-                                            <input id="solvenciaPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="solvenciaPDF" type="file" wire:model="solvenciaPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('solvenciaPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -371,7 +319,7 @@
                                                 @endif
                                             @endif
                                             <label for="arrendamientoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b></label>
-                                            <input id="arrendamientoPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="arrendamientoPDF" type="file" wire:model="arrendamientoPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('arrendamientoPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -387,7 +335,7 @@
                                                 @endif
                                             @endif
                                             <label for="catastralPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CARTA CATASTRAL</b></label>
-                                            <input id="catastralPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="catastralPDF" type="file" wire:model="catastralPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('catastralPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -403,7 +351,7 @@
                                                 @endif
                                             @endif
                                             <label for="croquisPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CROQUIS DE UBICACIÓN</b></label>
-                                            <input id="croquisPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="croquisPDF" type="file" wire:model="croquisPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('croquisPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -421,7 +369,7 @@
                                                 @endif
                                             @endif
                                             <label for="planPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PLAN DE EMERGENCIA Y CONTINGENCIA</b></label>
-                                            <input id="planPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="planPDF" type="file" wire:model="planPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('planPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -437,7 +385,7 @@
                                                 @endif
                                             @endif
                                             <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICACIÓN DE ORIGEN</b></label>
-                                            <input id="origenPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="origenPDF" type="file" wire:model="origenPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('origenPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -453,7 +401,7 @@
                                                 @endif
                                             @endif
                                             <label for="riesgoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE RIESGO</b></label>
-                                            <input id="riesgoPDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+                                            <input id="riesgoPDF" type="file" wire:model="riesgoPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('riesgoPDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>

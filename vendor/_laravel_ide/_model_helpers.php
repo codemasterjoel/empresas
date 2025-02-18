@@ -2223,10 +2223,21 @@ namespace App\Models {
      * @property string|null $lat
      * @property string $direccion
      * @property string $telefono
-     * @property int(11) $cedula
+     * @property string $cedula
      * @property string $apellidos
      * @property string $nombres
      * @property bool|null $sucursal
+     * @property string|null $riesgoPDF
+     * @property string|null $origenPDF
+     * @property string|null $planPDF
+     * @property string|null $croquisPDF
+     * @property string|null $catastralPDF
+     * @property string|null $arrendamientoPDF
+     * @property string|null $solvenciaPDF
+     * @property string|null $rifPDF
+     * @property string|null $rmercantilPDF
+     * @property string|null $runpaPDF
+     * @property string|null $conformidadPDF
      * @property string|null $patentePDF
      * @property date|null $fecha_runpa
      * @property date|null $fecha_patente
@@ -2234,6 +2245,8 @@ namespace App\Models {
      * @property bool $posee_conformidad
      * @property bool $posee_patente
      * @property string $rif
+     * @property string $letra
+     * @property string $tipoRIF
      * @property string $nombre
      * @property string $codigo
      * @property int $id
@@ -2244,6 +2257,8 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCodigo($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombre($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereTiporif($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereLetra($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRif($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePoseePatente($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePoseeConformidad($value)
@@ -2251,6 +2266,17 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereFechaPatente($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereFechaRunpa($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePatentepdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereConformidadpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRunpapdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRmercantilpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRifpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSolvenciapdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereArrendamientopdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCatastralpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCroquispdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePlanpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereOrigenpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRiesgopdf($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSucursal($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombres($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereApellidos($value)

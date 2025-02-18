@@ -12,15 +12,13 @@ return new class extends Migration
             $table->id();
             $table->string('codigo')->unique();
             $table->string('nombre');
+            $table->char('tipoRIF');
+            $table->char('letra');
             $table->string('rif');
-            $table->boolean('posee_patente');
-            $table->boolean('posee_conformidad');
-            $table->boolean('posee_runpa');
             $table->date('fecha_patente')->nullable();
             $table->date('fecha_runpa')->nullable();
             $table->string('patentePDF')->nullable();
             $table->string('conformidadPDF')->nullable();
-            $table->string('patentePDF')->nullable();
             $table->string('runpaPDF')->nullable();
             $table->string('rmercantilPDF')->nullable();
             $table->string('rifPDF')->nullable();
@@ -34,7 +32,7 @@ return new class extends Migration
             $table->boolean('sucursal')->nullable();
             $table->string('nombres');
             $table->string('apellidos');
-            $table->integer('cedula');
+            $table->string('cedula');
             $table->string('telefono');
             $table->longText('direccion');
             $table->string('lat')->nullable();
