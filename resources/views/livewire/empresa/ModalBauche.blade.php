@@ -64,7 +64,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{$bauche}}
                         <div class="row mt-4">
                             <div class="col-xl-12 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4">

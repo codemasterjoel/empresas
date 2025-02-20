@@ -56,6 +56,7 @@ class Index extends Component
     {
         $this->empresa_id = $id;
         $this->tipos_materiales = TipoMateriales::all();
+        $this->bancos = Banco::all();
         $this->empresa = Empresa::where('id', $id)->firstOrFail();
 
         if ($this->empresa->bauche) 
