@@ -412,6 +412,7 @@
                                 </div>
                             </div>
                         </div>
+                        <img src="{{asset($bauche)}}" alt="">
                         <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">TIPOS DE MATERIALES</h3>
                         <table class="table align-items-center mb-0">
                             <thead>

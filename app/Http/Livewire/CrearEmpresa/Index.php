@@ -17,7 +17,7 @@ class Index extends Component
     use WithFileUploads;
     public $id, $empresa, $tipoRIF, $letra = null;
     public $patentePDF, $conformidadPDF, $runpaPDF, $rmercantilPDF,$rifPDF,$solvenciaPDF,$arrendamientoPDF,$catastralPDF,$croquisPDF,$planPDF,$origenPDF,$riesgoPDF = null;
-    public $fecha_runpa, $fecha_patente, $ejes, $bancos = null;
+    public $fecha_runpa, $fecha_patente, $ejes, $bancos, $bauche = null;
     public $input_patente = null;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $sucursal, $correo = null;
     public $tipos_materiales, $materiales, $parroquias, $tipoMaterialesId, $parroquiaId, $categorias, $categoriaId, $bancoId =null;
@@ -66,6 +66,7 @@ class Index extends Component
             $this->origenPDF = $empresa->origenPDF;
             $this->riesgoPDF = $empresa->riesgoPDF;
             $this->conformidadPDF = $empresa->conformidadPDF;
+            $this->bauche = $empresa->bauche;
     
             return view('livewire.empresa.crear', ['empresa'=> $empresa]);
     
