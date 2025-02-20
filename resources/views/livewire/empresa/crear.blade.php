@@ -106,7 +106,7 @@
 
 
 
-                    <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center mb-2">DATOS DE LA PROPIETARIO</h3>
+                    <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center mb-2">DATOS DEL PROPIETARIO</h3>
                         <div class="row">
                             <div class="col-xl-3 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
@@ -184,7 +184,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">SUBIR DOCUMENTOS LEGALES</h3>
+                        <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">DOCUMENTOS LEGALES</h3>
                         <div class="row">
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4">
