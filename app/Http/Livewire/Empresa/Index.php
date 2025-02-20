@@ -72,7 +72,7 @@ class Index extends Component
     }
     public function guardarBauche() 
     {
-        $bauche = $this->bauchetemp->store('bauche', 'public_path');
+        $bauche = $this->bauche->store('bauche', 'public_path');
         $this->empresa = Empresa::updateOrCreate(['id' => $this->empresa_id],
         values: [
             'bauche' => $bauche,
