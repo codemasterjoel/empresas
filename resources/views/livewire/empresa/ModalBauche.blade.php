@@ -64,14 +64,16 @@
                                 </div>
                             </div>
                         </div>
+                        {{$bauche}}
                         <div class="row mt-4">
                             <div class="col-xl-12 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class="max-w-xs">
-                                                @if ($empresa->bauche)
+                                                @if ($bauche)
                                                     <div class="flex items-center justify-center">
-                                                        <img width="400" height="500" src="{{asset($bauche)}}" class="mb-4 align-middle">  
+                                                        {{-- <img                          src="{{asset('/img/logoccs.png')}}" class=" w-40"> --}}
+                                                        <img width="400" height="500" src="{{asset('/'.$bauche)}}" class="mb-4 align-middle">  
                                                     </div>
                                                 @endif
                                             <label for="bauche" class="mb-1 block text-sm font-medium text-gray-700"><b>BAUCHE DE PAGO</b></label>
