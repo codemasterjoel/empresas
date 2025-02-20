@@ -1,8 +1,5 @@
   <section class="h-100-vh mb-8">
-      <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
-          style="background-image: url('../assets/img/curved-images/curved14.jpg');">
-          <span class="mask bg-gradient-dark opacity-6"></span>
-
+      <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('{{asset('img/Caracas_Panoramica.jpg')}}');">
       </div>
       <div class="container">
           <div class="row mt-lg-n10 mt-md-n11 mt-n10">
@@ -12,7 +9,6 @@
                           <h1>Crea una cuenta</h1>
                       </div>
                       <div class="card-body">
-
                           <form wire:submit="register" action="#" method="POST" role="form text-left">
                               <div class="mb-3">
                                   <div class="@error('name') border border-danger rounded-3  @enderror">
