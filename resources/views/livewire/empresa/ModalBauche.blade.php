@@ -5,18 +5,21 @@
         </div>
         <span class="hidden sm:inline-block sm:h-screen"></span>
         <div class="inline-block bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8  sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">    
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center -mt-20">
                 <div class="p-4 w-full bg-white rounded-lg">
                     <div class="flex items-center justify-center pt-8">
                         <img src="{{asset('/img/logoccs.png')}}" class=" w-40">
                     </div>
                     <h3 class="text-2xl text-cyan-400 font-extrabold text-center mt-4">REGISTRO DE PAGO</h3>
                     <h2 class="text-2xl text-cyan-800 font-semibold text-center text-uppercase mt-4">Empresa: {{$nombreEmpresa}}</h2>
+                    <h2 class="text-2xl text-cyan-800 font-semibold text-center text-uppercase mt-4">Monto a Pagar: <b class=" text-red-900">120 €</b></h2>
+                    <h5 class=" text-center"><i>"A la taza del BCV del dia en que se hace la transferencia."</i></h5>
                     <form>
                         <h4 class=" text-cyan-800 font-semibold text-center text-uppercase mt-4">Realiza tu pago a:</h4>
                         <div class="row">
                             <div class="col-6">BANCO:</div><div class="col-6">Banco de Venezuela S.A</div>
                             <div class="col-6">RIF:</div><div class="col-6">G-200172304</div>
+                            <div class="col-6">A NOMBRE DE:</div><div class="col-6">FUND ECONOMIA CIRC Y ENERG INGRESOS PROPIOS</div>
                             <div class="col-6">CUENTA:</div><div class="col-6">0102-0762-26-00-00123466</div>
                         </div>
                         <h4 class=" text-cyan-800 font-semibold text-center text-uppercase mt-4 mb-2">DATOS DEL PAGO:</h4>

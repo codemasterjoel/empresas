@@ -62,7 +62,7 @@ class Index extends Component
         if ($this->empresa->bauche) 
         {
             $this->bauche = $this->empresa->bauche;
-            $this->telefono_pago = $this->empresa->telefono_pago;
+            $this->bancoId = $this->empresa->banco_id;
             $this->fecha_pago = $this->empresa->fecha_pago;
             $this->referencia = $this->empresa->referencia;
         }
