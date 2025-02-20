@@ -11,4 +11,9 @@ class EmpresaTipo extends Model
         "empresa_id",
         "tipo_materiales_id",
         ] ;
+
+    public function tipo_materiales()
+        {
+            return $this->belongsTo(TipoMateriales::class);
+        }
 }

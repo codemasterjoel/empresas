@@ -15,7 +15,7 @@ use App\Models\Banco;
 class Index extends Component
 {
     use WithFileUploads;
-    public $id, $empresa, $tipoRIF, $letra = null;
+    public $id, $empresa, $tipoRIF, $letra, $listaMateriales = null;
     public $patentePDF, $conformidadPDF, $runpaPDF, $rmercantilPDF,$rifPDF,$solvenciaPDF,$arrendamientoPDF,$catastralPDF,$croquisPDF,$planPDF,$origenPDF,$riesgoPDF = null;
     public $fecha_runpa, $fecha_patente, $ejes, $bancos, $bauche = null;
     public $input_patente = null;
@@ -33,6 +33,7 @@ class Index extends Component
             $this->categorias = Categoria::all();
             $this->bancos = Banco::all();
             $this->materiales = EmpresaTipo::where("empresa_id", $empresa->id)->count();
+            $this->listaMateriales = EmpresaTipo::where("empresa_id", $empresa->id)->get();
             
             $this->nombre = $empresa->nombre;
             $this->tipoRIF = $empresa->tipoRIF;

@@ -412,34 +412,35 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="{{asset($bauche)}}" alt="">
-                        <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">TIPOS DE MATERIALES</h3>
-                        <table class="table align-items-center mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">#</th>
-                                    <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">Material</th>
-                                    <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if($materiales > 0)
-                                <?php $indice = 0; ?>
-                                    @foreach ($empresa->tipo_materiales as $material)
-                                        <?php $indice += 1; ?>
-                                        <tr>
-                                            <td class="ps-4 text-center"><p class="text-xs font-weight-bold mb-0"><?php echo $indice; ?></p></td>
-                                            <td class="text-center text-uppercase"><p class="text-xs font-weight-bold mb-0"></p>{{$material->nombre}}</td>
-                                            <td class="text-center"><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Editar Integrante">
-                                                @if (auth()->user()->nivel_id == 1)
-                                                    <a href="#" wire:click="borrarIntegrante('{{$material->id}}')" class=" text-danger font-bold py-2 px-4"><span class="material-symbols-outlined">person_cancel</span></a>
-                                                @endif
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                @endif
-                            </tbody>
-                        </table>
+                        @if ($materiales > 0)
+                            <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">TIPOS DE MATERIALES</h3>
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">#</th>
+                                        <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">Material</th>
+                                        <th class="text-center text-uppercase text-gray-700 font-bold font-weight-bolder opacity-7">acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if($materiales > 0)
+                                    <?php $indice = 0; ?>
+                                        @foreach ($listaMateriales as $material)
+                                            <?php $indice += 1; ?>
+                                            <tr>
+                                                <td class="ps-4 text-center"><p class="text-xs font-weight-bold mb-0"><?php echo $indice; ?></p></td>
+                                                <td class="text-center text-uppercase"><p class="text-xs font-weight-bold mb-0"></p>{{$material->tipo_materiales->nombre}}</td>
+                                                <td class="text-center"><a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Editar Integrante">
+                                                    @if (auth()->user()->nivel_id == 1)
+                                                        <a href="#" wire:click="borrarIntegrante('{{$material->id}}')" class=" text-danger font-bold py-2 px-4"><span class="material-symbols-outlined">person_cancel</span></a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
+                                </tbody>
+                            </table>        
+                        @endif
                         <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">GEORREFERENCIACIÓN</h3>
                         <div class="items-center">
                             <div wire:ignore id="map" style= "width: 100%; height: 600px; z-index: 100;" class="mb-4"></div>
