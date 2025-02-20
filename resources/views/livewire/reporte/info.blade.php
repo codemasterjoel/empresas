@@ -7,14 +7,14 @@
               <img src="{{asset('img/logocenso.png')}}" width="200" style="display: block; margin:auto">
             </div>
             <div class="row mx-20" style="align-content: center">
-              <img src="{{asset('assets/img/marie.jpg')}}" class=" rounded-full" style="display: block; margin:auto">
+              <img src="{{asset('/img/logoccs.png')}}" class=" w-40">
             </div>
             <div class="row mt-4">
               <div class="col-3">
                   <h1 class="font-bold text-neutral-950">CÉDULA:</h1>
               </div>
               <div class="col-6">
-                <h1 class="font-bold text-neutral-950">{{ $lsb->cedula }}</h1>
+                <h1 class="font-bold text-neutral-950"></h1>
               </div>
             </div>
             <div class="row mt-4">
@@ -22,7 +22,7 @@
                     <h1 class="text-neutral-950">NOMBRE:</h1>
                 </div>
                 <div class="col-9 font-bold">
-                  <h1 class="text-neutral-950">{{ $lsb->nombre}} {{ $lsb->apellido}}</h1>
+                  <h1 class="text-neutral-950"></h1>
                 </div>
             </div>
             <div class="row mt-4 mb-4">

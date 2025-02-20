@@ -11,7 +11,7 @@
         <tr><td style="text-align: left; width: 33%"></td><td style="text-align: right; width: 64%">Receptoría Nº R-{{$empresa->codigo}}</td></tr>
 		<tr style="margin-top: -40px;"><td style="text-align: left; width: 33%; margin-top: -20px;">Ciudadano(a):</td><td style="text-align: right; width: 100%">SECA {{$empresa->parroquia->abreviatura}}-{{$empresa->codigo}}-0</td></tr>
 		<tr><td style="text-align: left; width: 100%; text-transform: uppercase;">{{$empresa->nombres}} {{$empresa->apellidos}}</td></tr>
-		<tr><td style="text-align: left; width: 100%">Presidente de {{$empresa->nombre}}</td></tr>
+		<tr><td style="text-align: left; width: 100%; text-transform: uppercase;">Presidente de {{$empresa->nombre}}</td></tr>
 		<tr><td>Presente.</td></tr>
     </table>
     <table style="width: 100%; border: 0px;" align="center">
@@ -27,7 +27,7 @@
 					susceptibles al reciclaje, (materiales no peligrosos), la empresa <b>{{$empresa->nombre}}</b>, ubicada en <b>{{$empresa->direccion}}</b>; cumplo en participarle que de acuerdo al informe de inspección realizado por personal técnico adscrito 
 					a este despacho, y visto los recaudos que acompañan la solicitud; esta Dirección de conformidad con lo establecido en el Artículo 178 de la Constitución de la República Bolivariana de Venezuela;  Artículo 56 literal “d” de la Ley Orgánica 
 					del Poder Público Municipal; Artículo 14 numerales 1 y 2 y Artículo 68 de la Ley de Residuos y Desechos Sólidos y la Ordenanza para la Gestión y Tratamiento Integral de los Residuos y Desechos Sólidos en Jurisdicción Territorial del Municipio 
-					Bolivariano Libertador (publicada en la Gaceta Municipal del Municipio Bolivariano Libertador Nº 4742-2 de fecha 25/10/2021), le participa que la empresa <b>{{$empresa->nombre}}</b> RIF. <b>{{$empresa->tipoRIF}}{{$empresa->rif}}</b>, queda 
+					Bolivariano Libertador (publicada en la Gaceta Municipal del Municipio Bolivariano Libertador Nº 4742-2 de fecha 25/10/2021), le participa que la empresa <b>{{$empresa->nombre}}</b> RIF. <b>{{$empresa->tipoRIF}}-{{$empresa->rif}}</b>, queda 
 					registrada bajo el número <b>SECA {{$empresa->parroquia->abreviatura}}-{{$empresa->codigo}}-0</b> de fecha <b>{{$empresa->created_at->format('d/m/Y')}}</b>, para realizar ACOPIO, COMPRA, VENTA Y COMERCIALIZACIÓN DE MATERIALES SUSCEPTIBLES AL RECICLAJE, 
 					debiendo dar cumplimiento a las siguientes condiciones:
 				</td>

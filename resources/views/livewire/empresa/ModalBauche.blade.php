@@ -71,7 +71,7 @@
                                         <div class="max-w-xs">
                                                 @if ($empresa->bauche)
                                                     <div class="flex items-center justify-center">
-                                                        <img width="400" height="500" src="{{asset($bauche)}}" class="mb-4 align-middle">  
+                                                        <img width="400" height="500" src="{{asset($empresa->bauche)}}" class="mb-4 align-middle">  
                                                     </div>
                                                 @endif
                                             <label for="bauchetemp" class="mb-1 block text-sm font-medium text-gray-700"><b>BAUCHE DE PAGO</b></label>
