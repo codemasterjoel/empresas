@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xl-2 col-sm-12 mb-xl-0">
+                            <div class="col-xl-3 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
@@ -48,13 +48,13 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">RIF</span>
-                                            <input wire:model="rif" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();" onkeypress="$(this).mask('00000000-0')" maxlength="10" placeholder="00000000-0">
+                                            <input wire:model="rif" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeypress="$(this).mask('00000000-0')" maxlength="10" placeholder="00000000-0">
                                         </div>
                                         @error('rif') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-sm-12 mb-xl-0">
+                            <div class="col-xl-5 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
@@ -71,9 +71,44 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-xl-6 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Parroquia</span>
+                                            <select wire:model="parroquiaId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
+                                                <option value="">Seleccione</option>
+                                                @foreach ($parroquias as $parroquia)
+                                                    <option value="{{$parroquia->id}}">{{$parroquia->nombre}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        @error('parroquiaId') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Dirección</span>
+                                            <input wire:model="direccion" type="text" class="w-full text-uppercase pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeyup="this.value = this.value.toUpperCase();"/>
+                                        </div>
+                                        @error('direccion') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center mb-2">DATOS DE LA PROPIETARIO</h3>
                         <div class="row">
-                            <div class="col-xl-2 col-sm-12 mb-xl-0">
+                            <div class="col-xl-3 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
@@ -149,37 +184,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-6 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
-                                    <div class="w-full rounded-lg">
-                                        <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Parroquia</span>
-                                            <select wire:model="parroquiaId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
-                                                <option value="">Seleccione</option>
-                                                @foreach ($parroquias as $parroquia)
-                                                    <option value="{{$parroquia->id}}">{{$parroquia->nombre}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        @error('parroquiaId') <div class="text-danger">{{ $message }}</div> @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-12 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
-                                    <div class="w-full rounded-lg">
-                                        <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Dirección</span>
-                                            <input wire:model="direccion" type="text" class="w-full text-uppercase pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeyup="this.value = this.value.toUpperCase();"/>
-                                        </div>
-                                        @error('direccion') <div class="text-danger">{{ $message }}</div> @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">SUBIR DOCUMENTOS LEGALES</h3>
                         <div class="row">
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
@@ -188,7 +192,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($patentePDF)
-                                                    <iframe width="500" height="600" src="{{asset($patentePDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($patentePDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                                 {{-- <img class="image" src="{{ asset('/img/pdf.svg') }}" style="width: 200px; height: 200px; margin:30%;"> --}}
@@ -205,7 +209,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($conformidadPDF)
-                                                    <iframe width="500" height="600" src="{{asset($conformidadPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($conformidadPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="conformidad" class="mb-1 block text-sm font-medium text-gray-700"><b>CONFORMIDAD DE USO</b></label>
@@ -221,7 +225,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($runpaPDF)
-                                                    <iframe width="500" height="600" src="{{asset($runpaPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($runpaPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="runpa" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b></label>
@@ -265,7 +269,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($rmercantilPDF)
-                                                    <iframe width="500" height="600" src="{{asset($rmercantilPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($rmercantilPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="rmercantilPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>REGISTRO MERCANTIL</b></label>
@@ -281,7 +285,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($rifPDF)
-                                                    <iframe width="500" height="600" src="{{asset($rifPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($rifPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="rif" class="mb-1 block text-sm font-medium text-gray-700"><b>RIF VIGENTE</b></label>
@@ -297,7 +301,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($solvenciaPDF)
-                                                    <iframe width="500" height="600" src="{{asset($solvenciaPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($solvenciaPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="solvenciaPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b></label>
@@ -315,7 +319,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($arrendamientoPDF)
-                                                    <iframe width="500" height="600" src="{{asset($arrendamientoPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($arrendamientoPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="arrendamientoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b></label>
@@ -331,7 +335,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($catastralPDF)
-                                                    <iframe width="500" height="600" src="{{asset($catastralPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($catastralPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="catastralPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CARTA CATASTRAL</b></label>
@@ -347,7 +351,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($croquisPDF)
-                                                    <iframe width="500" height="600" src="{{asset($croquisPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($croquisPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="croquisPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CROQUIS DE UBICACIÓN</b></label>
@@ -365,7 +369,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($planPDF)
-                                                    <iframe width="500" height="600" src="{{asset($planPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($planPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="planPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PLAN DE EMERGENCIA Y CONTINGENCIA</b></label>
@@ -381,7 +385,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($origenPDF)
-                                                    <iframe width="500" height="600" src="{{asset($origenPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($origenPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICACIÓN DE ORIGEN</b></label>
@@ -397,7 +401,7 @@
                                         <div class=" max-w-xs">
                                             @if ($id)
                                                 @if ($riesgoPDF)
-                                                    <iframe width="500" height="600" src="{{asset($riesgoPDF)}}" frameborder="0"></iframe>  
+                                                    <iframe width="300" height="500" src="{{asset($riesgoPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
                                             <label for="riesgoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE RIESGO</b></label>

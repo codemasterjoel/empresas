@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('empresa_tipos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('empresa_id')->references('id')->on('empresas')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignUuid('empresa_id')->references('id')->on('empresas')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('tipo_materiales_id')->references('id')->on('tipo_materiales')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });

@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empresa extends Model
 {
+    public $incrementing = false;
+    protected $keyType = 'string';
     protected $fillable = [
         'nombre',
         'tipoRIF',
@@ -41,6 +43,10 @@ class Empresa extends Model
         'origenPDF',
         'riesgoPDF',
         'conformidadPDF',
+        'bauche',
+        'fecha_pago',
+        'telefono_pago',
+        'referencia'
     ];
 
     public function parroquia()

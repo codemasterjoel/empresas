@@ -16,7 +16,7 @@ class Index extends Component
     use WithFileUploads;
     public $id, $empresa, $tipoRIF, $letra = null;
     public $patentePDF, $conformidadPDF, $runpaPDF, $rmercantilPDF,$rifPDF,$solvenciaPDF,$arrendamientoPDF,$catastralPDF,$croquisPDF,$planPDF,$origenPDF,$riesgoPDF = null;
-    public $fecha_runpa, $fecha_patente = null;
+    public $fecha_runpa, $fecha_patente, $ejes = null;
     public $input_patente = null;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $sucursal, $correo = null;
     public $tipos_materiales, $materiales, $parroquias, $tipoMaterialesId, $parroquiaId, $categorias, $categoriaId =null;
@@ -160,7 +160,6 @@ class Index extends Component
             'categoria_id'=> $this->categoriaId,
             'correo' => $this->correo,
             'user_id'=> auth()->user()->id,
-            'codigo' => 'EMP'.rand(1000, 9999),
             'patentePDF'=> $patente,
             'runpaPDF' => $runpa,
             'rmercantilPDF' => $rmercantil,

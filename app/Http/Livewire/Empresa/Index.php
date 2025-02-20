@@ -8,15 +8,17 @@ use Livewire\WithPagination;
 use Livewire\Component;
 use App\Models\Empresa;
 use App\Models\TipoMateriales;
+use Livewire\WithFileUploads;
 use App\Models\EmpresaTipo;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class Index extends Component
 {
+    use WithFileUploads;
     use WithPagination;
-    public $modal, $materialesModal = false;
-    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon =null;
-    public $tipos_materiales, $empresa_id, $nombreEmpresa, $tipoMaterialesId =null;
+    public $modal, $materialesModal, $baucheModal = false;
+    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $telefono_pago, $fecha_pago, $referencia =null;
+    public $tipos_materiales, $empresa_id, $nombreEmpresa, $tipoMaterialesId, $empresa =null;
     public $search = null;
     
     public function updatingSearch()
@@ -49,17 +51,47 @@ class Index extends Component
 
         $this->materialesModal = true;
     }
+    public function bauches($id)
+    {
+        $this->empresa_id = $id;
+        $this->tipos_materiales = TipoMateriales::all();
+        $this->empresa = Empresa::where('id', $id)->firstOrFail();
+
+        if ($this->empresa->bauche) 
+        {
+            $this->bauche = $this->empresa->bauche;
+            $this->telefono_pago = $this->empresa->telefono_pago;
+            $this->fecha_pago = $this->empresa->fecha_pago;
+            $this->referencia = $this->empresa->referencia;
+        }
+        
+        $this->nombreEmpresa = $this->empresa->nombre;
+
+        $this->baucheModal = true;
+    }
+    public function guardarBauche() 
+    {
+        $bauche = $this->bauche->store('bauche', 'public_path');
+        $this->empresa = Empresa::updateOrCreate(['id' => $this->empresa_id],
+        values: [
+            'bauche' => $bauche,
+            'telefono_pago' => $this->telefono_pago,
+            'fecha_pago' => $this->fecha_pago,
+            'referencia' => $this->referencia,
+        ]);
+        $this->baucheModal = false;
+    }
     public function cerrarModal()
     {
         $this->materialesModal = false;
+        $this->baucheModal = false;
     }
     public function guardarMaterial()
     {
         EmpresaTipo::Create([
             'empresa_id' => $this->empresa_id,
             'tipo_materiales_id' => $this->tipoMaterialesId,
-        ]);
-        $this->materialesModal = false;
+        ]); 
     }
     public function ficha($id)
     {

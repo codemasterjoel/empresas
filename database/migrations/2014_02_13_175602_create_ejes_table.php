@@ -6,25 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('parroquias', function (Blueprint $table) {
+        Schema::create('ejes', function (Blueprint $table) {
             $table->id();
-            $table->integer('parroquia_id');
             $table->string('nombre');
-            $table->string('abreviatura');
+            $table->foreignId('parroquia_id')->nullable()->references('id')->on('parroquias');
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('parroquias');
+        Schema::dropIfExists('ejes');
     }
 };
