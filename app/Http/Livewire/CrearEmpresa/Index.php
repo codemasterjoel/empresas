@@ -10,16 +10,17 @@ use App\Models\TipoMateriales;
 use App\Models\Parroquia;
 use App\Models\Categoria;
 use App\Models\FilePatente;
+use App\Models\Banco;
 
 class Index extends Component
 {
     use WithFileUploads;
     public $id, $empresa, $tipoRIF, $letra = null;
     public $patentePDF, $conformidadPDF, $runpaPDF, $rmercantilPDF,$rifPDF,$solvenciaPDF,$arrendamientoPDF,$catastralPDF,$croquisPDF,$planPDF,$origenPDF,$riesgoPDF = null;
-    public $fecha_runpa, $fecha_patente, $ejes = null;
+    public $fecha_runpa, $fecha_patente, $ejes, $bancos = null;
     public $input_patente = null;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $sucursal, $correo = null;
-    public $tipos_materiales, $materiales, $parroquias, $tipoMaterialesId, $parroquiaId, $categorias, $categoriaId =null;
+    public $tipos_materiales, $materiales, $parroquias, $tipoMaterialesId, $parroquiaId, $categorias, $categoriaId, $bancoId =null;
 
     public function mount($id)
     {
@@ -30,6 +31,7 @@ class Index extends Component
         if ($this->id) {
             $empresa = Empresa::findOrFail($this->id);
             $this->categorias = Categoria::all();
+            $this->bancos = Banco::all();
             $this->materiales = EmpresaTipo::where("empresa_id", $empresa->id)->count();
             
             $this->nombre = $empresa->nombre;

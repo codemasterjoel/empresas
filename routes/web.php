@@ -13,6 +13,7 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
+use App\Http\Livewire\Infoqr\Index as infoqr;
 
 use App\Http\Livewire\Usuario\Index as usuario;
 use App\Http\Livewire\Mapa\Index as mapa;
@@ -38,6 +39,7 @@ Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-passwo
 
 Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')->middleware('signed');
 
+Route::get('/info/{id}', infoqr::class)->name('infoqr');
 
 Route::middleware('auth')->group(function () {
     Route::get('/empresa', empresa::class)->name('empresa');

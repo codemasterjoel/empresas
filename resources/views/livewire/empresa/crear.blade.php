@@ -468,8 +468,10 @@
       </div>
     </div>
   </div>
+
+
   
-    <script>
+    {{-- <script>
     (g => {
         var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
         b = b[c] || (b[c] = {});
@@ -503,6 +505,14 @@
             center: position,
             mapId: "DEMO_MAP_ID",
             mapTypeId: "satellite",
+            disableDefaultUI: true,
+            zoomControl: true,
+            cameraControl: true,
+            mapTypeControl: true,
+            scaleControl: true,
+            // streetViewControl: true,
+            rotateControl: true,
+            fullscreenControl: true,
         });
 
         // Crear el marcador con la opción draggable: true
@@ -528,5 +538,97 @@
     }
 
     initMap();
+    </script> --}}
+
+    <script>
+        (g => {
+            var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+            b = b[c] || (b[c] = {});
+            var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+                await (a = m.createElement("script"));
+                e.set("libraries", [...r] + "");
+                for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                e.set("callback", c + ".maps." + q);
+                a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                d[q] = f;
+                a.onerror = () => h = n(Error(p + " could not load."));
+                a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                m.head.append(a);
+            }));
+            d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n));
+        })({
+            key: "AIzaSyCZhH6WXRQpmvkrpZ6w-kBIQTqOwHuPncI",
+            v: "weekly",
+        });
+        let map;
+        let marker;
+    
+        async function initMap() {
+            const { Map } = await google.maps.importLibrary("maps");
+    
+            // Función para manejar la ubicación del usuario
+            const handleUserLocation = (position) => {
+                const userPosition = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+    
+                // Crear el mapa centrado en la ubicación del usuario
+                map = new Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: userPosition,
+                    mapId: "DEMO_MAP_ID",
+                    mapTypeId: "satellite",
+                    streetViewControl: false,
+                });
+    
+                // Crear el marcador en la ubicación del usuario
+                marker = new google.maps.Marker({
+                    map,
+                    position: userPosition,
+                    draggable: true, // Habilitar arrastre
+                });
+    
+                // Escuchar eventos de arrastre
+                marker.addListener("dragend", (event) => {
+                    const newPosition = event.latLng;
+                    console.log("Nueva posición del marcador:", newPosition.lat(), newPosition.lng());
+                    @this.set('lat', newPosition.lat());
+                    @this.set('lon', newPosition.lng());
+                });
+            };
+    
+            // Función para manejar errores de geolocalización
+            const handleLocationError = () => {
+                const defaultPosition = { lat: {{isset($lat) ? $lat : '10.508248641257252'}}, lng: {{isset($lon) ? $lon : '-66.91428145941548'}} };
+    
+                // Crear el mapa con una posición predeterminada si falla la geolocalización
+                map = new Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: defaultPosition,
+                    mapId: "DEMO_MAP_ID",
+                    mapTypeId: "satellite",
+                });
+    
+                // Crear el marcador en la posición predeterminada
+                marker = new google.maps.Marker({
+                    map,
+                    position: defaultPosition,
+                    draggable: true, // Habilitar arrastre
+                });
+    
+                alert("No se pudo obtener tu ubicación. Se usará una ubicación predeterminada.");
+            };
+    
+            // Intentar obtener la ubicación del usuario
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(handleUserLocation, handleLocationError);
+            } else {
+                // Si el navegador no soporta geolocalización, usar una posición predeterminada
+                handleLocationError();
+            }
+        }
+    
+        initMap();
     </script>
 

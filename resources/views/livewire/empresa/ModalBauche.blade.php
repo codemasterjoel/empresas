@@ -15,20 +15,25 @@
                     <form>
                         <h4 class=" text-cyan-800 font-semibold text-center text-uppercase mt-4">Realiza tu pago a:</h4>
                         <div class="row">
-                            <div class="col-6">BANCO:</div><div class="col-6">Bicentenario</div>
-                            <div class="col-6">RIF:</div><div class="col-6">J-98128128-4</div>
-                            <div class="col-6">TELÉFONO:</div><div class="col-6">0424-2546400</div>
+                            <div class="col-6">BANCO:</div><div class="col-6">Banco de Venezuela S.A</div>
+                            <div class="col-6">RIF:</div><div class="col-6">G-200172304</div>
+                            <div class="col-6">CUENTA:</div><div class="col-6">0102-0762-26-00-00123466</div>
                         </div>
                         <h4 class=" text-cyan-800 font-semibold text-center text-uppercase mt-4 mb-2">DATOS DEL PAGO:</h4>
-                        <div class="row">
+                        <div class="row mt-4">
                             <div class="col-xl-12 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">TELÉFONO</span>
-                                            <input wire:model="telefono_pago" type="text" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeypress="$(this).mask('(0000)000 0000')" placeholder="(0000)000 0000"/>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">BANCO</span>
+                                            <select wire:model="bancoId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
+                                                <option value="">Seleccione</option>
+                                                @foreach ($bancos as $banco)
+                                                    <option value="{{$banco->id}}">{{$banco->nombre}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        @error('telefono_pago') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('bancoId') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -69,10 +74,10 @@
                                                         <img width="400" height="500" src="{{asset($bauche)}}" class="mb-4 align-middle">  
                                                     </div>
                                                 @endif
-                                            <label for="bauche" class="mb-1 block text-sm font-medium text-gray-700"><b>BAUCHE DE PAGO</b></label>
-                                            <input id="bauche" type="file" wire:model="bauche" class="relative flex mt-2 min-w-0 rounded-lg border text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60"/>
+                                            <label for="bauchetemp" class="mb-1 block text-sm font-medium text-gray-700"><b>BAUCHE DE PAGO</b></label>
+                                            <input id="bauchetemp" type="file" wire:model="bauchetemp" class="relative flex mt-2 min-w-0 rounded-lg border text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60"/>
                                         </div>
-                                        @error('bauche') <div class="text-danger">{{ $message }}</div> @enderror
+                                        @error('bauchetemp') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>

@@ -2,16 +2,16 @@
 
 namespace App\Http\Livewire\Infoqr;
 use App\Models\Infoqr;
-use App\Models\RegistroLuchador as Luchador;
+use App\Models\Empresa;
 
 use Livewire\Component;
 
 class Index extends Component
 {
-    public $lsb = null;
+    public $empresa = null;
 
     public function mount($id) {
-        $this->lsb = Luchador::findOrFail($id);
+        $this->empresa = Empresa::findOrFail($id);
     }
 
     public function render()

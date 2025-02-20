@@ -4,6 +4,7 @@ namespace App\Models;
 use App\Models\Parroquia;
 use App\Models\TipoMateriales;
 use App\Models\Categoria;
+use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +12,14 @@ class Empresa extends Model
 {
     public $incrementing = false;
     protected $keyType = 'string';
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            $model->id = (string) Str::uuid();
+        });
+    }
+
     protected $fillable = [
         'nombre',
         'tipoRIF',
@@ -45,9 +54,11 @@ class Empresa extends Model
         'conformidadPDF',
         'bauche',
         'fecha_pago',
-        'telefono_pago',
+        'banco_id',
         'referencia'
     ];
+
+
 
     public function parroquia()
     {

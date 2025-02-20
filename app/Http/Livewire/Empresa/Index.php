@@ -11,14 +11,15 @@ use App\Models\TipoMateriales;
 use Livewire\WithFileUploads;
 use App\Models\EmpresaTipo;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\Banco;
 
 class Index extends Component
 {
     use WithFileUploads;
     use WithPagination;
     public $modal, $materialesModal, $baucheModal = false;
-    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $telefono_pago, $fecha_pago, $referencia =null;
-    public $tipos_materiales, $empresa_id, $nombreEmpresa, $tipoMaterialesId, $empresa =null;
+    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $bauchetemp, $fecha_pago, $referencia =null;
+    public $tipos_materiales, $empresa_id, $nombreEmpresa, $tipoMaterialesId, $empresa, $bancos, $bancoId =null;
     public $search = null;
     
     public function updatingSearch()
@@ -54,13 +55,13 @@ class Index extends Component
     public function bauches($id)
     {
         $this->empresa_id = $id;
-        $this->tipos_materiales = TipoMateriales::all();
+        $this->bancos = Banco::all();
         $this->empresa = Empresa::where('id', $id)->firstOrFail();
 
         if ($this->empresa->bauche) 
         {
             $this->bauche = $this->empresa->bauche;
-            $this->telefono_pago = $this->empresa->telefono_pago;
+            $this->bancoId = $this->empresa->banco_id;
             $this->fecha_pago = $this->empresa->fecha_pago;
             $this->referencia = $this->empresa->referencia;
         }
@@ -71,14 +72,15 @@ class Index extends Component
     }
     public function guardarBauche() 
     {
-        $bauche = $this->bauche->store('bauche', 'public_path');
+        $bauche = $this->bauchetemp->store('bauche', 'public_path');
         $this->empresa = Empresa::updateOrCreate(['id' => $this->empresa_id],
         values: [
             'bauche' => $bauche,
-            'telefono_pago' => $this->telefono_pago,
+            'banco_id' => $this->bancoId,
             'fecha_pago' => $this->fecha_pago,
             'referencia' => $this->referencia,
         ]);
+        $this->limpiarModalBauche();
         $this->baucheModal = false;
     }
     public function cerrarModal()
@@ -105,5 +107,12 @@ class Index extends Component
         return response()->streamDownload(function () use ($pdf) {
             echo $pdf->stream();
         }, 'ficha.pdf');
+    }
+    public function limpiarModalBauche()
+    {
+        $this->bauche = null;
+        $this->bancoId = null;
+        $this->fecha_pago = null;
+        $this->referencia = null;
     }
 }

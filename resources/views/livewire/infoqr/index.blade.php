@@ -1,9 +1,9 @@
 <div class="min-h-screen flex items-center justify-center">
     <div class="p-4 w-full bg-white rounded-lg">
         <div class="flex items-center justify-center">
-            <img src="{{asset('img/logo.svg')}}" class="w-52">
+            <img src="{{asset('/img/logoccs.png')}}" class=" w-40">
         </div>
-        <h3 class="text-2xl text-cyan-400 font-semibold text-center">REGISTRAR NUEVO LUCHADOR</h3>
+        <h3 class="text-2xl text-cyan-400 font-semibold text-center">DATOS DE LA EMPRESA</h3>
         <form>
             <div class="grid grid-cols-2 gap-4"> 
                 <div class="flex items-center justify-center py-4"> {{-- campo cedula --}}
@@ -40,9 +40,6 @@
                             <span class="bg-cyan-300 p-2 rounded-tl-lg rounded-bl-lg text-white font-semibold hover:bg-cyan-500 transition-colors">Genero</span>
                             <select wire:model="generoId" class="w-full px-4 py-2 border rounded-r-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
                                 <option value="">Seleccione</option>
-                                @foreach ($generos as $genero)
-                                    <option value="{{$genero->id}}">{{$genero->nombre}}</option>
-                                @endforeach
                             </select>
                             {{-- <input wire:model="generoId" type="text" class="w-full bg-white pl-2 text-base rounded-r-lg font-semibold outline-0 border-slate-200" />
                             <input wire:model="generoIdHidden" type="hidden" class="w-full bg-white pl-2 text-base rounded-r-lg font-semibold outline-0 border-slate-200" /> --}}
@@ -67,9 +64,6 @@
                         <span class="bg-cyan-300 p-2 rounded-tl-lg rounded-bl-lg text-white font-semibold hover:bg-cyan-500 transition-colors">Avanzada</span>
                         <select class="w-full px-4 py-2 rounded-r-lg focus:outline-none border focus:ring-2 focus:ring-cyan-500" wire:model="avanzadaId" required>
                             <option value="">Seleccione</option>
-                            @foreach( $avanzadas as $avanzada )
-                                <option value="{{ $avanzada->id }}">{{ $avanzada->nombre }}</option>
-                            @endforeach
                         </select>
                         </div>
                     </div>
@@ -84,45 +78,34 @@
                         <span class="bg-cyan-300 p-2 rounded-tl-lg rounded-bl-lg text-white font-semibold hover:bg-cyan-500 transition-colors">Estado</span>
                         <select class="w-full px-4 py-2 border rounded-r-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" wire:model.live="estadoId" required>
                             <option value="">Seleccione</option>
-                            @foreach( $estados as $estado )
-                                <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
-                            @endforeach
                         </select>
                     </div>
                     </div>
                 </div>
 
-                @if (!is_null($municipios)) {{-- campo municipio --}}
+                 {{-- campo municipio --}}
                     <div class="flex items-center justify-center pb-4"> {{-- campo estado --}}
                         <div class="w-full rounded-lg bg-gray-500">
                         <div class="flex">
                             <span class="bg-cyan-300 p-2 rounded-tl-lg rounded-bl-lg text-white font-semibold hover:bg-cyan-500 transition-colors">Municipio</span>
                             <select class="w-full px-4 py-2 border rounded-r-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" wire:model.live="municipioId" required>
                                 <option value="">Seleccione</option>
-                                @foreach( $municipios as $municipio )
-                                    <option value="{{ $municipio->id }}">{{ $municipio->nombre }}</option>
-                                @endforeach
                             </select>
                         </div>
                         </div>
                     </div>
-                @endif
 
-                @if (!is_null($parroquias)) {{-- campo Parroquia --}}
+                 {{-- campo Parroquia --}}
                     <div class="flex items-center justify-center pb-4"> {{-- campo estado --}}
                         <div class="w-full rounded-lg bg-gray-500">
                         <div class="flex">
                             <span class="bg-cyan-300 p-2 rounded-tl-lg rounded-bl-lg text-white font-semibold hover:bg-cyan-500 transition-colors">Parroquia</span>
                             <select class="w-full px-4 py-2 border rounded-r-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" wire:model="parroquiaId" required>
                                 <option value="">Seleccione</option>
-                                @foreach( $parroquias as $parroquia )
-                                <option value="{{ $parroquia->id }}">{{ $parroquia->nombre }}</option>
-                                @endforeach
                             </select>
                         </div>
                         </div>
                     </div>
-                @endif
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -130,9 +113,6 @@
                     <span class="flex bg-cyan-300 font-semibold text-white items-center whitespace-nowrap rounded-l-lg border border-r-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Nivel Académico</span>
                     <select wire:model="nivelAcademicoId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
                         <option value="">Seleccione</option>
-                        @foreach( $nivelesAcademicos as $nivelacademico )
-                            <option value="{{ $nivelacademico->id }}">{{ $nivelacademico->nombre }}</option>
-                        @endforeach
                     </select>
                     {{-- <input type="text" aria-label="Last name" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary" /> --}}
                 </div>
@@ -143,9 +123,6 @@
                         <span class="bg-cyan-300 p-2 rounded-tl-lg rounded-bl-lg text-white font-semibold hover:bg-cyan-500 transition-colors">Responsabilidad</span>
                         <select class="w-full px-4 py-2 border rounded-r-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" wire:model="responsabilidadId" required>
                             <option value="">Seleccione</option>
-                            @foreach( $responsabilidades as $responsabilidad )
-                                <option value="{{ $responsabilidad->id }}">{{ $responsabilidad->nombre }}</option>
-                            @endforeach
                         </select>
                         </div>
                     </div>
@@ -159,15 +136,6 @@
                     <input wire:model="correo" type="email" class="w-full bg-white pl-2 text-base border rounded-r-lg font-semibold outline-0 border-slate-200" placeholder="usuario@correo.com" />
                     </div>
                 </div>
-            </div>
-
-            <div class="px-4 py-3 sm:px-6 sm:flex">
-                <span class="flex w-full rounded-md sm:ml-3 sm:w-auto">
-                    <button type="submit" class="w-32 bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mb-2" wire:click.prevent="guardar()"  >GUARDAR</button>
-                </span>
-                <span class="flex w-full rounded-md sm:ml-3 sm:w-auto">
-                    <button type="button" class="w-32 bg-gradient-to-r from-red-400 to-red-600 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mb-2" wire:click="cerrarModal()">SALIR</button>
-                </span>
             </div>
         </form>
     </div>

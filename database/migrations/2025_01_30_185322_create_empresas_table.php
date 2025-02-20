@@ -42,9 +42,9 @@ return new class extends Migration
             $table->string('lat')->nullable();
             $table->string('lon')->nullable();
 
-            // DATOS DEL PAGO MOVIL
-            $table->string('telefono_pago')->nullable();
+            // DATOS DE LA TRASNFERENCIA
             $table->bigInteger('referencia')->nullable();
+            $table->foreignId('banco_id')->nullable()->references('id')->on('bancos');
             $table->string('bauche')->nullable();
             $table->date('fecha_pago')->nullable();
             $table->boolean('estatus')->nullable()->defaultFalse();
