@@ -55,13 +55,13 @@ class Index extends Component
     public function bauches($id)
     {
         $this->empresa_id = $id;
-        $this->bancos = Banco::all();
+        $this->tipos_materiales = TipoMateriales::all();
         $this->empresa = Empresa::where('id', $id)->firstOrFail();
 
         if ($this->empresa->bauche) 
         {
             $this->bauche = $this->empresa->bauche;
-            $this->bancoId = $this->empresa->banco_id;
+            $this->telefono_pago = $this->empresa->telefono_pago;
             $this->fecha_pago = $this->empresa->fecha_pago;
             $this->referencia = $this->empresa->referencia;
         }
