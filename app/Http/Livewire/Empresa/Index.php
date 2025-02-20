@@ -73,6 +73,13 @@ class Index extends Component
     }
     public function guardarBauche() 
     {
+        $this->validate([
+            'bauche' => 'required|mimes:jpg,jpeg,png',
+            'bancoId'=> 'required',
+            'fecha_pago'=> 'required',
+            'referencia' => 'required',
+        ]);
+
         $bauche = $this->bauche->store('bauche', 'public_path');
         $this->empresa = Empresa::updateOrCreate(['id' => $this->empresa_id],
         values: [
