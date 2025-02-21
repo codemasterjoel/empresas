@@ -1449,13 +1449,13 @@ namespace App\Models {
     /**
      * App\Models\User
      *
-     * @property \Illuminate\Support\Carbon|null $deleted_at
+     * @property string|null $deleted_at
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
-     * @property bigint(20) unsigned|null $rol_id
-     * @property bigint(20) unsigned|null $parroquia_id
+     * @property mixed $rol_id
+     * @property mixed $parroquia_id
      * @property string|null $profile_photo_path
-     * @property bigint(20) unsigned|null $current_team_id
+     * @property mixed $current_team_id
      * @property string|null $remember_token
      * @property string $password
      * @property \Illuminate\Support\Carbon|null $email_verified_at
@@ -1719,7 +1719,7 @@ namespace App\Models {
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property string $cambios
-     * @property bigint(20) unsigned $user_id
+     * @property mixed $user_id
      * @property string $model_id
      * @property string $model_type
      * @property string $accion
@@ -2459,7 +2459,7 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
-     * @property bigint(20) unsigned|null $parroquia_id
+     * @property mixed $parroquia_id
      * @property string $nombre
      * @property int $id
      * @method static \Illuminate\Database\Eloquent\Builder|Eje whereId($value)
@@ -2703,18 +2703,18 @@ namespace App\Models {
     /**
      * App\Models\Empresa
      *
-     * @property int(10) unsigned $codigo
+     * @property mixed $codigo
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
-     * @property bigint(20) unsigned|null $user_id
-     * @property bigint(20) unsigned|null $parroquia_id
-     * @property bigint(20) unsigned|null $categoria_id
+     * @property mixed $user_id
+     * @property mixed $parroquia_id
+     * @property mixed $categoria_id
      * @property string $correo
      * @property bool|null $estatus
-     * @property date|null $fecha_pago
+     * @property string|null $fecha_pago
      * @property string|null $bauche
-     * @property bigint(20) unsigned|null $banco_id
-     * @property bigint(20)|null $referencia
+     * @property mixed $banco_id
+     * @property mixed $referencia
      * @property string|null $lon
      * @property string|null $lat
      * @property string $direccion
@@ -2735,8 +2735,8 @@ namespace App\Models {
      * @property string|null $runpaPDF
      * @property string|null $conformidadPDF
      * @property string|null $patentePDF
-     * @property date|null $fecha_runpa
-     * @property date|null $fecha_patente
+     * @property string|null $fecha_runpa
+     * @property string|null $fecha_patente
      * @property string $rif
      * @property string $letra
      * @property string $tipoRIF
@@ -3023,7 +3023,7 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
-     * @property bigint(20) unsigned $tipo_materiales_id
+     * @property mixed $tipo_materiales_id
      * @property string $empresa_id
      * @property int $id
      * @property-read \App\Models\TipoMateriales $tipo_materiales
@@ -4699,11 +4699,11 @@ namespace App\Models {
     /**
      * App\Models\Sessions
      *
-     * @property int(11) $last_activity
+     * @property mixed $last_activity
      * @property string $payload
      * @property string|null $user_agent
      * @property string|null $ip_address
-     * @property bigint(20) unsigned|null $user_id
+     * @property mixed $user_id
      * @property string $id
      * @property-read \App\Models\User $user
      * @method static \Illuminate\Database\Eloquent\Builder|Sessions whereId($value)

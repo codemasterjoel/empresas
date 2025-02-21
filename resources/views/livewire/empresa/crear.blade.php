@@ -89,7 +89,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-xl-12 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
@@ -106,7 +105,7 @@
 
 
 
-                    <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center mb-2">DATOS DEL PROPIETARIO</h3>
+                        <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center mb-2">DATOS DEL PROPIETARIO</h3>
                         <div class="row">
                             <div class="col-xl-3 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}

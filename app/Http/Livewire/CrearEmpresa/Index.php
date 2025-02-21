@@ -34,6 +34,9 @@ class Index extends Component
             $this->bancos = Banco::all();
             $this->materiales = EmpresaTipo::where("empresa_id", $empresa->id)->count();
             $this->listaMateriales = EmpresaTipo::where("empresa_id", $empresa->id)->get();
+            $this->parroquias = Parroquia::all();
+            $this->tipos_materiales = TipoMateriales::all();
+            $this->categorias = Categoria::all();
             
             $this->nombre = $empresa->nombre;
             $this->tipoRIF = $empresa->tipoRIF;
@@ -47,11 +50,8 @@ class Index extends Component
             $this->lat = $empresa->lat;
             $this->lon = $empresa->lon;
             $this->parroquiaId = $empresa->parroquia_id;
-            $this->parroquias = Parroquia::all();
-            $this->tipos_materiales = TipoMateriales::all();
             $this->correo = $empresa->correo;
             $this->categoriaId = $empresa->categoria_id;
-            $this->categorias = Categoria::all();
             
             $this->fecha_runpa = $empresa->fecha_runpa;
             $this->fecha_patente = $empresa->fecha_patente;

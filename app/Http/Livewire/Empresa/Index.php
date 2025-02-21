@@ -17,9 +17,10 @@ class Index extends Component
 {
     use WithFileUploads;
     use WithPagination;
-    public $modal, $materialesModal, $baucheModal = false;
-    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $bauchetemp, $fecha_pago, $referencia =null;
-    public $tipos_materiales, $empresa_id, $nombreEmpresa, $tipoMaterialesId, $empresa, $bancos, $bancoId =null;
+    public $modal, $materialesModal, $baucheModal, $documentosModal = false;
+    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $bauchetemp, $fecha_pago, $referencia, $correo, $tipoRIF =null;
+    public $tipos_materiales, $empresa_id, $nombreEmpresa, $tipoMaterialesId, $empresa, $bancos, $bancoId, $categoriaId =null;
+    public $patentePDF, $runpaPDF, $rmercantilPDF, $rifPDF, $solvenciaPDF, $arrendamientoPDF, $catastralPDF, $croquisPDF, $planPDF, $origenPDF, $riesgoPDF, $conformidadPDF = null;
     public $search = null;
     
     public function updatingSearch()
@@ -95,6 +96,7 @@ class Index extends Component
     {
         $this->materialesModal = false;
         $this->baucheModal = false;
+        $this->documentosModal = false;
     }
     public function guardarMaterial()
     {
@@ -122,5 +124,37 @@ class Index extends Component
         $this->bancoId = null;
         $this->fecha_pago = null;
         $this->referencia = null;
+    }
+    public function documentos($id)
+    {
+        $this->empresa = Empresa::find($id);
+
+        $this->nombre = $this->empresa->nombre;
+        $this->tipoRIF = $this->empresa->tipoRIF;
+        $this->rif = $this->empresa->rif;
+        $this->letra = $this->empresa->letra;
+        $this->cedula = $this->empresa->cedula;
+        $this->nombres = $this->empresa->nombres;
+        $this->apellidos = $this->empresa->apellidos;
+        $this->telefono = $this->empresa->telefono;
+        $this->direccion = $this->empresa->direccion;
+        $this->parroquiaId = $this->empresa->parroquia_id;
+        $this->correo = $this->empresa->correo;
+        $this->categoriaId = $this->empresa->categoria_id;
+
+        $this->patentePDF = $this->empresa->patentePDF;
+        $this->runpaPDF = $this->empresa->runpaPDF;
+        $this->rmercantilPDF = $this->empresa->rmercantilPDF;
+        $this->rifPDF = $this->empresa->rifPDF;
+        $this->solvenciaPDF = $this->empresa->solvenciaPDF;
+        $this->arrendamientoPDF = $this->empresa->arrendamientoPDF;
+        $this->catastralPDF = $this->empresa->catastralPDF;
+        $this->croquisPDF = $this->empresa->croquisPDF;
+        $this->planPDF = $this->empresa->planPDF;
+        $this->origenPDF = $this->empresa->origenPDF;
+        $this->riesgoPDF = $this->empresa->riesgoPDF;
+        $this->conformidadPDF = $this->empresa->conformidadPDF;
+
+        $this->documentosModal = true;
     }
 }
