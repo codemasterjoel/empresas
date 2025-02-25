@@ -33,6 +33,19 @@ return new class extends Migration
             $table->string('origenPDF')->nullable();
             $table->string('riesgoPDF')->nullable();
 
+            $table->integer('patente')->default(0);
+            $table->integer('conformidad')->default(0);
+            $table->integer('runpa')->default(0);
+            $table->integer('rmercantil')->default(0);
+            $table->integer('rif2')->default(0);
+            $table->integer('solvencia')->default(0);
+            $table->integer('arrendamiento')->default(0);
+            $table->integer('catastral')->default(0);
+            $table->integer('croquis')->default(0);
+            $table->integer('plan')->default(0);
+            $table->integer('origen')->default(0);
+            $table->integer('riesgo')->default(0);
+
             $table->boolean('sucursal')->nullable();
             $table->string('nombres');
             $table->string('apellidos');

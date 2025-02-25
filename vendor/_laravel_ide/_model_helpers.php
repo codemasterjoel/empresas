@@ -2723,6 +2723,18 @@ namespace App\Models {
      * @property string $apellidos
      * @property string $nombres
      * @property bool|null $sucursal
+     * @property mixed $riesgo
+     * @property mixed $origen
+     * @property mixed $plan
+     * @property mixed $croquis
+     * @property mixed $catastral
+     * @property mixed $arrendamiento
+     * @property mixed $solvencia
+     * @property mixed $rif2
+     * @property mixed $rmercantil
+     * @property mixed $runpa
+     * @property mixed $conformidad
+     * @property mixed $patente
      * @property string|null $riesgoPDF
      * @property string|null $origenPDF
      * @property string|null $planPDF
@@ -2765,6 +2777,18 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePlanpdf($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereOrigenpdf($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRiesgopdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePatente($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereConformidad($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRunpa($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRmercantil($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRif2($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSolvencia($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereArrendamiento($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCatastral($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCroquis($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePlan($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereOrigen($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRiesgo($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSucursal($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombres($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereApellidos($value)

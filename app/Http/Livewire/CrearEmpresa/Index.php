@@ -72,11 +72,13 @@ class Index extends Component
             return view('livewire.empresa.crear', ['empresa'=> $empresa]);
     
             } else {
+
                 $this->materiales = EmpresaTipo::where("empresa_id", $this->id)->count();
                 $this->categorias = Categoria::all();
                 $this->parroquias = Parroquia::all();
                 $this->tipos_materiales = TipoMateriales::all();
-                return view('livewire.empresa.crear');
+
+                return view('livewire.empresa.crear')->with('success', 'success');
             }
     }
     public function guardar(){
@@ -177,7 +179,7 @@ class Index extends Component
             'riesgoPDF' => $riesgo,
             'conformidadPDF' => $conformidad,
         ]);
-
         return redirect('empresa');
+
     }
 }
