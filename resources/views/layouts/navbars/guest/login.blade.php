@@ -4,7 +4,7 @@
         <ul class="navbar-nav items-start content-start">
             <li class="nav-item">
                 <a class="nav-link text-dark font-extrabold me-2 text-dark" href=" {{ auth()->user() ? route('static-sign-up') : route('sign-up') }}">
-                    <i class="fas fa-user-circle font-extrabold text-dark me-1">REGISTRASE</i>
+                    <i class="fas fa-user-circle font-extrabold text-dark me-1">REGISTRARSE</i>
                 </a>
             </li>
             {{-- <li class="nav-item">

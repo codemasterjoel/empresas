@@ -17,8 +17,8 @@ class Index extends Component
 {
     use WithFileUploads;
     use WithPagination;
-    public $patente, $runpa, $rmercantil, $rif2, $solvencia, $arrendamiento, $catastral, $croquis, $plan, $origen, $riesgo, $conformidad = null;
-    public $modal, $materialesModal, $baucheModal, $documentosModal = false;
+    public $patente, $runpa, $rmercantil, $rif2, $solvencia, $arrendamiento, $catastral, $croquis, $plan, $origen, $riesgo, $conformidad, $aprobado = null;
+    public $modal, $materialesModal, $baucheModal, $documentosModal, $VerificarPago = false;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $bauchetemp, $fecha_pago, $referencia, $correo, $tipoRIF =null;
     public $tipos_materiales, $empresa_id, $nombreEmpresa, $tipoMaterialesId, $empresa, $bancos, $bancoId, $categoriaId =null;
     public $patentePDF, $runpaPDF, $rmercantilPDF, $rifPDF, $solvenciaPDF, $arrendamientoPDF, $catastralPDF, $croquisPDF, $planPDF, $origenPDF, $riesgoPDF, $conformidadPDF = null;
@@ -73,6 +73,25 @@ class Index extends Component
 
         $this->baucheModal = true;
     }
+    public function verificarpago($id)
+    {
+        $this->empresa_id = $id;
+        $this->tipos_materiales = TipoMateriales::all();
+        $this->bancos = Banco::all();
+        $this->empresa = Empresa::where('id', $id)->firstOrFail();
+
+        if ($this->empresa->bauche) 
+        {
+            $this->bauche = $this->empresa->bauche;
+            $this->bancoId = $this->empresa->banco_id;
+            $this->fecha_pago = $this->empresa->fecha_pago;
+            $this->referencia = $this->empresa->referencia;
+        }
+        
+        $this->nombreEmpresa = $this->empresa->nombre;
+
+        $this->VerificarPago = true;
+    }
     public function guardarBauche() 
     {
         $this->validate([
@@ -100,6 +119,7 @@ class Index extends Component
         $this->materialesModal = false;
         $this->baucheModal = false;
         $this->documentosModal = false;
+        $this->VerificarPago = false;
     }
     public function guardarMaterial()
     {
@@ -238,8 +258,12 @@ class Index extends Component
             $empresa->update();
             $this->conformidad = 1;
             session()->flash("success","success");
+        }elseif ($documento == "bauche"){
+            $empresa->aprobado = 1;
+            $empresa->update();
+            $this->aprobado = 1;
+            session()->flash("success","success");
         }
-        
     }
     public function reprobar($documento)
     {
@@ -304,6 +328,11 @@ class Index extends Component
             $empresa->conformidad = 2;
             $empresa->update();
             $this->conformidad = 2;
+            session()->flash("fail","fail");
+        }elseif ($documento == "bauche"){
+            $empresa->aprobado = 2;
+            $empresa->update();
+            $this->aprobado = 2;
             session()->flash("fail","fail");
         }
     }

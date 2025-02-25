@@ -22,6 +22,9 @@
                 @if($baucheModal)
                     @include('livewire.empresa.ModalBauche')   
                 @endif
+                @if($VerificarPago)
+                    @include('livewire.empresa.VerificarBauche')   
+                @endif
                 @if($documentosModal)
                     @include('livewire.empresa.documentos')   
                 @endif
@@ -57,7 +60,10 @@
                                             <a wire:click="materiales('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" rel="tooltip" title="Materiales" type="button"><span class="material-symbols-outlined">lists</span></a>
                                             <a wire:click="documentos('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" rel="tooltip" title="Verificar Documentos" type="button"><span class="material-symbols-outlined">task</span></a>
                                             <a wire:click="bauches('{{$empresa->id}}')" rel="tooltip" title="Subir Bauche de Pago" class=" text-danger px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">upload_file</span></a>
-                                            <a wire:click="ficha('{{$empresa->id}}')" rel="tooltip" title="Generar Ficha" type="button" class="text-warning font-bold py-2 px-2"><i class="material-symbols-outlined">file_save</i></a>
+                                            <a wire:click="verificarpago('{{$empresa->id}}')" rel="tooltip" title="Verificar Pago" class=" text-info px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">upload_file</span></a>
+                                            @if ($empresa->aprobado == 1)
+                                                <a wire:click="ficha('{{$empresa->id}}')" rel="tooltip" title="Generar Ficha" type="button" class="text-warning font-bold py-2 px-2"><i class="material-symbols-outlined">file_save</i></a>
+                                            @endif
                                             <a href="" wire:click="borrar('{{$empresa->id}}')" rel="tooltip" title="Eliminar Empresa" class="text-danger font-bold py-2 px-2"><span class="material-symbols-outlined">person_cancel</span></a>
                                         </td>
                                     </tr>

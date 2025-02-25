@@ -4,6 +4,7 @@ namespace App\Models;
 use App\Models\Parroquia;
 use App\Models\TipoMateriales;
 use App\Models\Categoria;
+use App\Models\Banco;
 use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\Model;
@@ -71,5 +72,9 @@ class Empresa extends Model
     public function categoria()
     {
         return $this->belongsTo(Categoria::class);
+    }
+    public function banco()
+    {
+        return $this->belongsTo(Banco::class);
     }
 }

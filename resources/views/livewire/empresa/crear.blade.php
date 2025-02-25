@@ -387,7 +387,7 @@
                                                     <iframe width="300" height="500" src="{{asset($origenPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICACIÓN DE ORIGEN</b></label>
+                                            <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE ORIGEN</b></label>
                                             <input id="origenPDF" type="file" wire:model="origenPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('origenPDF') <div class="text-danger">{{ $message }}</div> @enderror

@@ -2758,6 +2758,7 @@ namespace App\Models {
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TipoMateriales> $tipo_materiales
      * @property-read int|null $tipo_materiales_count
      * @property-read \App\Models\Categoria $categoria
+     * @property-read \App\Models\Banco $banco
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombre($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereTiporif($value)

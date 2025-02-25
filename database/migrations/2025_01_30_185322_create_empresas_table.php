@@ -61,6 +61,7 @@ return new class extends Migration
             $table->string('bauche')->nullable();
             $table->date('fecha_pago')->nullable();
             $table->boolean('estatus')->nullable()->defaultFalse();
+            $table->integer('aprobado')->default(0);
             
             $table->string('correo');
             $table->foreignId('categoria_id')->nullable()->references('id')->on('categorias');
