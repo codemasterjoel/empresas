@@ -58,8 +58,8 @@
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0">{{isset($empresa->parroquia->nombre) ? $empresa->parroquia->nombre : ''}}</p></td>
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0 {{$empresa->sucursal > 0 ? 'text-white bg-cyan-500' : 'text-white bg-green-500'}} rounded-lg">{{$empresa->sucursal > 0 ? 'SUCURSAL' : 'PRINCIPAL'}}</p></td>
                                         <td class="text-center">
-                                            <a href="{{route('empresa.editar', [$empresa->id])}}" rel="tooltip" title="Editar Empresa" class=" text-success px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">edit_document</span></a>
                                             @if (auth()->user()->rol_id == 4)
+                                                <a href="{{route('empresa.editar', [$empresa->id])}}" rel="tooltip" title="Editar Empresa" class=" text-success px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">edit_document</span></a>
                                                 <a wire:click="materiales('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" rel="tooltip" title="Materiales" type="button"><span class="material-symbols-outlined">lists</span></a>
                                                 <a wire:click="bauches('{{$empresa->id}}')" rel="tooltip" title="Subir Bauche de Pago" class=" text-danger px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">upload_file</span></a>  
                                             @endif
