@@ -30,7 +30,7 @@ class Index extends Component
     }
     public function render()
     {
-        if (auth()->user()->rol_id == 1) 
+        if (auth()->user()->rol_id == 1 || auth()->user()->rol_id == 2 || auth()->user()->rol_id == 3)
         {
             $empresas = Empresa::where('nombre', 'like', "%$this->search%")->paginate(5);
         } else 
