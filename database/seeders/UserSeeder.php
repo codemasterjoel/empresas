@@ -12,13 +12,13 @@ use App\Models\User;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         User::insert([
-            ['name' => 'ADMINISTRADOR', 'email' => 'admin@email.com','password' => bcrypt('21246813')],
+            ['name' => 'ADMINISTRADOR', 'email' => 'admin@email.com','password' => bcrypt('21246813'), 'rol_id' => '1'],
+            ['name' => 'VERIFICADOR DOCUMENTOS', 'email' => 'verificarpago@email.com','password' => bcrypt('21246813'), 'rol_id' => '2'],
+            ['name' => 'VERIFICADOR PAGOS', 'email' => 'verificardocumentos@email.com','password' => bcrypt('21246813'), 'rol_id' => '3'],
+            ['name' => 'RECYCLER C.A.', 'email' => 'recycler@email.com','password' => bcrypt('21246813'), 'rol_id' => '4'],
         ]);
 
         // $user = User::Where('email', '=', 'admin@email.com')->get();

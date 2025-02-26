@@ -10,7 +10,9 @@
                         <input wire:model.live="search" type="text" placeholder="Filtrar por Nombre" class="w-30 px-4 py-2 border border-solid rounded-lg outline-2 font-bold">
                         {{-- <button wire:click="crear()" class="btn bg-gradient-primary btn-sm mb-0 font-weight-bolder" type="button">+&nbsp; NUEVA EMPRESA</button> --}}
                         {{-- <button type="button" class="btn bg-gradient-primary btn-sm mb-0 font-weight-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal">+&nbsp; NUEVA EMPRESA</button> --}}
-                        <a href="/empresa/0" wire:navigate class="btn bg-gradient-primary btn-sm mb-0 font-bold">+&nbsp; NUEVA EMPRESA</a>
+                        @if (auth()->user()->rol_id == 4 || auth()->user()->rol_id == 1)
+                            <a href="/empresa/0" wire:navigate class="btn bg-gradient-primary btn-sm mb-0 font-bold">+&nbsp; NUEVA EMPRESA</a>
+                        @endif
                     </div>
                 </div>
                 @if($modal)
@@ -57,10 +59,16 @@
                                         <td class="text-center text-uppercase"><p class="text-dark font-weight-bold mb-0 {{$empresa->sucursal > 0 ? 'text-white bg-cyan-500' : 'text-white bg-green-500'}} rounded-lg">{{$empresa->sucursal > 0 ? 'SUCURSAL' : 'PRINCIPAL'}}</p></td>
                                         <td class="text-center">
                                             <a href="{{route('empresa.editar', [$empresa->id])}}" rel="tooltip" title="Editar Empresa" class=" text-success px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">edit_document</span></a>
-                                            <a wire:click="materiales('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" rel="tooltip" title="Materiales" type="button"><span class="material-symbols-outlined">lists</span></a>
-                                            <a wire:click="documentos('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" rel="tooltip" title="Verificar Documentos" type="button"><span class="material-symbols-outlined">task</span></a>
-                                            <a wire:click="bauches('{{$empresa->id}}')" rel="tooltip" title="Subir Bauche de Pago" class=" text-danger px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">upload_file</span></a>
-                                            <a wire:click="verificarpago('{{$empresa->id}}')" rel="tooltip" title="Verificar Pago" class=" text-info px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">upload_file</span></a>
+                                            @if (auth()->user()->rol_id == 4)
+                                                <a wire:click="materiales('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" rel="tooltip" title="Materiales" type="button"><span class="material-symbols-outlined">lists</span></a>
+                                                <a wire:click="bauches('{{$empresa->id}}')" rel="tooltip" title="Subir Bauche de Pago" class=" text-danger px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">upload_file</span></a>  
+                                            @endif
+                                            @if (auth()->user()->rol_id == 2)
+                                                <a wire:click="documentos('{{$empresa->id}}')" class=" text-success px-2 py-1 mb-0" rel="tooltip" title="Verificar Documentos" type="button"><span class="material-symbols-outlined">task</span></a>
+                                            @endif
+                                            @if (auth()->user()->rol_id == 3)
+                                                <a wire:click="verificarpago('{{$empresa->id}}')" rel="tooltip" title="Verificar Pago" class=" text-info px-2 py-1 mb-0" type="button"><span class="material-symbols-outlined">upload_file</span></a>
+                                            @endif
                                             @if ($empresa->aprobado == 1)
                                                 <a wire:click="ficha('{{$empresa->id}}')" rel="tooltip" title="Generar Ficha" type="button" class="text-warning font-bold py-2 px-2"><i class="material-symbols-outlined">file_save</i></a>
                                             @endif

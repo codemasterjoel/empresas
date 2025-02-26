@@ -2710,6 +2710,7 @@ namespace App\Models {
      * @property mixed $parroquia_id
      * @property mixed $categoria_id
      * @property string $correo
+     * @property mixed $aprobado
      * @property bool|null $estatus
      * @property string|null $fecha_pago
      * @property string|null $bauche
@@ -2803,6 +2804,7 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereBauche($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereFechaPago($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereEstatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereAprobado($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCorreo($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCategoriaId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereParroquiaId($value)

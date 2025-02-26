@@ -7,15 +7,17 @@
     </div>
     <div class="navbar navbar-collapse w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
-            {{-- INICIO --}}    
-            <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}" href="{{ route('dashboard') }}">
-                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <span class="material-icons {{ in_array(request()->route()->getName(),['dashboard']) ? 'text-white' : 'text-dark' }}">home</span>
-                    </div>
-                    <span class="nav-link-text ms-1"><b>INICIO</b></span>
-                </a>
-            </li>
+            {{-- INICIO --}}
+            @if (auth()->user()->rol_id == 1 || auth()->user()->rol_id == 2 || auth()->user()->rol_id == 3)
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <span class="material-icons {{ in_array(request()->route()->getName(),['dashboard']) ? 'text-white' : 'text-dark' }}">home</span>
+                        </div>
+                        <span class="nav-link-text ms-1"><b>INICIO</b></span>
+                    </a>
+                </li>
+            @endif
             {{-- REGISTRO DE LSB --}}
                 <li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'empresa' ? 'active' : '' }}" href="{{route('empresa')}}">

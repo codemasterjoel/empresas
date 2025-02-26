@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/auditoria', auditoria::class)->name('auditoria');
     Route::get('/mapa', mapa::class)->name('mapa');
     Route::get('/usuario', usuario::class)->name('usuario');
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/dashboard', Dashboard::class)->name('dashboard')->middleware('Admin');
     Route::get('/perfil', UserProfile::class)->name('perfil');
     Route::get('/reporte', reporte::class)->name('reporte');
     Route::get('/billing', Billing::class)->name('billing');

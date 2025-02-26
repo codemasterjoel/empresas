@@ -32,14 +32,14 @@ class Index extends Component
     {
         if (auth()->user()->rol_id == 1) 
         {
-            $empresas = Empresa::where('nombre', 'like', "%$this->search%")->paginate(5)->with('success', 'success');
+            $empresas = Empresa::where('nombre', 'like', "%$this->search%")->paginate(5);
         } else 
         {
             $empresas = Empresa::where('nombre', 'like', "%$this->search%")
                                  ->where('user_id', Auth()->user()->id)
                                  ->paginate(5);
         }
-        return view('livewire.empresa.index', ['empresas' => $empresas])->with('success', 'success');
+        return view('livewire.empresa.index', ['empresas' => $empresas]);
     }
     public function crear()
     {
