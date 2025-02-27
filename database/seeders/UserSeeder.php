@@ -16,8 +16,8 @@ class UserSeeder extends Seeder
     {
         User::insert([
             ['name' => 'ADMINISTRADOR', 'email' => 'admin@email.com','password' => bcrypt('21246813'), 'rol_id' => '1'],
-            ['name' => 'VERIFICADOR DOCUMENTOS', 'email' => 'verificarpago@email.com','password' => bcrypt('21246813'), 'rol_id' => '2'],
-            ['name' => 'VERIFICADOR PAGOS', 'email' => 'verificardocumentos@email.com','password' => bcrypt('21246813'), 'rol_id' => '3'],
+            ['name' => 'VERIFICADOR DOCUMENTOS', 'email' => 'verificardocumentos@email.com','password' => bcrypt('21246813'), 'rol_id' => '2'],
+            ['name' => 'VERIFICADOR PAGOS', 'email' => 'verificarpago@email.com','password' => bcrypt('21246813'), 'rol_id' => '3'],
             ['name' => 'RECYCLER C.A.', 'email' => 'recycler@email.com','password' => bcrypt('21246813'), 'rol_id' => '4'],
         ]);
 
