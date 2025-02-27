@@ -27,13 +27,12 @@ class Login extends Component
         if(auth()->user()){
             redirect('/dashboard');
         }
-        $this->fill(['email' => 'admin@email.com', 'password' => '21246813']);
     }
     public function login() 
     {    
         $user = User::where('email', '=', $this->email)->first();
         
-        if($user->count() > 0){
+        if(isset($user)){
             if($user->email == $this->email and password_verify($this->password, $user->password)) 
             {
                 auth()->login($user, $this->remember_me);
@@ -43,6 +42,8 @@ class Login extends Component
             {
                 return $this->addError('email', trans('auth.failed')); 
             }
+        }else{
+            return $this->addError('email', trans('auth.failed')); 
         }
     }
     public function render()
