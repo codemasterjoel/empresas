@@ -48,7 +48,7 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">RIF</span>
-                                            <input wire:model="rif" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeypress="$(this).mask('00000000-0')" maxlength="10" placeholder="00000000-0">
+                                            <input wire:model="rif" type="text"      class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeypress="$(this).mask('00000000-0')" placeholder="00000000-0">
                                         </div>
                                         @error('rif') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
@@ -186,7 +186,13 @@
                         <h3 class=" my-4 text-2xl text-cyan-400 font-bold text-center">DOCUMENTOS LEGALES</h3>
                         <div class="row">
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
-                                <div class="flex items-center justify-center pb-4">
+                                @if ($patente == 2)
+                                    <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                @endif
+                                @if ($patente == 1)
+                                    <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                @endif
+                                <div class="flex items-center justify-center">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
                                             @if ($id)
@@ -194,15 +200,22 @@
                                                     <iframe width="300" height="500" src="{{asset($patentePDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                                {{-- <img class="image" src="{{ asset('/img/pdf.svg') }}" style="width: 200px; height: 200px; margin:30%;"> --}}
+                                            @if ($patente == 2 || $patente == null)
                                                 <label for="patentePDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b></label>
                                                 <input id="patentePDF" wire:model="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
+                                            @endif
                                         </div>
                                         @error('patentePDF') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                @if ($conformidad == 2)
+                                    <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                @endif
+                                @if ($conformidad == 1)
+                                    <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                @endif
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
@@ -218,7 +231,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-sm-12 mb-xl-0">
+                            <div class="col-xl-4 col-sm-12 mb-xl-0">                                
+                                @if ($runpa == 2)
+                                    <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                @endif
+                                @if ($runpa == 1)
+                                    <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                @endif
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
@@ -263,6 +282,12 @@
                         </div>
                         <div class="row">
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                @if ($rmercantil == 2)
+                                    <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                @endif
+                                @if ($rmercantil == 1)
+                                    <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                @endif
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
@@ -279,6 +304,12 @@
                                 </div>
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                @if ($rif2 == 2)
+                                    <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                @endif
+                                @if ($rif2 == 1)
+                                    <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                @endif
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
@@ -296,6 +327,12 @@
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4">
+                                    @if ($solvencia == 2)
+                                        <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                    @endif
+                                    @if ($solvencia == 1)
+                                        <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                    @endif
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
                                             @if ($id)
@@ -363,6 +400,12 @@
                         </div>
                         <div class="row">
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
+                                @if ($plan == 2)
+                                    <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                @endif
+                                @if ($plan == 1)
+                                    <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                @endif
                                 <div class="flex items-center justify-center pb-4">
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
@@ -380,6 +423,12 @@
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4">
+                                    @if ($origen == 2)
+                                        <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                    @endif
+                                    @if ($origen == 1)
+                                        <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                    @endif
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
                                             @if ($id)
@@ -396,6 +445,12 @@
                             </div>
                             <div class="col-xl-4 col-sm-12 mb-xl-0">
                                 <div class="flex items-center justify-center pb-4">
+                                    @if ($riesgo == 2)
+                                        <div class="text-white uppercase bg-red-600"><b>documento no aprobado, por favor verificar</b></div>
+                                    @endif
+                                    @if ($riesgo == 1)
+                                        <div class="text-white uppercase bg-green-600"><b>documento verificado</b></div>
+                                    @endif
                                     <div class="w-full rounded-lg">
                                         <div class=" max-w-xs">
                                             @if ($id)
@@ -445,7 +500,7 @@
                             <div wire:ignore id="map" style= "width: 100%; height: 600px; z-index: 100;" class="mb-4"></div>
                         </div>
                         <div class="row">
-                            <label>COORDENADA UTM</label>
+                            <label>COORDENADAS UTM</label>
                             <div class="col-sm-3">
                                 <input wire:model.live="lat" type="text" name="latitud" value="10.494134" id="latitud" class="form-control">
                             </div>

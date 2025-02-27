@@ -16,6 +16,7 @@ class Index extends Component
 {
     use WithFileUploads;
     public $id, $empresa, $tipoRIF, $letra, $listaMateriales = null;
+    public $patente, $runpa, $rmercantil, $rif2, $solvencia, $arrendamiento, $catastral, $croquis, $plan, $origen, $riesgo, $conformidad, $aprobado = null;
     public $patentePDF, $conformidadPDF, $runpaPDF, $rmercantilPDF,$rifPDF,$solvenciaPDF,$arrendamientoPDF,$catastralPDF,$croquisPDF,$planPDF,$origenPDF,$riesgoPDF = null;
     public $fecha_runpa, $fecha_patente, $ejes, $bancos, $bauche = null;
     public $input_patente = null;
@@ -68,6 +69,8 @@ class Index extends Component
             $this->riesgoPDF = $empresa->riesgoPDF;
             $this->conformidadPDF = $empresa->conformidadPDF;
             $this->bauche = $empresa->bauche;
+
+            $this->patente = $empresa->patente;
     
             return view('livewire.empresa.crear', ['empresa'=> $empresa]);
     
@@ -110,10 +113,10 @@ class Index extends Component
         $existeEmpresa = Empresa::where('rif', $this->rif)->count();
 
         if($existeEmpresa > 0){
-            $this->sucursal = 1;
+            $this->sucursal = $existeEmpresa+1;
         }
         if($existeEmpresa = 0){
-            $this->sucursal = 0;
+            $this->sucursal = 1;
         }
         if ($this->conformidadPDF) {
             $conformidad = $this->conformidadPDF->store('conformidad', 'public_path');
@@ -135,7 +138,6 @@ class Index extends Component
         }else{
             $riesgo = null;
         }
-       
 
         $patente = $this->patentePDF->store('patente', 'public_path');
         $runpa = $this->runpaPDF->store('runpa', 'public_path');
