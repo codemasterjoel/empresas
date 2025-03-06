@@ -11,6 +11,7 @@ use App\Models\Parroquia;
 use App\Models\Categoria;
 use App\Models\FilePatente;
 use App\Models\Banco;
+use Psy\Readline\Hoa\Console;
 
 class Index extends Component
 {
@@ -100,24 +101,19 @@ class Index extends Component
             'parroquiaId' => 'required',
             'correo' => 'required|email:rfc',
             'categoriaId'=> 'required',
-            'patentePDF'=> 'required',
-            'runpaPDF' => 'required',
-            'rmercantilPDF'=> 'required',
-            'rifPDF'=> 'required',
-            'solvenciaPDF'=> 'required',
-            'arrendamientoPDF'=> 'required',
             'croquisPDF'=> 'required',
-            'origenPDF'=> 'required',
+            'rifPDF'=> 'required',
+            'rmercantilPDF'=> 'required',
         ]);
 
         $existeEmpresa = Empresa::where('rif', $this->rif)->count();
 
-        if($existeEmpresa > 0){
+        if ($existeEmpresa > 0){
             $this->sucursal = $existeEmpresa+1;
-        }
-        if($existeEmpresa = 0){
+        }elseif($existeEmpresa == 0){
             $this->sucursal = 1;
         }
+
         if ($this->conformidadPDF) {
             $conformidad = $this->conformidadPDF->store('conformidad', 'public_path');
         }else{
@@ -138,20 +134,42 @@ class Index extends Component
         }else{
             $riesgo = null;
         }
+        if ($this->patentePDF) {
+            $patente = $this->patentePDF->store('patente', 'public_path');
+        } else {
+            $patente = null;
+        }
+        if ($this->runpaPDF) {
+            $runpa = $this->runpaPDF->store('runpa', 'public_path');
+        } else {
+            $runpa = null;
+        }
+        if ($this->solvenciaPDF) {
+            $solvencia = $this->solvenciaPDF->store('solvencia', 'public_path');
+        } else {
+            $solvencia = null;
+        }
+        if ($this->arrendamientoPDF) {
+            $arrendamiento = $this->arrendamientoPDF->store('arrendamiento', 'public_path');
+        } else {
+            $arrendamiento = null;
+        }
+        if ($this->origenPDF) {
+            $origen = $this->origenPDF->store('origen', 'public_path');
+        } else {
+            $origen = null;
+        }
+        
+        $valor_formateado = substr($this->rif, 0, -1) . "-" . substr($this->rif, -1);
 
-        $patente = $this->patentePDF->store('patente', 'public_path');
-        $runpa = $this->runpaPDF->store('runpa', 'public_path');
-        $rmercantil = $this->rmercantilPDF->store('rmercantil', 'public_path');
-        $rif = $this->rifPDF->store('rif', 'public_path');
-        $solvencia = $this->solvenciaPDF->store('solvencia', 'public_path');
-        $arrendamiento = $this->arrendamientoPDF->store('arrendamiento', 'public_path');
         $croquis = $this->croquisPDF->store('croquis', 'public_path');
-        $origen = $this->origenPDF->store('origen', 'public_path');
+        $rif = $this->rifPDF->store('rif', 'public_path');
+        $rmercantil = $this->rmercantilPDF->store('rmercantil', 'public_path');
 
         $this->empresa = Empresa::updateOrCreate(['id' => $this->id],
         values: [
             'nombre' => $this->nombre,
-            'rif' => $this->rif,
+            'rif' => $valor_formateado,
             'letra'=> $this->letra,
             'tipoRIF'=> $this->tipoRIF,
             'cedula' => $this->cedula,

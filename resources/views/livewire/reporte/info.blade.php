@@ -4,12 +4,22 @@
         <h2 class="title text-center"></h2>
         <div class="team">
             <div class="row mx-20" style="align-content: center">
-              <img src="{{asset('/img/logoccs.png')}}" width="200" style="display: block; margin:auto">
+              <img src="{{asset('img/logoccs.png')}}" width="200" style="display: block; margin:auto">
             </div>
             <h2 class=" mt-4 text-4xl text-cyan-400 font-bold text-center">SISTEMA DE VERIFICACIÓN DE EMPRESAS RECICLADORAS</h2>
             <h3 class=" mt-4 text-2xl text-cyan-400 font-bold text-center">DATOS DE LA EMPRESA</h3>
             <div class="row"> {{-- campo nombre --}}
-                <div class="col-xl-12 col-sm-12 mb-xl-0">
+                <div class="col-xl-3 col-sm-12 mb-xl-0">
+                    <div class="flex items-center justify-center pb-4"> {{-- campo codigo --}}
+                        <div class="w-full rounded-lg">
+                            <div class="flex">
+                                <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">CÓDIGO</span>
+                                <input wire:model="codigo" disabled type="text" class="w-full pl-3 border border-solid uppercase rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-sm-12 mb-xl-0">
                     <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
                         <div class="w-full rounded-lg">
                             <div class="flex">

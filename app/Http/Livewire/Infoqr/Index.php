@@ -9,7 +9,7 @@ use Livewire\Component;
 class Index extends Component
 {
     public $patente, $runpa, $rmercantil, $rif2, $solvencia, $arrendamiento, $catastral, $croquis, $plan, $origen, $riesgo, $conformidad, $aprobado = null;
-    public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $bauchetemp, $fecha_pago, $referencia, $correo, $tipoRIF =null;
+    public $nombre, $codigo, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $bauchetemp, $fecha_pago, $referencia, $correo, $tipoRIF =null;
     public $empresa = null;
 
     public function mount($id) {
@@ -19,6 +19,7 @@ class Index extends Component
 
         $this->empresa_id = $id;
         $this->nombre = $this->empresa->nombre;
+        $this->codigo = $this->empresa->parroquia->abreviatura."-".$this->empresa->codigo."-".$this->empresa->sucursal;
         $this->tipoRIF = $this->empresa->tipoRIF;
         $this->rif = $this->empresa->rif;
         $this->letra = $this->empresa->letra;

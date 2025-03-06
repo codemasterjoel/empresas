@@ -201,7 +201,7 @@
                                                 @endif
                                             @endif
                                             @if ($patente == 2 || $patente == null)
-                                                <label for="patentePDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b><b class="text-red-500"> *</b></label>
+                                                <label for="patentePDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b></label>
                                                 <input id="patentePDF" wire:model="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                             @endif
                                         </div>
@@ -246,7 +246,7 @@
                                                     <iframe width="300" height="500" src="{{asset($runpaPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="runpa" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b><b class="text-red-500"> *</b></label>
+                                            <label for="runpa" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b></label>
                                             <input id="runpaPDF" type="file" wire:model="runpaPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('runpaPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -340,7 +340,7 @@
                                                     <iframe width="300" height="500" src="{{asset($solvenciaPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="solvenciaPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b><b class="text-red-500"> *</b></label>
+                                            <label for="solvenciaPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b></label>
                                             <input id="solvenciaPDF" type="file" wire:model="solvenciaPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('solvenciaPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -358,7 +358,7 @@
                                                     <iframe width="300" height="500" src="{{asset($arrendamientoPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="arrendamientoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b><b class="text-red-500"> *</b></label>
+                                            <label for="arrendamientoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b></label>
                                             <input id="arrendamientoPDF" type="file" wire:model="arrendamientoPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('arrendamientoPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -436,7 +436,7 @@
                                                     <iframe width="300" height="500" src="{{asset($origenPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE ORIGEN</b><b class="text-red-500"> *</b></label>
+                                            <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE ORIGEN</b></label>
                                             <input id="origenPDF" type="file" wire:model="origenPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('origenPDF') <div class="text-danger">{{ $message }}</div> @enderror
