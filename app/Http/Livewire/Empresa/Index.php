@@ -17,7 +17,7 @@ class Index extends Component
 {
     use WithFileUploads;
     use WithPagination;
-    public $patente, $runpa, $rmercantil, $rif2, $solvencia, $arrendamiento, $catastral, $croquis, $plan, $origen, $riesgo, $conformidad, $aprobado = null;
+    public $patente, $runpa, $rmercantil, $rif2, $solvencia, $arrendamiento, $catastral, $croquis, $plan, $origen, $riesgo, $conformidad, $aprobado, $monto = null;
     public $modal, $materialesModal, $baucheModal, $documentosModal, $VerificarPago = false;
     public $nombre, $rif, $cedula, $nombres, $apellidos, $telefono, $direccion, $lat, $lon, $bauche, $bauchetemp, $fecha_pago, $referencia, $correo, $tipoRIF =null;
     public $tipos_materiales, $empresa_id, $nombreEmpresa, $tipoMaterialesId, $empresa, $bancos, $bancoId, $categoriaId =null;
@@ -67,6 +67,7 @@ class Index extends Component
             $this->bancoId = $this->empresa->banco_id;
             $this->fecha_pago = $this->empresa->fecha_pago;
             $this->referencia = $this->empresa->referencia;
+            $this->monto = $this->empresa->monto;
         }
         
         $this->nombreEmpresa = $this->empresa->nombre;
@@ -86,6 +87,7 @@ class Index extends Component
             $this->bancoId = $this->empresa->banco_id;
             $this->fecha_pago = $this->empresa->fecha_pago;
             $this->referencia = $this->empresa->referencia;
+            $this->monto = $this->empresa->monto;
         }
         
         $this->nombreEmpresa = $this->empresa->nombre;
@@ -99,6 +101,7 @@ class Index extends Component
             'bancoId'=> 'required',
             'fecha_pago'=> 'required',
             'referencia' => 'required',
+            'monto' => 'required'
         ]);
 
         $bauche = $this->bauche->store('bauche', 'public_path');
@@ -108,6 +111,7 @@ class Index extends Component
             'banco_id' => $this->bancoId,
             'fecha_pago' => $this->fecha_pago,
             'referencia' => $this->referencia,
+            'monto' => $this->monto,
         ]);
         $this->limpiarModalBauche();
         $this->baucheModal = false;
@@ -147,6 +151,7 @@ class Index extends Component
         $this->bancoId = null;
         $this->fecha_pago = null;
         $this->referencia = null;
+        $this->monto = null;
     }
     public function documentos($id)
     {

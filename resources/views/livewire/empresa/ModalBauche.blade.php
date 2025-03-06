@@ -8,7 +8,7 @@
             <div class="flex items-center justify-center -mt-20">
                 <div class="p-4 w-full bg-white rounded-lg">
                     <div class="flex items-center justify-center pt-8">
-                        <img src="{{asset('/img/logoccs.png')}}" class=" w-40">
+                        <img src="{{asset('img/logoccs.png')}}" class=" w-40">
                     </div>
                     <h3 class="text-2xl text-cyan-400 font-extrabold text-center mt-4">REGISTRO DE PAGO</h3>
                     <h2 class="text-2xl text-cyan-800 font-semibold text-center text-uppercase mt-4">Empresa: {{$nombreEmpresa}}</h2>
@@ -50,6 +50,19 @@
                                             <input wire:model="referencia" type="number" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" placeholder="0000"/>
                                         </div>
                                         @error('referencia') <div class="text-danger">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12 col-sm-12 mb-xl-0">
+                                <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
+                                    <div class="w-full rounded-lg">
+                                        <div class="flex">
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">MONTO</span>
+                                            <input wire:model="monto" type="number" step=".01" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900"/>
+                                        </div>
+                                        @error('monto') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>

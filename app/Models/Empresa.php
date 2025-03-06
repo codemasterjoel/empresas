@@ -56,7 +56,8 @@ class Empresa extends Model
         'bauche',
         'fecha_pago',
         'banco_id',
-        'referencia'
+        'referencia',
+        'monto',
     ];
 
 

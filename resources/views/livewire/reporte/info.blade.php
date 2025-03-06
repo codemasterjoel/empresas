@@ -144,8 +144,20 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-4 mb-4">
-              <h2 class=" mt-4 text-4xl text-cyan-400 uppercase font-bold text-center">esta empresa se encuentra registrada y cumple con los requisitos para el ejercicio del cargo.</h2>
+            <table style="width: 100%">
+                <tbody>
+                    <tr><td style="text-align:justify; text-indent: 2em;">Nos complace informarle que esta empresa ha completado satisfactoriamente su registro en el sistema de empresas recicladoras.
+                        La empresa ha presentado y cumplido con todos los requisitos necesarios, incluyendo:</td></tr>
+                    <tr><td><ul>
+                        <ol><b>1.</b> Entrega de toda la documentación legal requerida.</ol>
+                        <ol><b>2.</b> Obtención y aprobación de los permisos correspondientes.</ol>
+                        <ol><b>3. </b> Alineación con las normativas ambientales vigentes.</ol>
+                    </ul></td></tr>
+                    <tr><td>Además, la empresa ha efectuado el pago correspondiente al proceso de certificación, de acuerdo a lo establecido por la Fundación Para la Economía Circular y Las Energías Renovables
+                        Agradecemos su atención a este comunicado y quedamos a su disposición para cualquier consulta o información adicional que pueda necesitar.</td></tr>
+                    <tr class="text-center"><td>Atentamente,</td></tr>
+                    <tr class="text-center"><td>Fundación Para la Economía Circular y Las Energías Renovables</td></tr>
+                </tbody>
             </div>
         </div>
       </div>

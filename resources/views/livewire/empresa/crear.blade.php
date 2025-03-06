@@ -15,7 +15,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Empresa</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Empresa<b class="text-red-500"> *</b></span>
                                             <input wire:model="nombre" type="text" class="w-full pl-3 border text-uppercase border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeyup="this.value = this.value.toUpperCase();"/>
                                         </div>
                                         @error('nombre') <div class="text-danger">{{ $message }}</div> @enderror
@@ -28,7 +28,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">TIPO DE RIF</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">TIPO DE RIF <b class="text-red-500"> *</b></span>
                                             <select name="tipoRIF" id="tipoRIF" wire:model="tipoRIF" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
                                                 <option value=""></option>
                                                 <option value="V">V</option>
@@ -47,7 +47,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">RIF</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">RIF<b class="text-red-500"> *</b></span>
                                             <input wire:model="rif" type="text"      class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeypress="$(this).mask('00000000-0')" placeholder="00000000-0">
                                         </div>
                                         @error('rif') <div class="text-danger">{{ $message }}</div> @enderror
@@ -58,7 +58,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Categoría</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Categoría<b class="text-red-500"> *</b></span>
                                             <select wire:model="categoriaId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
                                                 <option value="">Seleccione</option>
                                                 @foreach ($categorias as $categoria)
@@ -76,7 +76,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Parroquia</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Parroquia<b class="text-red-500"> *</b></span>
                                             <select wire:model="parroquiaId" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
                                                 <option value="">Seleccione</option>
                                                 @foreach ($parroquias as $parroquia)
@@ -94,7 +94,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Dirección</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Dirección <b class="text-red-500"> *</b></span>
                                             <input wire:model="direccion" type="text" class="w-full text-uppercase pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeyup="this.value = this.value.toUpperCase();"/>
                                         </div>
                                         @error('direccion') <div class="text-danger">{{ $message }}</div> @enderror
@@ -111,7 +111,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo rif --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">NACIONALIDAD</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">NACIONALIDAD<b class="text-red-500"> *</b></span>
                                             <select name="letra" id="letra" wire:model="letra" class="relative m-0 -ml-px block w-[1px] min-w-0 flex-auto rounded-r-lg border border-solid border-neutral-900 bg-clip-padding px-3 py-[0.25rem] font-bold leading-[1.6] text-neutral-900 outline-2 transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary">
                                                 <option value=""></option>
                                                 <option value="V">V</option>
@@ -126,7 +126,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo cedula --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Cédula</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Cédula<b class="text-red-500"> *</b></span>
                                             <input wire:model="cedula" type="text"  class="w-full pl-3 border px-3 py-[0.25rem] border-solid rounded-r-lg text-neutral-900 font-bold outline-2 border-slate-900" onkeypress="$(this).mask('00000000')" maxlength="8">
                                             {{-- <input wire:click="consultar" type="button" value="Buscar" class="bg-gradient-primary px-2 py-[0.25rem] rounded-tr-lg rounded-br-lg text-white font-bold "> --}}
                                         </div>
@@ -140,7 +140,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombres --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Nombres</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Nombres<b class="text-red-500"> *</b></span>
                                             <input wire:model="nombres" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();">
                                         </div>
                                         @error('nombres') <div class="text-danger">{{ $message }}</div> @enderror
@@ -151,7 +151,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo apellidos --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Apellidos</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Apellidos<b class="text-red-500"> *</b></span>
                                             <input wire:model="apellidos" type="text" class="w-full pl-2 border text-uppercase text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeyup="this.value = this.value.toUpperCase();">
                                         </div>
                                         @error('apellidos') <div class="text-danger">{{ $message }}</div> @enderror
@@ -164,7 +164,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Telefono</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Telefono<b class="text-red-500"> *</b></span>
                                             <input wire:model="telefono" type="text" class="w-full pl-3 border border-solid rounded-r-lg font-bold text-neutral-900 outline-2 border-slate-900" onkeypress="$(this).mask('(0000)000 0000')" placeholder="(0000)000 0000"/>
                                         </div>
                                         @error('telefono') <div class="text-danger">{{ $message }}</div> @enderror
@@ -175,7 +175,7 @@
                                 <div class="flex items-center justify-center pb-4"> {{-- campo nombre --}}
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
-                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Correo</span>
+                                            <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">Correo<b class="text-red-500"> *</b></span>
                                             <input wire:model="correo" type="email" class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" >
                                         </div>
                                         @error('correo') <div class="text-danger">{{ $message }}</div> @enderror
@@ -201,7 +201,7 @@
                                                 @endif
                                             @endif
                                             @if ($patente == 2 || $patente == null)
-                                                <label for="patentePDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b></label>
+                                                <label for="patentePDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PATENTE DE INDUSTRIA Y COMERCIO</b><b class="text-red-500"> *</b></label>
                                                 <input id="patentePDF" wire:model="patentePDF" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                             @endif
                                         </div>
@@ -246,7 +246,7 @@
                                                     <iframe width="300" height="500" src="{{asset($runpaPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="runpa" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b></label>
+                                            <label for="runpa" class="mb-1 block text-sm font-medium text-gray-700"><b>RUNPA</b><b class="text-red-500"> *</b></label>
                                             <input id="runpaPDF" type="file" wire:model="runpaPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('runpaPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -296,7 +296,7 @@
                                                     <iframe width="300" height="500" src="{{asset($rmercantilPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="rmercantilPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>REGISTRO MERCANTIL</b></label>
+                                            <label for="rmercantilPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>REGISTRO MERCANTIL</b><b class="text-red-500"> *</b></label>
                                             <input id="rmercantilPDF" type="file" wire:model="rmercantilPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('rmercantilPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -318,7 +318,7 @@
                                                     <iframe width="300" height="500" src="{{asset($rifPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="rif" class="mb-1 block text-sm font-medium text-gray-700"><b>RIF VIGENTE</b></label>
+                                            <label for="rif" class="mb-1 block text-sm font-medium text-gray-700"><b>RIF VIGENTE</b><b class="text-red-500"> *</b></label>
                                             <input id="rifPDF" type="file" wire:model="rifPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('rifPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -340,7 +340,7 @@
                                                     <iframe width="300" height="500" src="{{asset($solvenciaPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="solvenciaPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b></label>
+                                            <label for="solvenciaPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>SOLVENCIA MUNICIPAL DE INMUEBLE Y ASEO</b><b class="text-red-500"> *</b></label>
                                             <input id="solvenciaPDF" type="file" wire:model="solvenciaPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('solvenciaPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -358,7 +358,7 @@
                                                     <iframe width="300" height="500" src="{{asset($arrendamientoPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="arrendamientoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b></label>
+                                            <label for="arrendamientoPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>PROPIEDAD DEL ARRENDAMIENTO</b><b class="text-red-500"> *</b></label>
                                             <input id="arrendamientoPDF" type="file" wire:model="arrendamientoPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('arrendamientoPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -390,7 +390,7 @@
                                                     <iframe width="300" height="500" src="{{asset($croquisPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="croquisPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CROQUIS DE UBICACIÓN</b></label>
+                                            <label for="croquisPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CROQUIS DE UBICACIÓN</b><b class="text-red-500"> *</b></label>
                                             <input id="croquisPDF" type="file" wire:model="croquisPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('croquisPDF') <div class="text-danger">{{ $message }}</div> @enderror
@@ -436,7 +436,7 @@
                                                     <iframe width="300" height="500" src="{{asset($origenPDF)}}" frameborder="0"></iframe>  
                                                 @endif
                                             @endif
-                                            <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE ORIGEN</b></label>
+                                            <label for="origenPDF" class="mb-1 block text-sm font-medium text-gray-700"><b>CERTIFICADO DE ORIGEN</b><b class="text-red-500"> *</b></label>
                                             <input id="origenPDF" type="file" wire:model="origenPDF" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-cyan-900 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-teal-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept="application/pdf, .pdf"/>
                                         </div>
                                         @error('origenPDF') <div class="text-danger">{{ $message }}</div> @enderror
