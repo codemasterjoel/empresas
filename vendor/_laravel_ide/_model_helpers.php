@@ -13,9 +13,9 @@ namespace App\Models {
      * @property-read \App\Models\NivelAcademico $nivelAcademico
      * @property-read \App\Models\Responsabilidad $responsabilidad
      * @property-read \App\Models\NBC $nbc
-     * @method static \Illuminate\Database\Eloquent\Builder|RegistroLuchador newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|RegistroLuchador newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|RegistroLuchador query()
+     * @method static \Illuminate\Database\Eloquent\Builder<RegistroLuchador>|RegistroLuchador newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<RegistroLuchador>|RegistroLuchador newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<RegistroLuchador>|RegistroLuchador query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -251,9 +251,9 @@ namespace App\Models {
      *
      * @property-read \App\Models\registro1x10ffm $jefe
      * @property-read \App\Models\Saime $saime
-     * @method static \Illuminate\Database\Eloquent\Builder|Integrante newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Integrante newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Integrante query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Integrante>|Integrante newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Integrante>|Integrante newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Integrante>|Integrante query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -496,9 +496,9 @@ namespace App\Models {
      * @property-read \App\Models\RegistroLuchador $movilizador
      * @property-read \App\Models\RegistroLuchador $defensa
      * @property-read \App\Models\RegistroLuchador $productivo
-     * @method static \Illuminate\Database\Eloquent\Builder|NBC newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|NBC newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|NBC query()
+     * @method static \Illuminate\Database\Eloquent\Builder<NBC>|NBC newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<NBC>|NBC newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<NBC>|NBC query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -737,9 +737,9 @@ namespace App\Models {
      * @property-read \App\Models\Municipio $municipio
      * @property-read \App\Models\Parroquia $parroquia
      * @property-read \App\Models\NivelAcademico $nivelAcademico
-     * @method static \Illuminate\Database\Eloquent\Builder|postulacion newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|postulacion newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|postulacion query()
+     * @method static \Illuminate\Database\Eloquent\Builder<postulacion>|postulacion newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<postulacion>|postulacion newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<postulacion>|postulacion query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -976,9 +976,9 @@ namespace App\Models {
      * @property-read \App\Models\Estado $estado
      * @property-read \App\Models\Municipio $municipio
      * @property-read \App\Models\Parroquia $parroquia
-     * @method static \Illuminate\Database\Eloquent\Builder|registro1x10ffm newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|registro1x10ffm newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|registro1x10ffm query()
+     * @method static \Illuminate\Database\Eloquent\Builder<registro1x10ffm>|registro1x10ffm newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<registro1x10ffm>|registro1x10ffm newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<registro1x10ffm>|registro1x10ffm query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -1213,9 +1213,9 @@ namespace App\Models {
      * App\Models\Saime
      *
      * @property-read \App\Models\Genero $genero
-     * @method static \Illuminate\Database\Eloquent\Builder|Saime newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Saime newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Saime query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Saime>|Saime newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Saime>|Saime newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Saime>|Saime query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -1467,22 +1467,22 @@ namespace App\Models {
      * @property-read \App\Models\area $area
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
      * @property-read int|null $notifications_count
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereName($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereEmail($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereEmailVerifiedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereCurrentTeamId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereProfilePhotoPath($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereParroquiaId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereRolId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User whereDeletedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|User query()
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmailVerifiedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User wherePassword($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereRememberToken($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereCurrentTeamId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereProfilePhotoPath($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereParroquiaId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereRolId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereDeletedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -1708,7 +1708,7 @@ namespace App\Models {
      * @method static mixed macroCall($method, $parameters)
      * @mixin \Illuminate\Database\Query\Builder
      */
-    class User extends \Illuminate\Database\Eloquent\Model
+    class User extends \Illuminate\Foundation\Auth\User
     {
         //
     }
@@ -1725,17 +1725,17 @@ namespace App\Models {
      * @property string $accion
      * @property int $id
      * @property-read \App\Models\User $user
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria whereAccion($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria whereModelType($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria whereModelId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria whereUserId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria whereCambios($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Auditoria query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria whereAccion($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria whereModelType($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria whereModelId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria whereUserId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria whereCambios($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Auditoria>|Auditoria query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -1973,13 +1973,13 @@ namespace App\Models {
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property string $nombre
      * @property int $id
-     * @method static \Illuminate\Database\Eloquent\Builder|Banco whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Banco whereNombre($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Banco whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Banco whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Banco newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Banco newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Banco query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Banco>|Banco whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Banco>|Banco whereNombre($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Banco>|Banco whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Banco>|Banco whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Banco>|Banco newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Banco>|Banco newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Banco>|Banco query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -2217,13 +2217,13 @@ namespace App\Models {
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property string $nombre
      * @property int $id
-     * @method static \Illuminate\Database\Eloquent\Builder|Categoria whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Categoria whereNombre($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Categoria whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Categoria whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Categoria newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Categoria newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Categoria query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Categoria>|Categoria whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Categoria>|Categoria whereNombre($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Categoria>|Categoria whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Categoria>|Categoria whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Categoria>|Categoria newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Categoria>|Categoria newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Categoria>|Categoria query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -2462,14 +2462,14 @@ namespace App\Models {
      * @property mixed $parroquia_id
      * @property string $nombre
      * @property int $id
-     * @method static \Illuminate\Database\Eloquent\Builder|Eje whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Eje whereNombre($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Eje whereParroquiaId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Eje whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Eje whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Eje newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Eje newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Eje query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Eje>|Eje whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Eje>|Eje whereNombre($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Eje>|Eje whereParroquiaId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Eje>|Eje whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Eje>|Eje whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Eje>|Eje newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Eje>|Eje newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Eje>|Eje query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -2713,6 +2713,7 @@ namespace App\Models {
      * @property mixed $aprobado
      * @property bool|null $estatus
      * @property string|null $fecha_pago
+     * @property float|null $monto
      * @property string|null $bauche
      * @property mixed $banco_id
      * @property mixed $referencia
@@ -2760,61 +2761,62 @@ namespace App\Models {
      * @property-read int|null $tipo_materiales_count
      * @property-read \App\Models\Categoria $categoria
      * @property-read \App\Models\Banco $banco
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombre($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereTiporif($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereLetra($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRif($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereFechaPatente($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereFechaRunpa($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePatentepdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereConformidadpdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRunpapdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRmercantilpdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRifpdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSolvenciapdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereArrendamientopdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCatastralpdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCroquispdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePlanpdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereOrigenpdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRiesgopdf($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePatente($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereConformidad($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRunpa($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRmercantil($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRif2($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSolvencia($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereArrendamiento($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCatastral($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCroquis($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa wherePlan($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereOrigen($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereRiesgo($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereSucursal($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereNombres($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereApellidos($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCedula($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereTelefono($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereDireccion($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereLat($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereLon($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereReferencia($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereBancoId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereBauche($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereFechaPago($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereEstatus($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereAprobado($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCorreo($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCategoriaId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereParroquiaId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereUserId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa whereCodigo($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Empresa query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereNombre($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereTiporif($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereLetra($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRif($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereFechaPatente($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereFechaRunpa($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa wherePatentepdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereConformidadpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRunpapdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRmercantilpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRifpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereSolvenciapdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereArrendamientopdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCatastralpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCroquispdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa wherePlanpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereOrigenpdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRiesgopdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa wherePatente($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereConformidad($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRunpa($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRmercantil($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRif2($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereSolvencia($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereArrendamiento($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCatastral($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCroquis($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa wherePlan($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereOrigen($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereRiesgo($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereSucursal($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereNombres($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereApellidos($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCedula($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereTelefono($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereDireccion($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereLat($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereLon($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereReferencia($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereBancoId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereBauche($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereMonto($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereFechaPago($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereEstatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereAprobado($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCorreo($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCategoriaId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereParroquiaId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereUserId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa whereCodigo($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Empresa>|Empresa query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -3054,14 +3056,14 @@ namespace App\Models {
      * @property string $empresa_id
      * @property int $id
      * @property-read \App\Models\TipoMateriales $tipo_materiales
-     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereEmpresaId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereTipoMaterialesId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|EmpresaTipo query()
+     * @method static \Illuminate\Database\Eloquent\Builder<EmpresaTipo>|EmpresaTipo whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<EmpresaTipo>|EmpresaTipo whereEmpresaId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<EmpresaTipo>|EmpresaTipo whereTipoMaterialesId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<EmpresaTipo>|EmpresaTipo whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<EmpresaTipo>|EmpresaTipo whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<EmpresaTipo>|EmpresaTipo newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<EmpresaTipo>|EmpresaTipo newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<EmpresaTipo>|EmpresaTipo query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -3303,9 +3305,9 @@ namespace App\Models {
      * @property-read int|null $user_count
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\RegistroLuchador> $lsb
      * @property-read int|null $lsb_count
-     * @method static \Illuminate\Database\Eloquent\Builder|Estado newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Estado newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Estado query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Estado>|Estado newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Estado>|Estado newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Estado>|Estado query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -3544,9 +3546,9 @@ namespace App\Models {
      * @property-read \App\Models\Municipio $municipio
      * @property-read \App\Models\Parroquia $parroquia
      * @property-read \App\Models\NivelAcademico $nivelAcademico
-     * @method static \Illuminate\Database\Eloquent\Builder|Formacion newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Formacion newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Formacion query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Formacion>|Formacion newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Formacion>|Formacion newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Formacion>|Formacion query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -3782,9 +3784,9 @@ namespace App\Models {
      *
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\User> $user
      * @property-read int|null $user_count
-     * @method static \Illuminate\Database\Eloquent\Builder|Nivel newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Nivel newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Nivel query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Nivel>|Nivel newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Nivel>|Nivel newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Nivel>|Nivel query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -4018,9 +4020,9 @@ namespace App\Models {
     /**
      * App\Models\Pais
      *
-     * @method static \Illuminate\Database\Eloquent\Builder|Pais newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Pais newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Pais query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Pais>|Pais newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Pais>|Pais newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Pais>|Pais query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -4254,9 +4256,9 @@ namespace App\Models {
     /**
      * App\Models\Profesion
      *
-     * @method static \Illuminate\Database\Eloquent\Builder|Profesion newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Profesion newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Profesion query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Profesion>|Profesion newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Profesion>|Profesion newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Profesion>|Profesion query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -4490,9 +4492,9 @@ namespace App\Models {
     /**
      * App\Models\Recreador
      *
-     * @method static \Illuminate\Database\Eloquent\Builder|Recreador newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Recreador newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Recreador query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Recreador>|Recreador newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Recreador>|Recreador newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Recreador>|Recreador query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -4733,15 +4735,15 @@ namespace App\Models {
      * @property mixed $user_id
      * @property string $id
      * @property-read \App\Models\User $user
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions whereUserId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions whereIpAddress($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions whereUserAgent($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions wherePayload($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions whereLastActivity($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|Sessions query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions whereUserId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions whereIpAddress($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions whereUserAgent($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions wherePayload($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions whereLastActivity($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Sessions>|Sessions query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -4981,13 +4983,13 @@ namespace App\Models {
      * @property int $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Empresa> $empresas
      * @property-read int|null $empresas_count
-     * @method static \Illuminate\Database\Eloquent\Builder|TipoMateriales whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|TipoMateriales whereNombre($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|TipoMateriales whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|TipoMateriales whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|TipoMateriales newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|TipoMateriales newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|TipoMateriales query()
+     * @method static \Illuminate\Database\Eloquent\Builder<TipoMateriales>|TipoMateriales whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<TipoMateriales>|TipoMateriales whereNombre($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<TipoMateriales>|TipoMateriales whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<TipoMateriales>|TipoMateriales whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<TipoMateriales>|TipoMateriales newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<TipoMateriales>|TipoMateriales newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<TipoMateriales>|TipoMateriales query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -5221,9 +5223,9 @@ namespace App\Models {
     /**
      * App\Models\area
      *
-     * @method static \Illuminate\Database\Eloquent\Builder|area newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|area newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|area query()
+     * @method static \Illuminate\Database\Eloquent\Builder<area>|area newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<area>|area newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<area>|area query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -5457,9 +5459,9 @@ namespace App\Models {
     /**
      * App\Models\centro
      *
-     * @method static \Illuminate\Database\Eloquent\Builder|centro newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|centro newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|centro query()
+     * @method static \Illuminate\Database\Eloquent\Builder<centro>|centro newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<centro>|centro newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<centro>|centro query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -5699,13 +5701,13 @@ namespace App\Models {
      * @property int $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\User> $user
      * @property-read int|null $user_count
-     * @method static \Illuminate\Database\Eloquent\Builder|rols whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|rols whereNombre($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|rols whereCreatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|rols whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|rols newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|rols newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder|rols query()
+     * @method static \Illuminate\Database\Eloquent\Builder<rols>|rols whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<rols>|rols whereNombre($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<rols>|rols whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<rols>|rols whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<rols>|rols newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<rols>|rols newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<rols>|rols query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)

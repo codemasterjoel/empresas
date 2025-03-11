@@ -77,8 +77,6 @@ class Index extends Component
     public function verificarpago($id)
     {
         $this->empresa_id = $id;
-        $this->tipos_materiales = TipoMateriales::all();
-        $this->bancos = Banco::all();
         $this->empresa = Empresa::where('id', $id)->firstOrFail();
 
         if ($this->empresa->bauche) 
@@ -127,10 +125,21 @@ class Index extends Component
     }
     public function guardarMaterial()
     {
+        $this->validate([
+            'tipoMaterialesId' => 'required',
+        ]);
+
+        $empresaTipo = EmpresaTipo::where('empresa_id', $this->empresa_id)
+                                  ->where('tipo_materiales_id', $this->tipoMaterialesId)
+                                  ->count();
+
+        //dd($empresaTipo);
+
         EmpresaTipo::Create([
             'empresa_id' => $this->empresa_id,
             'tipo_materiales_id' => $this->tipoMaterialesId,
-        ]); 
+        ]);
+        session()->flash("success","success");
     }
     public function ficha($id)
     {

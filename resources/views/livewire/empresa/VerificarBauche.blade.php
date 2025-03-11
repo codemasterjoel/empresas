@@ -1,5 +1,11 @@
-<div class="fixed z-50 inset-0 overflow-y-auto ease-out duration-400">
-    <div class="flex justify-center min-h-screen pt-4 px-4 pb-20 text-center">
+<div class="fixed z-40 inset-0 overflow-y-auto ease-out duration-400">
+    @if(session()->has('success')== 'success')
+        @include('livewire.components.aprobado')
+    @endif
+    @if(session()->has('fail')== 'fail')
+        @include('livewire.components.rechazado')
+    @endif
+    <div class="flex justify-center min-h-screen pt-4 px-4 pb-20 text-center  sm:p-0 min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
         <div class="fixed inset-0 transition-opacity">
             <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
@@ -8,7 +14,7 @@
             <div class="flex items-center justify-center -mt-20">
                 <div class="p-4 w-full bg-white rounded-lg">
                     <div class="flex items-center justify-center pt-8">
-                        <img src="{{asset('/img/logoccs.png')}}" class=" w-40">
+                        <img src="{{asset('img/logoccs.png')}}" class=" w-40">
                     </div>
                     <h3 class="text-2xl text-cyan-400 font-extrabold text-center mt-4">VERIFICACIÓN DE PAGO</h3>
                     <h2 class="text-2xl text-cyan-800 font-semibold text-center text-uppercase mt-4">Empresa: {{$nombreEmpresa}}</h2>
@@ -81,12 +87,12 @@
                                 @if($empresa->bauche)
                                     <div class="flex flex-wrap bg-white justify-center">
                                         <div class="flex space-x-4">
-                                            @if($empresa->aprobado == 0 || $empresa->aprobado == 2)
+                                            @if($aprobado == 0 || $aprobado == 2)
                                                 <button wire:click="aprobar('bauche')" class="flex items-center justify-center bg-success hover:bg-successActive rounded-full p-4 h-10 w-10 transition duration-300">
                                                     <span class="material-symbols-outlined text-white">check_circle</span>
                                                 </button>
                                             @endif
-                                            @if($empresa->aprobado == 0 || $empresa->aprobado == 1)
+                                            @if($aprobado == 0 || $aprobado == 1)
                                                 <button wire:click="reprobar('bauche')" class="flex items-center justify-center bg-danger hover:bg-dangerActive rounded-full p-4 h-10 w-10 transition duration-300">
                                                     <span class="material-symbols-outlined text-white">cancel</span>
                                                 </button>

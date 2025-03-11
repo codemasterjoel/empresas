@@ -1,14 +1,17 @@
-<div class="fixed z-50 inset-0 overflow-y-auto ease-out duration-400">
-    <div class="flex justify-center min-h-screen pt-4 px-4 pb-20 text-center">
+<div class="fixed z-40 inset-0 overflow-y-auto ease-out duration-400">
+    @if(session()->has('success')== 'success')
+        @include('livewire.components.success')
+    @endif
+    <div class="flex justify-center min-h-screen pt-4 px-4 pb-20 text-center  sm:p-0 min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
         <div class="fixed inset-0 transition-opacity">
             <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
         <span class="hidden sm:inline-block sm:h-screen"></span>
-        <div class="inline-block bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8  sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">    
+        <div class="inline-block bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">    
             <div class="flex items-center justify-center">
                 <div class="p-4 w-full bg-white rounded-lg">
                     <div class="flex items-center justify-center pt-8">
-                        <img src="{{asset('/img/logoccs.png')}}" class=" w-40">
+                        <img src="{{asset('img/logoccs.png')}}" class=" w-40">
                     </div>
                     <h3 class="text-2xl text-cyan-400 font-extrabold text-center mt-4">REGISTRAR MATERIALES</h3>
                     <h2 class="text-2xl text-cyan-800 font-semibold text-center text-uppercase mt-4">Empresa: {{$nombreEmpresa}}</h2>
