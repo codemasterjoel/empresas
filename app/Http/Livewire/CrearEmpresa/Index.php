@@ -87,119 +87,145 @@ class Index extends Component
     }
     public function guardar(){
 
-        $this->validate([
-            'nombre' => 'required',
-            'letra'=> 'required',
-            'tipoRIF'=> 'required',
-            'rif' => 'required',
-            'cedula' => 'required',
-            'nombres' => 'required',
-            'apellidos' => 'required',
-            'direccion' => 'required',
-            'lat' => 'required',
-            'lon' => 'required',
-            'parroquiaId' => 'required',
-            'correo' => 'required|email:rfc',
-            'categoriaId'=> 'required',
-            'croquisPDF'=> 'required',
-            'rifPDF'=> 'required',
-            'rmercantilPDF'=> 'required',
-        ]);
+        if (isset($this->id)) {
 
-        $existeEmpresa = Empresa::where('rif', $this->rif)->count();
+            Empresa::where('id', $this->id)->update([
+                'nombre' => $this->nombre,
+                'letra'=> $this->letra,
+                'tipoRIF'=> $this->tipoRIF,
+                'cedula' => $this->cedula,
+                'nombres' => $this->nombres,
+                'apellidos' => $this->apellidos,
+                'telefono' => $this->telefono,
+                'direccion' => $this->direccion,
+                'fecha_runpa' => $this->fecha_runpa,
+                'fecha_patente' => $this->fecha_patente,
+                'lat' => $this->lat,
+                'lon' => $this->lon,
+                'parroquia_id' => $this->parroquiaId,
+                'sucursal' => $this->sucursal,
+                'categoria_id'=> $this->categoriaId,
+                'correo' => $this->correo,
+            ]);
 
-        if ($existeEmpresa > 0){
-            $this->sucursal = $existeEmpresa+1;
-        }elseif($existeEmpresa == 0){
-            $this->sucursal = 1;
-        }
+            return redirect('empresa');
 
-        if ($this->conformidadPDF) {
-            $conformidad = $this->conformidadPDF->store('conformidad', 'public_path');
-        }else{
-            $conformidad = null;
-        }
-        if ($this->catastralPDF) {
-            $catastral = $this->catastralPDF->store('catastral', 'public_path');
-        }else{
-            $catastral = null;
-        }
-        if ($this->planPDF) {
-            $plan = $this->planPDF->store('plan', 'public_path');
-        }else{
-            $plan = null;
-        }
-        if ($this->riesgoPDF) {
-            $riesgo = $this->riesgoPDF->store('riesgo', 'public_path');
-        }else{
-            $riesgo = null;
-        }
-        if ($this->patentePDF) {
-            $patente = $this->patentePDF->store('patente', 'public_path');
         } else {
-            $patente = null;
-        }
-        if ($this->runpaPDF) {
-            $runpa = $this->runpaPDF->store('runpa', 'public_path');
-        } else {
-            $runpa = null;
-        }
-        if ($this->solvenciaPDF) {
-            $solvencia = $this->solvenciaPDF->store('solvencia', 'public_path');
-        } else {
-            $solvencia = null;
-        }
-        if ($this->arrendamientoPDF) {
-            $arrendamiento = $this->arrendamientoPDF->store('arrendamiento', 'public_path');
-        } else {
-            $arrendamiento = null;
-        }
-        if ($this->origenPDF) {
-            $origen = $this->origenPDF->store('origen', 'public_path');
-        } else {
-            $origen = null;
-        }
-        
-        $valor_formateado = substr($this->rif, 0, -1) . "-" . substr($this->rif, -1);
+            
+            $this->validate([
+                'nombre' => 'required',
+                'letra'=> 'required',
+                'tipoRIF'=> 'required',
+                'rif' => 'required',
+                'cedula' => 'required',
+                'nombres' => 'required',
+                'apellidos' => 'required',
+                'direccion' => 'required',
+                'lat' => 'required',
+                'lon' => 'required',
+                'parroquiaId' => 'required',
+                'correo' => 'required|email:rfc',
+                'categoriaId'=> 'required',
+                'croquisPDF'=> 'required',
+                'rifPDF'=> 'required',
+                'rmercantilPDF'=> 'required',
+            ]);
 
-        $croquis = $this->croquisPDF->store('croquis', 'public_path');
-        $rif = $this->rifPDF->store('rif', 'public_path');
-        $rmercantil = $this->rmercantilPDF->store('rmercantil', 'public_path');
+            $existeEmpresa = Empresa::where('rif', $this->rif)->count();
 
-        $this->empresa = Empresa::updateOrCreate(['id' => $this->id],
-        values: [
-            'nombre' => $this->nombre,
-            'rif' => $valor_formateado,
-            'letra'=> $this->letra,
-            'tipoRIF'=> $this->tipoRIF,
-            'cedula' => $this->cedula,
-            'nombres' => $this->nombres,
-            'apellidos' => $this->apellidos,
-            'telefono' => $this->telefono,
-            'direccion' => $this->direccion,
-            'fecha_runpa' => $this->fecha_runpa,
-            'fecha_patente' => $this->fecha_patente,
-            'lat' => $this->lat,
-            'lon' => $this->lon,
-            'parroquia_id' => $this->parroquiaId,
-            'sucursal' => $this->sucursal,
-            'categoria_id'=> $this->categoriaId,
-            'correo' => $this->correo,
-            'user_id'=> auth()->user()->id,
-            'patentePDF'=> $patente,
-            'runpaPDF' => $runpa,
-            'rmercantilPDF' => $rmercantil,
-            'rifPDF' => $rif,
-            'solvenciaPDF' => $solvencia,
-            'arrendamientoPDF' => $arrendamiento,
-            'catastralPDF' => $catastral,
-            'croquisPDF' => $croquis,
-            'planPDF' => $plan,
-            'origenPDF' => $origen,
-            'riesgoPDF' => $riesgo,
-            'conformidadPDF' => $conformidad,
-        ]);
-        return redirect('empresa');
+            if ($existeEmpresa > 0){
+                $this->sucursal = $existeEmpresa+1;
+            }elseif($existeEmpresa == 0){
+                $this->sucursal = 1;
+            }
+
+            if ($this->conformidadPDF) {
+                $conformidad = $this->conformidadPDF->store('conformidad', 'public_path');
+            }else{
+                $conformidad = null;
+            }
+            if ($this->catastralPDF) {
+                $catastral = $this->catastralPDF->store('catastral', 'public_path');
+            }else{
+                $catastral = null;
+            }
+            if ($this->planPDF) {
+                $plan = $this->planPDF->store('plan', 'public_path');
+            }else{
+                $plan = null;
+            }
+            if ($this->riesgoPDF) {
+                $riesgo = $this->riesgoPDF->store('riesgo', 'public_path');
+            }else{
+                $riesgo = null;
+            }
+            if ($this->patentePDF) {
+                $patente = $this->patentePDF->store('patente', 'public_path');
+            } else {
+                $patente = null;
+            }
+            if ($this->runpaPDF) {
+                $runpa = $this->runpaPDF->store('runpa', 'public_path');
+            } else {
+                $runpa = null;
+            }
+            if ($this->solvenciaPDF) {
+                $solvencia = $this->solvenciaPDF->store('solvencia', 'public_path');
+            } else {
+                $solvencia = null;
+            }
+            if ($this->arrendamientoPDF) {
+                $arrendamiento = $this->arrendamientoPDF->store('arrendamiento', 'public_path');
+            } else {
+                $arrendamiento = null;
+            }
+            if ($this->origenPDF) {
+                $origen = $this->origenPDF->store('origen', 'public_path');
+            } else {
+                $origen = null;
+            }
+            
+            $valor_formateado = substr($this->rif, 0, -1) . "-" . substr($this->rif, -1);
+
+            $croquis = $this->croquisPDF->store('croquis', 'public_path');
+            $rif = $this->rifPDF->store('rif', 'public_path');
+            $rmercantil = $this->rmercantilPDF->store('rmercantil', 'public_path');
+
+            $this->empresa = Empresa::updateOrCreate(['id' => $this->id],
+            values: [
+                'nombre' => $this->nombre,
+                'rif' => $valor_formateado,
+                'letra'=> $this->letra,
+                'tipoRIF'=> $this->tipoRIF,
+                'cedula' => $this->cedula,
+                'nombres' => $this->nombres,
+                'apellidos' => $this->apellidos,
+                'telefono' => $this->telefono,
+                'direccion' => $this->direccion,
+                'fecha_runpa' => $this->fecha_runpa,
+                'fecha_patente' => $this->fecha_patente,
+                'lat' => $this->lat,
+                'lon' => $this->lon,
+                'parroquia_id' => $this->parroquiaId,
+                'sucursal' => $this->sucursal,
+                'categoria_id'=> $this->categoriaId,
+                'correo' => $this->correo,
+                'user_id'=> auth()->user()->id,
+                'patentePDF'=> $patente,
+                'runpaPDF' => $runpa,
+                'rmercantilPDF' => $rmercantil,
+                'rifPDF' => $rif,
+                'solvenciaPDF' => $solvencia,
+                'arrendamientoPDF' => $arrendamiento,
+                'catastralPDF' => $catastral,
+                'croquisPDF' => $croquis,
+                'planPDF' => $plan,
+                'origenPDF' => $origen,
+                'riesgoPDF' => $riesgo,
+                'conformidadPDF' => $conformidad,
+            ]);
+            return redirect('empresa');
+        }
 
     }
 }
