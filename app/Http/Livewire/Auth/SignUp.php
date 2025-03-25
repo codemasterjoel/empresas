@@ -29,7 +29,8 @@ class SignUp extends Component
         $user = User::create([
             'name' => $this->name,
             'email' => $this->email,
-            'password' => Hash::make($this->password)
+            'password' => Hash::make($this->password),
+            'rol_id' => 4
         ]);
 
         auth()->login($user);

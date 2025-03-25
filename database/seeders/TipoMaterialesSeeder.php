@@ -25,7 +25,7 @@ class TipoMaterialesSeeder extends Seeder
             ['nombre' => 'MOTOR'],
             ['nombre' => 'TARJETA ELECTRÓNICA'],
             ['nombre' => 'PAPEL ARCHIVO'],
-            ['nombre' => 'CATÓN'],
+            ['nombre' => 'CARTÓN'],
         ]);
     }
 }
