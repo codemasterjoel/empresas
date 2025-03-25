@@ -12,8 +12,8 @@
                     </div>
                     <h3 class="text-2xl text-cyan-400 font-extrabold text-center mt-4">REGISTRO DE PAGO</h3>
                     <h2 class="text-2xl text-cyan-800 font-semibold text-center text-uppercase mt-4">Empresa: {{$nombreEmpresa}}</h2>
-                    <h2 class="text-2xl text-cyan-800 font-semibold text-center text-uppercase mt-4">Monto a Pagar: <b class=" text-red-900">120 €</b></h2>
-                    <h5 class=" text-center"><i>"A la taza del BCV del dia en que se hace la transferencia."</i></h5>
+                    <h2 class="text-2xl text-cyan-800 font-semibold text-center text-uppercase mt-4">Monto a Pagar: <b class=" text-red-900">600 UCD</b></h2>
+                    <h5 class=" text-center"><i>"Unidad de Cuenta Dinamica del dia en que se hace la transferencia."</i></h5>
                     <form>
                         <h4 class=" text-cyan-800 font-semibold text-center text-uppercase mt-4">Realiza tu pago a:</h4>
                         <div class="row">
