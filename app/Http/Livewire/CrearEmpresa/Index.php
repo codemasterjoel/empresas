@@ -86,31 +86,6 @@ class Index extends Component
             }
     }
     public function guardar(){
-
-        if (isset($this->id)) {
-
-            Empresa::where('id', $this->id)->update([
-                'nombre' => $this->nombre,
-                'letra'=> $this->letra,
-                'tipoRIF'=> $this->tipoRIF,
-                'cedula' => $this->cedula,
-                'nombres' => $this->nombres,
-                'apellidos' => $this->apellidos,
-                'telefono' => $this->telefono,
-                'direccion' => $this->direccion,
-                'fecha_runpa' => $this->fecha_runpa,
-                'fecha_patente' => $this->fecha_patente,
-                'lat' => $this->lat,
-                'lon' => $this->lon,
-                'parroquia_id' => $this->parroquiaId,
-                'sucursal' => $this->sucursal,
-                'categoria_id'=> $this->categoriaId,
-                'correo' => $this->correo,
-            ]);
-
-            return redirect('empresa');
-
-        } else {
             
             $this->validate([
                 'nombre' => 'required',
@@ -225,7 +200,5 @@ class Index extends Component
                 'conformidadPDF' => $conformidad,
             ]);
             return redirect('empresa');
-        }
-
     }
 }
