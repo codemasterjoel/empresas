@@ -8,12 +8,11 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Empresas</p>
-                    <h5 class="font-weight-bolder mb-0"></h5>
+                    <h5 class="font-weight-bolder mb-0">{{$empresas->count()}}</h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    {{-- <i class="ni ni-money-coins " aria-hidden="true"></i> --}}
                     <span class="material-symbols-outlined text-white m-2">person</span>
                   </div>
                 </div>
@@ -27,8 +26,8 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicadores</p>
-                    <h5 class="font-weight-bolder mb-0"></h5>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Principales</p>
+                    <h5 class="font-weight-bolder mb-0">{{ $empresas->where('sucursal', 1)->count() }}</h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -46,8 +45,8 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicadores</p>
-                    <h5 class="font-weight-bolder mb-0"></h5>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Sucursales</p>
+                    <h5 class="font-weight-bolder mb-0">{{ $empresas->where('sucursal', 2)->count() }}</h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -65,8 +64,8 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicadores</p>
-                    <h5 class="font-weight-bolder mb-0"></h5>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">En Espera</p>
+                    <h5 class="font-weight-bolder mb-0">{{ $empresas->where('aprobado', 0)->count() }}</h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -84,8 +83,8 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicaodres</p>
-                    <h5 class="font-weight-bolder mb-0"></h5>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Aprobadas</p>
+                    <h5 class="font-weight-bolder mb-0">{{ $empresas->where('aprobado', 1)->count() }}</h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -103,8 +102,8 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Indicadores</p>
-                    <h5 class="font-weight-bolder mb-0"></h5>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Rechazada</p>
+                    <h5 class="font-weight-bolder mb-0">{{ $empresas->where('aprobado', 2)->count() }}</h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
