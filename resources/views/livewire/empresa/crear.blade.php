@@ -48,7 +48,7 @@
                                     <div class="w-full rounded-lg">
                                         <div class="flex">
                                             <span class="flex bg-cyan-900 text-white items-center font-bold whitespace-nowrap rounded-l-lg border-r-0 border-solid px-3 py-[0.25rem] text-center text-base leading-[1.6] dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200">RIF<b class="text-red-500"> *</b></span>
-                                            <input wire:model="rif" type="text"      class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeypress="$(this).mask('00000000-0')" placeholder="00000000-0">
+                                            <input wire:model="rif" type="text" class="w-full pl-2 border text-neutral-900 font-bold rounded-r-lg border-neutral-900" onkeypress="$(this).mask('00000000-0')" placeholder="00000000-0">
                                         </div>
                                         @error('rif') <div class="text-danger">{{ $message }}</div> @enderror
                                     </div>
