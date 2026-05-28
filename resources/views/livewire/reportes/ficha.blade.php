@@ -52,7 +52,7 @@
 					<img style="width:50%" src="img/firma_JL.svg">
 				</td>
 			</tr> --}}
-			{{-- <tr>
+			<tr>
 				<td style="text-align: center; font-size:12pt"><br><br><br><br><br>
 					<img style="width:30%; margin-bottom: -20px;" src="img/firma_JL.svg"><br>
 					______________________________________<br>
@@ -60,7 +60,7 @@
 							<i>Fundación Para la Economía Circular y Las Energías Renovables</i>
 					
 				</td>
-			</tr> --}}
+			</tr>
             <tr>
                 <td style="text-align:right">
                 <img src="data:image/png;base64, {!! base64_encode(QrCode::format('svg')->size(150)->generate('https://registro.fundaeco.com.ve/info/'.$empresa->id)) !!} "></td>
